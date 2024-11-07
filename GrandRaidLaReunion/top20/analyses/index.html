@@ -111,47 +111,43 @@
             </style>
         </head>
         <body>
-            <div class="header-section">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <h1 class="mb-0">Classement des Coureurs</h1>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <select id="courseSelect" class="form-select d-inline-block">
-        <option value="Toutes les courses">Toutes les courses</option><option value="Diagonale des Fous">Diagonale des Fous</option><option value="Mascareignes">Mascareignes</option><option value="Metiss Trail">Metiss Trail</option><option value="Trail de Bourbon">Trail de Bourbon</option>
-                            </select>
-                        </div>
-                    </div>
+            <div class="container py-4">
+                <h1>Classement des Coureurs</h1>
+                <div class="mb-4">
+                    <a href="../index.html" class="btn btn-secondary">← Retour au tableau des coureurs</a>
                 </div>
-            </div>
-
-            <div class="container mb-4">
-                <a href="../index.html" class="back-button">
-                    <i class="fas fa-arrow-left"></i> Retour au tableau des coureurs
-                </a>
-            </div>
-
-            <div class="container">
+                
                 <div class="row">
-                    <!-- TOP Progression -->
+                    <!-- TOP Vitesses -->
                     <div class="col-md-6 col-lg-3">
                         <div class="analysis-section">
                             <h3 class="section-title">
-                                <i class="fas fa-chart-line"></i>
-                                TOP - Progression au Classement
+                                <i class="fas fa-gauge-high"></i>
+                                TOP Vitesses
                             </h3>
                             <ul class="analysis-links">
                                 <li>
-                                    <a href="progression_globale.html">
-                                        <i class="fas fa-arrow-trend-up"></i>
-                                        Progression globale
+                                    <a href="vitesse_moyenne.html">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Vitesse moyenne
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="progression_sections.html">
-                                        <i class="fas fa-route"></i>
-                                        Progression entre 2 sections
+                                    <a href="vitesse_effort.html">
+                                        <i class="fas fa-fire"></i>
+                                        Vitesse effort
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="vitesse_regularite.html">
+                                        <i class="fas fa-chart-line"></i>
+                                        Régularité
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="vitesse_sections.html">
+                                        <i class="fas fa-flag-checkered"></i>
+                                        Vitesse par section
                                     </a>
                                 </li>
                             </ul>
@@ -182,42 +178,36 @@
                         </div>
                     </div>
 
-                    <!-- TOP Vitesses -->
+                    <!-- TOP Progression -->
                     <div class="col-md-6 col-lg-3">
                         <div class="analysis-section">
                             <h3 class="section-title">
-                                <i class="fas fa-gauge-high"></i>
-                                TOP Vitesses
+                                <i class="fas fa-chart-line"></i>
+                                TOP Progression
                             </h3>
                             <ul class="analysis-links">
                                 <li>
-                                    <a href="vitesse_moyenne.html">
-                                        <i class="fas fa-tachometer-alt"></i>
-                                        Vitesse moyenne
+                                    <a href="progression_globale.html">
+                                        <i class="fas fa-arrow-trend-up"></i>
+                                        Progression globale
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="vitesse_effort.html">
-                                        <i class="fas fa-fire"></i>
-                                        Vitesse effort
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="vitesse_sections.html">
-                                        <i class="fas fa-flag-checkered"></i>
-                                        Vitesse par section
+                                    <a href="progression_sections.html">
+                                        <i class="fas fa-route"></i>
+                                        Progression par section
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- TOP par sections -->
+                    <!-- TOP Sections -->
                     <div class="col-md-6 col-lg-3">
                         <div class="analysis-section">
                             <h3 class="section-title">
                                 <i class="fas fa-map-marked-alt"></i>
-                                TOP par sections
+                                TOP Sections
                             </h3>
                             <ul class="analysis-links">
                                 <li>
@@ -230,10 +220,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <script>
-                document.getElementById('courseSelect').addEventListener('change', function() {
+                document.getElementById('courseSelect') && document.getElementById('courseSelect').addEventListener('change', function() {
                     const course = this.value;
                     const suffix = course === 'Toutes les courses' ? '' : '_' + course.toLowerCase().replace(/ /g, '_');
                     updateLinks(suffix);
@@ -241,34 +232,22 @@
 
                 function updateLinks(suffix) {
                     const links = {
-                        'TOP - Progression au Classement': {
-                            'Progression globale': `progression_globale${suffix}.html`,
-                            'Progression entre 2 sections': `progression_sections${suffix}.html`
-                        },
-                        'TOP - D+ et D-': {
-                            'Top Grimpeurs': `grimpeurs${suffix}.html`,
-                            'Top Descendeurs': `descendeurs${suffix}.html`
-                        },
-                        'TOP Vitesses': {
-                            'Vitesse moyenne': `vitesse_moyenne${suffix}.html`,
-                            'Vitesse effort': `vitesse_effort${suffix}.html`,
-                            'Vitesse par section': `vitesse_sections${suffix}.html`
-                        }
+                        'vitesse_moyenne': 'vitesse_moyenne',
+                        'vitesse_effort': 'vitesse_effort',
+                        'vitesse_regularite': 'vitesse_regularite',
+                        'vitesse_sections': 'vitesse_sections',
+                        'progression_globale': 'progression_globale',
+                        'progression_sections': 'progression_sections',
+                        'grimpeurs': 'grimpeurs',
+                        'descendeurs': 'descendeurs'
                     };
 
-                    document.querySelectorAll('.analysis-section').forEach(section => {
-                        const title = section.querySelector('.section-title').textContent.trim();
-                        if (title in links) {  // Ne mettre à jour que les sections avec des liens dynamiques
-                            const ul = section.querySelector('ul');
-                            Array.from(ul.children).forEach(li => {
-                                const a = li.querySelector('a');
-                                const linkText = a.textContent.trim();
-                                if (links[title][linkText]) {
-                                    a.href = links[title][linkText];
-                                }
-                            });
-                        }
-                    });
+                    for (const [baseLink, pageType] of Object.entries(links)) {
+                        const elements = document.querySelectorAll(`a[href^="${baseLink}"]`);
+                        elements.forEach(element => {
+                            element.href = `${pageType}${suffix}.html`;
+                        });
+                    }
                 }
 
                 // Initialize links

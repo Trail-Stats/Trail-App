@@ -3,7 +3,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Top Grimpeurs</title>
+            <title>Régularité</title>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
@@ -97,89 +97,103 @@
                             <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
                         </div>
                         <div class="col">
-                            <h2 class="mb-0">Top Grimpeurs</h2>
+                            <h2 class="mb-0">Régularité</h2>
                         </div>
                         <div class="col-auto">
                             <select id="courseSelect" class="form-select" onchange="changeCourse(this.value)">
-        <option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" selected>Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Toutes les courses" >Toutes les courses</option><option value="Trail de Bourbon" >Trail de Bourbon</option>
+        <option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" >Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Toutes les courses" selected>Toutes les courses</option><option value="Trail de Bourbon" >Trail de Bourbon</option>
                             </select>
                         </div>
                     </div>
                 </div>
         
-            
-                <div class="container-fluid mb-4">
+                        <div class="container-fluid mb-4">
             <div class="card">
                 <div class="collapsible-header" onclick="toggleSection(this)">
-                            <h3 class="card-title mb-0" style="font-size: 14px;">⛰️ Analyse des Performances en Montée</h3>
+                    <h3 class="card-title mb-0" style="font-size: 14px;">🎯 Comprendre l'analyse de régularité</h3>
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="collapsible-content">
                     <div class="card-body">
-                        <div class="row">                    
-                            <div class="col-md-6">
-                                    <h5>📊 Métriques analysées</h5>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3">
-                                            <strong>D+ total</strong><br>
-                                            <small class="text-muted">
-                                                Dénivelé positif total accumulé sur la section
-                                            </small>
-                                        </li>
-                                        <li class="mb-3">
-                                            <strong>Vitesse verticale</strong><br>
-                                            <small class="text-muted">
-                                                Vitesse de progression en montée (m/h) = D+ / Temps
-                                            </small>
-                                        </li>
-                                        <li class="mb-3">
-                                            <strong>Pente moyenne</strong><br>
-                                            <small class="text-muted">
-                                                Pourcentage moyen de la pente sur la section
-                                            </small>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div class="row">
+                                        <div class="col-md-6">
+                                            <h5>📊 Métriques utilisées</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="mb-3">
+                                                    <strong>Score de régularité</strong><br>
+                                                    <small class="text-muted">
+                                                        Score sur 100 points qui mesure la stabilité du rythme du coureur.
+                                                        Plus le score est élevé, plus le coureur maintient une vitesse constante.
+                                                        Un score de 100 représenterait une vitesse parfaitement stable.
+                                                    </small>
+                                                </li>
+                                                <li class="mb-3">
+                                                    <strong>Vitesse moyenne</strong><br>
+                                                    <small class="text-muted">
+                                                        Moyenne des vitesses mesurées à chaque point de chronométrage.
+                                                        Cette valeur est identique à celle affichée dans le classement par vitesse moyenne.
+                                                    </small>
+                                                </li>
+                                                <li class="mb-3">
+                                                    <strong>Variation</strong><br>
+                                                    <small class="text-muted">
+                                                        Indique l'amplitude des variations de vitesse en pourcentage.
+                                                        Par exemple, ±20% signifie que la vitesse varie entre -20% et +20% autour de la moyenne.
+                                                    </small>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                <div class="col-md-6">
-                                    <h5>💡 Interprétation</h5>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3">
-                                            <strong>Vitesse verticale élevée</strong><br>
-                                            <small class="text-muted">
-                                                Indique une forte capacité à progresser en montée
-                                            </small>
-                                        </li>
-                                        <li class="mb-3">
-                                            <strong>Pente et vitesse</strong><br>
-                                            <small class="text-muted">
-                                                La difficulté augmente exponentiellement avec la pente
-                                            </small>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                                        <div class="col-md-6">
+                                            <h5>💡 Comment interpréter les résultats ?</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="mb-3">
+                                                    <strong>Score élevé (> 80)</strong><br>
+                                                    <small class="text-muted">
+                                                        Indique un coureur très régulier qui maintient un rythme stable.
+                                                        Généralement associé à une bonne gestion de l'effort.
+                                                    </small>
+                                                </li>
+                                                <li class="mb-3">
+                                                    <strong>Score moyen (50-80)</strong><br>
+                                                    <small class="text-muted">
+                                                        Suggère des variations modérées de vitesse.
+                                                        Peut être dû au profil du parcours ou à une stratégie de course.
+                                                    </small>
+                                                </li>
+                                                <li class="mb-3">
+                                                    <strong>Score faible (< 50)</strong><br>
+                                                    <small class="text-muted">
+                                                        Indique des variations importantes de vitesse.
+                                                        Peut refléter des difficultés ou une stratégie spécifique.
+                                                    </small>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
 
-                            <div class="alert alert-info mt-3">
-                                <strong>📝 Note:</strong>
-                                <p class="mb-0">
-                                    L'analyse ne considère que les sections avec un dénivelé positif significatif (>100m).
-                                    Les performances sont calculées sur des sections entières pour une meilleure représentativité.
-                                </p>
+                                    <div class="alert alert-info mt-3">
+                                        <strong>📝 Note importante:</strong>
+                                        <p class="mb-0">
+                                            Cette analyse prend en compte les vitesses à chaque point de chronométrage.
+                                            Les variations peuvent être influencées par de nombreux facteurs comme le profil du terrain,
+                                            la stratégie de course, la fatigue, ou les conditions météorologiques.
+                                            Un score plus bas ne signifie pas nécessairement une moins bonne performance globale.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
             
                 <table id="analysisTable" class="table table-striped">
                     <thead>
                         <tr>
-        <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>D+ total</th><th>Temps</th><th>Vitesse</th><th>Pente moy.</th><th>Tendance</th>
+        <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>État</th><th>Score régularité</th><th>Vitesse moyenne</th><th>Variation</th>
                         </tr>
                     </thead>
                     <tbody>
-        <tr><td>1</td><td>4457</td><td>Matis FUGIER</td><td>Mascareignes</td><td>742m</td><td>00:55:39</td><td>800.0 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>2</td><td>3759</td><td>Alexandre DEPECHE</td><td>Mascareignes</td><td>1304m</td><td>01:43:28</td><td>756.2 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>3</td><td>3759</td><td>Alexandre DEPECHE</td><td>Mascareignes</td><td>742m</td><td>00:58:56</td><td>755.4 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>4</td><td>4160</td><td>Rivosoa Hobilalaina ANDRIANIRINA</td><td>Mascareignes</td><td>1304m</td><td>01:43:49</td><td>753.6 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>5</td><td>4506</td><td>Antoine COMPAROT</td><td>Mascareignes</td><td>742m</td><td>00:59:32</td><td>747.8 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>6</td><td>4398</td><td>Nicolas MARCY</td><td>Mascareignes</td><td>742m</td><td>01:00:00</td><td>742.0 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>7</td><td>4457</td><td>Matis FUGIER</td><td>Mascareignes</td><td>1304m</td><td>01:46:18</td><td>736.0 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>8</td><td>4204</td><td>Paolo VELLE</td><td>Mascareignes</td><td>742m</td><td>01:01:16</td><td>726.7 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>9</td><td>4319</td><td>Titouan FORT</td><td>Mascareignes</td><td>742m</td><td>01:01:47</td><td>720.6 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>10</td><td>4609</td><td>Ludovic JASMIN</td><td>Mascareignes</td><td>1304m</td><td>01:49:00</td><td>717.8 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>11</td><td>4139</td><td>Adrien Karim CHOUCHOU</td><td>Mascareignes</td><td>1304m</td><td>01:49:04</td><td>717.4 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>12</td><td>4152</td><td>Emmanuel HADOUX</td><td>Mascareignes</td><td>742m</td><td>01:02:53</td><td>708.0 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>13</td><td>4160</td><td>Rivosoa Hobilalaina ANDRIANIRINA</td><td>Mascareignes</td><td>742m</td><td>01:03:14</td><td>704.1 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>14</td><td>4398</td><td>Nicolas MARCY</td><td>Mascareignes</td><td>1304m</td><td>01:51:49</td><td>699.7 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>15</td><td>4204</td><td>Paolo VELLE</td><td>Mascareignes</td><td>1304m</td><td>01:51:51</td><td>699.5 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>16</td><td>4506</td><td>Antoine COMPAROT</td><td>Mascareignes</td><td>1304m</td><td>01:52:13</td><td>697.2 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>17</td><td>4444</td><td>Urko LARRANAGA</td><td>Mascareignes</td><td>742m</td><td>01:04:01</td><td>695.4 m/h</td><td>15.8%</td><td>Deux Bras → Dos d'Ane</td></tr><tr><td>18</td><td>4152</td><td>Emmanuel HADOUX</td><td>Mascareignes</td><td>1304m</td><td>01:52:50</td><td>693.4 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>19</td><td>3172</td><td>Jean Charles BRETON</td><td>Mascareignes</td><td>1304m</td><td>01:53:06</td><td>691.8 m/h</td><td>8.2%</td><td>Hell-Bourg → Plaine des Merles</td></tr><tr><td>20</td><td>4398</td><td>Nicolas MARCY</td><td>Mascareignes</td><td>814m</td><td>01:10:53</td><td>689.0 m/h</td><td>9.6%</td><td>Grande Chaloupe → Le Colorado</td></tr>
+        <tr><td>1</td><td>3923</td><td>Anne Marie JOHN</td><td>Mascareignes</td><td>Finisher</td><td>83.4</td><td>6.1 km/h</td><td>±75.9%</td></tr><tr><td>2</td><td>3931</td><td>Maud LEKIEFFRE</td><td>Mascareignes</td><td>Finisher</td><td>82.7</td><td>5.7 km/h</td><td>±78.5%</td></tr><tr><td>3</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td>Finisher</td><td>82.5</td><td>5.4 km/h</td><td>±59.3%</td></tr><tr><td>4</td><td>4398</td><td>Nicolas MARCY</td><td>Mascareignes</td><td>Finisher</td><td>82.4</td><td>8.8 km/h</td><td>±83.0%</td></tr><tr><td>5</td><td>3953</td><td>Pierre BEINCHET</td><td>Mascareignes</td><td>Finisher</td><td>82.0</td><td>7.5 km/h</td><td>±81.8%</td></tr><tr><td>6</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td>Finisher</td><td>81.9</td><td>5.5 km/h</td><td>±60.2%</td></tr><tr><td>7</td><td>4506</td><td>Antoine COMPAROT</td><td>Mascareignes</td><td>Finisher</td><td>81.8</td><td>8.7 km/h</td><td>±87.4%</td></tr><tr><td>8</td><td>4457</td><td>Matis FUGIER</td><td>Mascareignes</td><td>Finisher</td><td>81.5</td><td>8.5 km/h</td><td>±74.1%</td></tr><tr><td>9</td><td>3731</td><td>Thaïs PIBOULEAU</td><td>Mascareignes</td><td>Finisher</td><td>81.4</td><td>6.6 km/h</td><td>±82.8%</td></tr><tr><td>10</td><td>4609</td><td>Ludovic JASMIN</td><td>Mascareignes</td><td>Finisher</td><td>81.4</td><td>8.2 km/h</td><td>±85.6%</td></tr><tr><td>11</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td>Finisher</td><td>81.3</td><td>5.6 km/h</td><td>±55.2%</td></tr><tr><td>12</td><td>4319</td><td>Titouan FORT</td><td>Mascareignes</td><td>Finisher</td><td>81.3</td><td>7.6 km/h</td><td>±86.6%</td></tr><tr><td>13</td><td>4376</td><td>Mathieu COQUIERE</td><td>Mascareignes</td><td>Finisher</td><td>81.3</td><td>7.6 km/h</td><td>±92.2%</td></tr><tr><td>14</td><td>3759</td><td>Alexandre DEPECHE</td><td>Mascareignes</td><td>Finisher</td><td>81.2</td><td>8.8 km/h</td><td>±80.7%</td></tr><tr><td>15</td><td>4510</td><td>Jean Jérôme MUSSARD</td><td>Mascareignes</td><td>Finisher</td><td>81.2</td><td>7.5 km/h</td><td>±86.2%</td></tr><tr><td>16</td><td>4450</td><td>Johny VALIN</td><td>Mascareignes</td><td>Finisher</td><td>81.2</td><td>7.6 km/h</td><td>±86.8%</td></tr><tr><td>17</td><td>3369</td><td>Laetitia AUBRY</td><td>Mascareignes</td><td>Finisher</td><td>81.1</td><td>5.8 km/h</td><td>±87.6%</td></tr><tr><td>18</td><td>7158</td><td>Valerie RIVIERE</td><td>Metiss Trail</td><td>Finisher</td><td>81.1</td><td>5.2 km/h</td><td>±63.6%</td></tr><tr><td>19</td><td>3854</td><td>Lisiane CHAPELIN</td><td>Mascareignes</td><td>Finisher</td><td>80.9</td><td>5.5 km/h</td><td>±78.9%</td></tr><tr><td>20</td><td>4111</td><td>Jonathan SCHEUBER</td><td>Mascareignes</td><td>Finisher</td><td>80.8</td><td>7.5 km/h</td><td>±94.3%</td></tr>
                     </tbody>
                 </table>
             </div>

@@ -20,23 +20,73 @@
                     z-index: 1000;
                     border-bottom: 1px solid #dee2e6;
                 }
-                .nav-section {
-                    border-bottom: 1px solid #dee2e6;
-                    margin-bottom: 1rem;
+                .card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
                 }
-                .nav-section a {
-                    color: #6c757d;
-                    text-decoration: none;
-                    padding: 0.5rem 1rem;
-                    display: inline-block;
+                .card-title {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 0.5rem;
                 }
-                .nav-section a:hover {
-                    color: #0d6efd;
+                .list-unstyled strong {
+                    color: #2c3e50;
+                    display: block;
+                    margin-bottom: 0.25rem;
                 }
-                .nav-section .active {
-                    color: #0d6efd;
-                    border-bottom: 2px solid #0d6efd;
+                .text-muted {
+                    color: #6c757d !important;
                 }
+                .alert-info {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    border-radius: 4px;
+                }
+                .formula {
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    margin: 1rem 0;
+                }
+                @media print {
+                    .card { break-inside: avoid; }
+                    .no-print { display: none; }
+                }
+                .collapsible-header {
+                cursor: pointer;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s ease;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .collapsible-header:hover {
+                background-color: #e9ecef;
+            }
+            
+            .collapsible-content {
+                display: none;
+                padding: 1rem;
+            }
+            
+            .collapsible-header .toggle-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .collapsible-header.active .toggle-icon {
+                transform: rotate(180deg);
+            }
+            
+            .card-title {
+                margin-bottom: 0 !important;
+            }
+                
             </style>
         </head>
         <body>
@@ -56,30 +106,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="nav-section">
-                    <div class="container-fluid">
-                        <div class="row">
         
-                            <div class="col">
-                                <h4>Progression</h4>
-            <a href="progression_globale_metiss_trail.html" class="">Progression globale</a><a href="progression_sections_metiss_trail.html" class="">Progression entre points</a>
-                            </div>
-            
-                            <div class="col">
-                                <h4>Dénivelés</h4>
-            <a href="grimpeurs_metiss_trail.html" class="">Top Grimpeurs</a><a href="descendeurs_metiss_trail.html" class="">Top Descendeurs</a>
-                            </div>
-            
-                            <div class="col">
-                                <h4>Vitesses</h4>
-            <a href="vitesse_moyenne_metiss_trail.html" class="">Vitesse moyenne</a><a href="vitesse_effort_metiss_trail.html" class="">Vitesse effort</a><a href="vitesse_sections_metiss_trail.html" class="">Vitesse par section</a>
-                            </div>
-            
-                        </div>
-                    </div>
-                </div>
-
                 <table id="analysisTable" class="table table-striped">
                     <thead>
                         <tr>
@@ -87,7 +114,7 @@
                         </tr>
                     </thead>
                     <tbody>
-        <tr><td>1</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td>249</td><td>64</td><td>+185</td></tr><tr><td>2</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td>199</td><td>79</td><td>+120</td></tr><tr><td>3</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td>177</td><td>77</td><td>+100</td></tr><tr><td>4</td><td>7046</td><td>Cecile DE LASSAT DE PRESSIGNY</td><td>Metiss Trail</td><td>126</td><td>47</td><td>+79</td></tr><tr><td>5</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td>79</td><td>22</td><td>+57</td></tr><tr><td>6</td><td>7158</td><td>Valerie RIVIERE</td><td>Metiss Trail</td><td>143</td><td>97</td><td>+46</td></tr><tr><td>7</td><td>7164</td><td>Camille LECAT</td><td>Metiss Trail</td><td>136</td><td>93</td><td>+43</td></tr><tr><td>8</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td>96</td><td>55</td><td>+41</td></tr><tr><td>9</td><td>7055</td><td>Marie ALEKSANDROWICZ</td><td>Metiss Trail</td><td>89</td><td>49</td><td>+40</td></tr><tr><td>10</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>55</td><td>18</td><td>+37</td></tr><tr><td>11</td><td>7413</td><td>Celia SEYCHELLES</td><td>Metiss Trail</td><td>64</td><td>36</td><td>+28</td></tr><tr><td>12</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td>84</td><td>58</td><td>+26</td></tr><tr><td>13</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>36</td><td>13</td><td>+23</td></tr><tr><td>14</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td>47</td><td>24</td><td>+23</td></tr><tr><td>15</td><td>7150</td><td>Chris Alexandre ROUSSETY</td><td>Metiss Trail</td><td>39</td><td>20</td><td>+19</td></tr><tr><td>16</td><td>7195</td><td>Aurélie PERRIN-TERRIN</td><td>Metiss Trail</td><td>99</td><td>82</td><td>+17</td></tr><tr><td>17</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>28</td><td>14</td><td>+14</td></tr><tr><td>18</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>30</td><td>16</td><td>+14</td></tr><tr><td>19</td><td>7392</td><td>Charline ICART</td><td>Metiss Trail</td><td>80</td><td>66</td><td>+14</td></tr><tr><td>20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>33</td><td>20</td><td>+13</td></tr>
+        <tr><td>1</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td>249</td><td>64</td><td class="progression-positive">+185</td></tr><tr><td>2</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td>199</td><td>79</td><td class="progression-positive">+120</td></tr><tr><td>3</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td>177</td><td>77</td><td class="progression-positive">+100</td></tr><tr><td>4</td><td>7046</td><td>Cecile DE LASSAT DE PRESSIGNY</td><td>Metiss Trail</td><td>126</td><td>47</td><td class="progression-positive">+79</td></tr><tr><td>5</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td>79</td><td>22</td><td class="progression-positive">+57</td></tr><tr><td>6</td><td>7158</td><td>Valerie RIVIERE</td><td>Metiss Trail</td><td>143</td><td>97</td><td class="progression-positive">+46</td></tr><tr><td>7</td><td>7164</td><td>Camille LECAT</td><td>Metiss Trail</td><td>136</td><td>93</td><td class="progression-positive">+43</td></tr><tr><td>8</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td>96</td><td>55</td><td class="progression-positive">+41</td></tr><tr><td>9</td><td>7055</td><td>Marie ALEKSANDROWICZ</td><td>Metiss Trail</td><td>89</td><td>49</td><td class="progression-positive">+40</td></tr><tr><td>10</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>55</td><td>18</td><td class="progression-positive">+37</td></tr><tr><td>11</td><td>7413</td><td>Celia SEYCHELLES</td><td>Metiss Trail</td><td>64</td><td>36</td><td class="progression-positive">+28</td></tr><tr><td>12</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td>84</td><td>58</td><td class="progression-positive">+26</td></tr><tr><td>13</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>36</td><td>13</td><td class="progression-positive">+23</td></tr><tr><td>14</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td>47</td><td>24</td><td class="progression-positive">+23</td></tr><tr><td>15</td><td>7150</td><td>Chris Alexandre ROUSSETY</td><td>Metiss Trail</td><td>39</td><td>20</td><td class="progression-positive">+19</td></tr><tr><td>16</td><td>7195</td><td>Aurélie PERRIN-TERRIN</td><td>Metiss Trail</td><td>99</td><td>82</td><td class="progression-positive">+17</td></tr><tr><td>17</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>28</td><td>14</td><td class="progression-positive">+14</td></tr><tr><td>18</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>30</td><td>16</td><td class="progression-positive">+14</td></tr><tr><td>19</td><td>7392</td><td>Charline ICART</td><td>Metiss Trail</td><td>80</td><td>66</td><td class="progression-positive">+14</td></tr><tr><td>20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>33</td><td>20</td><td class="progression-positive">+13</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -101,6 +128,7 @@
                         'vitesse_moyenne': 'vitesse_moyenne',
                         'vitesse_effort': 'vitesse_effort',
                         'vitesse_sections': 'vitesse_sections',
+                        'vitesse_regularite': 'vitesse_regularite',
                         'progression_globale': 'progression_globale',
                         'progression_sections': 'progression_sections',
                         'grimpeurs': 'grimpeurs',
@@ -142,10 +170,46 @@
                             "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
                         },
                         "order": [[0, "asc"]],
-                        "dom": 'rt<"bottom"ip>'
+                        "dom": 'rt<"bottom"ip>',
+                        "columnDefs": [{
+                            "targets": "_all",
+                            "render": function(data, type, row) {
+                                if (type === 'sort') {
+                                    // Retirer les unités et symboles pour le tri
+                                    return data.replace(/[^\d.-]/g, '');
+                                }
+                                return data;
+                            }
+                        }]
                     });
                 });
+                function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                localStorage.setItem(header.textContent.trim(), 'closed');
+            } else {
+                content.style.display = 'block';
+                localStorage.setItem(header.textContent.trim(), 'open');
+            }
+        }
+        
+        // Restaurer l'état des sections au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                const state = localStorage.getItem(header.textContent.trim());
+                
+                if (state === 'open') {
+                    header.classList.add('active');
+                    content.style.display = 'block';
+                }
+            });
+        });
             </script>
         </body>
         </html>
-        
+    

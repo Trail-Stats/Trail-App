@@ -20,23 +20,73 @@
                     z-index: 1000;
                     border-bottom: 1px solid #dee2e6;
                 }
-                .nav-section {
-                    border-bottom: 1px solid #dee2e6;
-                    margin-bottom: 1rem;
+                .card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
                 }
-                .nav-section a {
-                    color: #6c757d;
-                    text-decoration: none;
-                    padding: 0.5rem 1rem;
-                    display: inline-block;
+                .card-title {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 0.5rem;
                 }
-                .nav-section a:hover {
-                    color: #0d6efd;
+                .list-unstyled strong {
+                    color: #2c3e50;
+                    display: block;
+                    margin-bottom: 0.25rem;
                 }
-                .nav-section .active {
-                    color: #0d6efd;
-                    border-bottom: 2px solid #0d6efd;
+                .text-muted {
+                    color: #6c757d !important;
                 }
+                .alert-info {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    border-radius: 4px;
+                }
+                .formula {
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    margin: 1rem 0;
+                }
+                @media print {
+                    .card { break-inside: avoid; }
+                    .no-print { display: none; }
+                }
+                .collapsible-header {
+                cursor: pointer;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s ease;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .collapsible-header:hover {
+                background-color: #e9ecef;
+            }
+            
+            .collapsible-content {
+                display: none;
+                padding: 1rem;
+            }
+            
+            .collapsible-header .toggle-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .collapsible-header.active .toggle-icon {
+                transform: rotate(180deg);
+            }
+            
+            .card-title {
+                margin-bottom: 0 !important;
+            }
+                
             </style>
         </head>
         <body>
@@ -56,30 +106,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="nav-section">
-                    <div class="container-fluid">
-                        <div class="row">
         
-                            <div class="col">
-                                <h4>Progression</h4>
-            <a href="progression_globale_trail_de_bourbon.html" class="">Progression globale</a><a href="progression_sections_trail_de_bourbon.html" class="">Progression entre points</a>
-                            </div>
-            
-                            <div class="col">
-                                <h4>Dénivelés</h4>
-            <a href="grimpeurs_trail_de_bourbon.html" class="">Top Grimpeurs</a><a href="descendeurs_trail_de_bourbon.html" class="">Top Descendeurs</a>
-                            </div>
-            
-                            <div class="col">
-                                <h4>Vitesses</h4>
-            <a href="vitesse_moyenne_trail_de_bourbon.html" class="">Vitesse moyenne</a><a href="vitesse_effort_trail_de_bourbon.html" class="">Vitesse effort</a><a href="vitesse_sections_trail_de_bourbon.html" class="">Vitesse par section</a>
-                            </div>
-            
-                        </div>
-                    </div>
-                </div>
-
                 <table id="analysisTable" class="table table-striped">
                     <thead>
                         <tr>
@@ -87,7 +114,7 @@
                         </tr>
                     </thead>
                     <tbody>
-        <tr><td>1</td><td>6119</td><td>Elif BASIC</td><td>Trail de Bourbon</td><td>358</td><td>75</td><td>+283</td></tr><tr><td>2</td><td>5776</td><td>Solenn MICHEL</td><td>Trail de Bourbon</td><td>378</td><td>127</td><td>+251</td></tr><tr><td>3</td><td>6166</td><td>Emma BATAILLE</td><td>Trail de Bourbon</td><td>333</td><td>89</td><td>+244</td></tr><tr><td>4</td><td>5715</td><td>Lucile GUSTIN</td><td>Trail de Bourbon</td><td>350</td><td>129</td><td>+221</td></tr><tr><td>5</td><td>6192</td><td>Florence CHARLOT</td><td>Trail de Bourbon</td><td>243</td><td>52</td><td>+191</td></tr><tr><td>6</td><td>6239</td><td>Louise BERLIOZ</td><td>Trail de Bourbon</td><td>290</td><td>106</td><td>+184</td></tr><tr><td>7</td><td>5230</td><td>Anaïs CORNILLON</td><td>Trail de Bourbon</td><td>284</td><td>131</td><td>+153</td></tr><tr><td>8</td><td>6178</td><td>Marie MEEÛS</td><td>Trail de Bourbon</td><td>269</td><td>128</td><td>+141</td></tr><tr><td>9</td><td>6131</td><td>Charlotte LANTENOIS</td><td>Trail de Bourbon</td><td>133</td><td>45</td><td>+88</td></tr><tr><td>10</td><td>5146</td><td>Julien MORVILLE</td><td>Trail de Bourbon</td><td>85</td><td>17</td><td>+68</td></tr><tr><td>11</td><td>5986</td><td>Samira ADJAOUD</td><td>Trail de Bourbon</td><td>158</td><td>105</td><td>+53</td></tr><tr><td>12</td><td>5976</td><td>Libéra FONTAINE</td><td>Trail de Bourbon</td><td>81</td><td>38</td><td>+43</td></tr><tr><td>13</td><td>5668</td><td>Mar SORIANO MARTINEZ</td><td>Trail de Bourbon</td><td>88</td><td>48</td><td>+40</td></tr><tr><td>14</td><td>6176</td><td>Anthony MAILLOT</td><td>Trail de Bourbon</td><td>57</td><td>22</td><td>+35</td></tr><tr><td>15</td><td>5208</td><td>Pauline WINER</td><td>Trail de Bourbon</td><td>69</td><td>38</td><td>+31</td></tr><tr><td>16</td><td>6090</td><td>Chloé MERIEL</td><td>Trail de Bourbon</td><td>59</td><td>29</td><td>+30</td></tr><tr><td>17</td><td>6013</td><td>Nathan TOUZO</td><td>Trail de Bourbon</td><td>44</td><td>16</td><td>+28</td></tr><tr><td>18</td><td>5161</td><td>Vincent BEUGNOT</td><td>Trail de Bourbon</td><td>36</td><td>9</td><td>+27</td></tr><tr><td>19</td><td>5043</td><td>Eric CONCÉ</td><td>Trail de Bourbon</td><td>26</td><td>5</td><td>+21</td></tr><tr><td>20</td><td>5706</td><td>Romain BARDEUR</td><td>Trail de Bourbon</td><td>22</td><td>8</td><td>+14</td></tr>
+        <tr><td>1</td><td>6119</td><td>Elif BASIC</td><td>Trail de Bourbon</td><td>358</td><td>75</td><td class="progression-positive">+283</td></tr><tr><td>2</td><td>5776</td><td>Solenn MICHEL</td><td>Trail de Bourbon</td><td>378</td><td>127</td><td class="progression-positive">+251</td></tr><tr><td>3</td><td>6166</td><td>Emma BATAILLE</td><td>Trail de Bourbon</td><td>333</td><td>89</td><td class="progression-positive">+244</td></tr><tr><td>4</td><td>5715</td><td>Lucile GUSTIN</td><td>Trail de Bourbon</td><td>350</td><td>129</td><td class="progression-positive">+221</td></tr><tr><td>5</td><td>6192</td><td>Florence CHARLOT</td><td>Trail de Bourbon</td><td>243</td><td>52</td><td class="progression-positive">+191</td></tr><tr><td>6</td><td>6239</td><td>Louise BERLIOZ</td><td>Trail de Bourbon</td><td>290</td><td>106</td><td class="progression-positive">+184</td></tr><tr><td>7</td><td>5230</td><td>Anaïs CORNILLON</td><td>Trail de Bourbon</td><td>284</td><td>131</td><td class="progression-positive">+153</td></tr><tr><td>8</td><td>6178</td><td>Marie MEEÛS</td><td>Trail de Bourbon</td><td>269</td><td>128</td><td class="progression-positive">+141</td></tr><tr><td>9</td><td>6131</td><td>Charlotte LANTENOIS</td><td>Trail de Bourbon</td><td>133</td><td>45</td><td class="progression-positive">+88</td></tr><tr><td>10</td><td>5146</td><td>Julien MORVILLE</td><td>Trail de Bourbon</td><td>85</td><td>17</td><td class="progression-positive">+68</td></tr><tr><td>11</td><td>5986</td><td>Samira ADJAOUD</td><td>Trail de Bourbon</td><td>158</td><td>105</td><td class="progression-positive">+53</td></tr><tr><td>12</td><td>5976</td><td>Libéra FONTAINE</td><td>Trail de Bourbon</td><td>81</td><td>38</td><td class="progression-positive">+43</td></tr><tr><td>13</td><td>5668</td><td>Mar SORIANO MARTINEZ</td><td>Trail de Bourbon</td><td>88</td><td>48</td><td class="progression-positive">+40</td></tr><tr><td>14</td><td>6176</td><td>Anthony MAILLOT</td><td>Trail de Bourbon</td><td>57</td><td>22</td><td class="progression-positive">+35</td></tr><tr><td>15</td><td>5208</td><td>Pauline WINER</td><td>Trail de Bourbon</td><td>69</td><td>38</td><td class="progression-positive">+31</td></tr><tr><td>16</td><td>6090</td><td>Chloé MERIEL</td><td>Trail de Bourbon</td><td>59</td><td>29</td><td class="progression-positive">+30</td></tr><tr><td>17</td><td>6013</td><td>Nathan TOUZO</td><td>Trail de Bourbon</td><td>44</td><td>16</td><td class="progression-positive">+28</td></tr><tr><td>18</td><td>5161</td><td>Vincent BEUGNOT</td><td>Trail de Bourbon</td><td>36</td><td>9</td><td class="progression-positive">+27</td></tr><tr><td>19</td><td>5043</td><td>Eric CONCÉ</td><td>Trail de Bourbon</td><td>26</td><td>5</td><td class="progression-positive">+21</td></tr><tr><td>20</td><td>5706</td><td>Romain BARDEUR</td><td>Trail de Bourbon</td><td>22</td><td>8</td><td class="progression-positive">+14</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -101,6 +128,7 @@
                         'vitesse_moyenne': 'vitesse_moyenne',
                         'vitesse_effort': 'vitesse_effort',
                         'vitesse_sections': 'vitesse_sections',
+                        'vitesse_regularite': 'vitesse_regularite',
                         'progression_globale': 'progression_globale',
                         'progression_sections': 'progression_sections',
                         'grimpeurs': 'grimpeurs',
@@ -142,10 +170,46 @@
                             "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
                         },
                         "order": [[0, "asc"]],
-                        "dom": 'rt<"bottom"ip>'
+                        "dom": 'rt<"bottom"ip>',
+                        "columnDefs": [{
+                            "targets": "_all",
+                            "render": function(data, type, row) {
+                                if (type === 'sort') {
+                                    // Retirer les unités et symboles pour le tri
+                                    return data.replace(/[^\d.-]/g, '');
+                                }
+                                return data;
+                            }
+                        }]
                     });
                 });
+                function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                localStorage.setItem(header.textContent.trim(), 'closed');
+            } else {
+                content.style.display = 'block';
+                localStorage.setItem(header.textContent.trim(), 'open');
+            }
+        }
+        
+        // Restaurer l'état des sections au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                const state = localStorage.getItem(header.textContent.trim());
+                
+                if (state === 'open') {
+                    header.classList.add('active');
+                    content.style.display = 'block';
+                }
+            });
+        });
             </script>
         </body>
         </html>
-        
+    

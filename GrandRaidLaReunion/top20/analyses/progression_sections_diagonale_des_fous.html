@@ -20,23 +20,73 @@
                     z-index: 1000;
                     border-bottom: 1px solid #dee2e6;
                 }
-                .nav-section {
-                    border-bottom: 1px solid #dee2e6;
-                    margin-bottom: 1rem;
+                .card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
                 }
-                .nav-section a {
-                    color: #6c757d;
-                    text-decoration: none;
-                    padding: 0.5rem 1rem;
-                    display: inline-block;
+                .card-title {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 0.5rem;
                 }
-                .nav-section a:hover {
-                    color: #0d6efd;
+                .list-unstyled strong {
+                    color: #2c3e50;
+                    display: block;
+                    margin-bottom: 0.25rem;
                 }
-                .nav-section .active {
-                    color: #0d6efd;
-                    border-bottom: 2px solid #0d6efd;
+                .text-muted {
+                    color: #6c757d !important;
                 }
+                .alert-info {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    border-radius: 4px;
+                }
+                .formula {
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    margin: 1rem 0;
+                }
+                @media print {
+                    .card { break-inside: avoid; }
+                    .no-print { display: none; }
+                }
+                .collapsible-header {
+                cursor: pointer;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s ease;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .collapsible-header:hover {
+                background-color: #e9ecef;
+            }
+            
+            .collapsible-content {
+                display: none;
+                padding: 1rem;
+            }
+            
+            .collapsible-header .toggle-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .collapsible-header.active .toggle-icon {
+                transform: rotate(180deg);
+            }
+            
+            .card-title {
+                margin-bottom: 0 !important;
+            }
+                
             </style>
         </head>
         <body>
@@ -56,30 +106,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="nav-section">
-                    <div class="container-fluid">
-                        <div class="row">
         
-                            <div class="col">
-                                <h4>Progression</h4>
-            <a href="progression_globale_diagonale_des_fous.html" class="">Progression globale</a><a href="progression_sections_diagonale_des_fous.html" class="">Progression entre points</a>
-                            </div>
-            
-                            <div class="col">
-                                <h4>Dénivelés</h4>
-            <a href="grimpeurs_diagonale_des_fous.html" class="">Top Grimpeurs</a><a href="descendeurs_diagonale_des_fous.html" class="">Top Descendeurs</a>
-                            </div>
-            
-                            <div class="col">
-                                <h4>Vitesses</h4>
-            <a href="vitesse_moyenne_diagonale_des_fous.html" class="">Vitesse moyenne</a><a href="vitesse_effort_diagonale_des_fous.html" class="">Vitesse effort</a><a href="vitesse_sections_diagonale_des_fous.html" class="">Vitesse par section</a>
-                            </div>
-            
-                        </div>
-                    </div>
-                </div>
-
                 <table id="analysisTable" class="table table-striped">
                     <thead>
                         <tr>
@@ -87,7 +114,7 @@
                         </tr>
                     </thead>
                     <tbody>
-        <tr><td>1</td><td>464</td><td>Wenfei XIE</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td>+173</td><td>492 → 319</td></tr><tr><td>2</td><td>1789</td><td>Magali VIONNET</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td>+164</td><td>678 → 514</td></tr><tr><td>3</td><td>2219</td><td>Chloé COENYE</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td>+160</td><td>554 → 394</td></tr><tr><td>4</td><td>660</td><td>Marion FORTIN</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td>+156</td><td>677 → 521</td></tr><tr><td>5</td><td>2219</td><td>Chloé COENYE</td><td>Diagonale des Fous</td><td>Notre Dame de la Paix → Parking Aire Nez de Boeuf</td><td>+155</td><td>788 → 633</td></tr><tr><td>6</td><td>684</td><td>Marine GIVERNAUD</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td>+137</td><td>499 → 362</td></tr><tr><td>7</td><td>2688</td><td>Laura TRENTANI</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td>+103</td><td>593 → 490</td></tr><tr><td>8</td><td>1036</td><td>Pauline GRARDEL</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td>+98</td><td>326 → 228</td></tr><tr><td>9</td><td>2219</td><td>Chloé COENYE</td><td>Diagonale des Fous</td><td>Mare à Boue → Coteaux Kerveguen</td><td>+91</td><td>657 → 566</td></tr><tr><td>10</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td>+81</td><td>367 → 286</td></tr><tr><td>11</td><td>1789</td><td>Magali VIONNET</td><td>Diagonale des Fous</td><td>Mare à Boue → Coteaux Kerveguen</td><td>+79</td><td>510 → 431</td></tr><tr><td>12</td><td>1845</td><td>Sebastien BUET</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td>+77</td><td>263 → 186</td></tr><tr><td>13</td><td>2688</td><td>Laura TRENTANI</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td>+76</td><td>492 → 416</td></tr><tr><td>14</td><td>2212</td><td>Marion FLAMENT</td><td>Diagonale des Fous</td><td>Sentier Taïbit → Marla</td><td>+74</td><td>524 → 450</td></tr><tr><td>15</td><td>591</td><td>Julie PUTHOSTE</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td>+74</td><td>324 → 250</td></tr><tr><td>16</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td>+72</td><td>378 → 306</td></tr><tr><td>17</td><td>2212</td><td>Marion FLAMENT</td><td>Diagonale des Fous</td><td>Parking Aire Nez de Boeuf → Mare à Boue</td><td>+65</td><td>468 → 403</td></tr><tr><td>18</td><td>2867</td><td>Julie MARINI</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td>+63</td><td>267 → 204</td></tr><tr><td>19</td><td>2867</td><td>Julie MARINI</td><td>Diagonale des Fous</td><td>Mare à Boue → Coteaux Kerveguen</td><td>+59</td><td>328 → 269</td></tr><tr><td>20</td><td>660</td><td>Marion FORTIN</td><td>Diagonale des Fous</td><td>Parking Aire Nez de Boeuf → Mare à Boue</td><td>+59</td><td>498 → 439</td></tr>
+        <tr><td>1</td><td>464</td><td>Wenfei XIE</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td class="progression-positive">+173</td><td>492 → 319</td></tr><tr><td>2</td><td>1789</td><td>Magali VIONNET</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td class="progression-positive">+164</td><td>678 → 514</td></tr><tr><td>3</td><td>2219</td><td>Chloé COENYE</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td class="progression-positive">+160</td><td>554 → 394</td></tr><tr><td>4</td><td>660</td><td>Marion FORTIN</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td class="progression-positive">+156</td><td>677 → 521</td></tr><tr><td>5</td><td>2219</td><td>Chloé COENYE</td><td>Diagonale des Fous</td><td>Notre Dame de la Paix → Parking Aire Nez de Boeuf</td><td class="progression-positive">+155</td><td>788 → 633</td></tr><tr><td>6</td><td>684</td><td>Marine GIVERNAUD</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td class="progression-positive">+137</td><td>499 → 362</td></tr><tr><td>7</td><td>2688</td><td>Laura TRENTANI</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td class="progression-positive">+103</td><td>593 → 490</td></tr><tr><td>8</td><td>1036</td><td>Pauline GRARDEL</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td class="progression-positive">+98</td><td>326 → 228</td></tr><tr><td>9</td><td>2219</td><td>Chloé COENYE</td><td>Diagonale des Fous</td><td>Mare à Boue → Coteaux Kerveguen</td><td class="progression-positive">+91</td><td>657 → 566</td></tr><tr><td>10</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td class="progression-positive">+81</td><td>367 → 286</td></tr><tr><td>11</td><td>1789</td><td>Magali VIONNET</td><td>Diagonale des Fous</td><td>Mare à Boue → Coteaux Kerveguen</td><td class="progression-positive">+79</td><td>510 → 431</td></tr><tr><td>12</td><td>1845</td><td>Sebastien BUET</td><td>Diagonale des Fous</td><td>Domaine Vidot → Notre Dame de la Paix</td><td class="progression-positive">+77</td><td>263 → 186</td></tr><tr><td>13</td><td>2688</td><td>Laura TRENTANI</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td class="progression-positive">+76</td><td>492 → 416</td></tr><tr><td>14</td><td>2212</td><td>Marion FLAMENT</td><td>Diagonale des Fous</td><td>Sentier Taïbit → Marla</td><td class="progression-positive">+74</td><td>524 → 450</td></tr><tr><td>15</td><td>591</td><td>Julie PUTHOSTE</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td class="progression-positive">+74</td><td>324 → 250</td></tr><tr><td>16</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td class="progression-positive">+72</td><td>378 → 306</td></tr><tr><td>17</td><td>2212</td><td>Marion FLAMENT</td><td>Diagonale des Fous</td><td>Parking Aire Nez de Boeuf → Mare à Boue</td><td class="progression-positive">+65</td><td>468 → 403</td></tr><tr><td>18</td><td>2867</td><td>Julie MARINI</td><td>Diagonale des Fous</td><td>Cilaos (Stade) → Sentier Taïbit</td><td class="progression-positive">+63</td><td>267 → 204</td></tr><tr><td>19</td><td>2867</td><td>Julie MARINI</td><td>Diagonale des Fous</td><td>Mare à Boue → Coteaux Kerveguen</td><td class="progression-positive">+59</td><td>328 → 269</td></tr><tr><td>20</td><td>660</td><td>Marion FORTIN</td><td>Diagonale des Fous</td><td>Parking Aire Nez de Boeuf → Mare à Boue</td><td class="progression-positive">+59</td><td>498 → 439</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -101,6 +128,7 @@
                         'vitesse_moyenne': 'vitesse_moyenne',
                         'vitesse_effort': 'vitesse_effort',
                         'vitesse_sections': 'vitesse_sections',
+                        'vitesse_regularite': 'vitesse_regularite',
                         'progression_globale': 'progression_globale',
                         'progression_sections': 'progression_sections',
                         'grimpeurs': 'grimpeurs',
@@ -142,10 +170,46 @@
                             "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
                         },
                         "order": [[0, "asc"]],
-                        "dom": 'rt<"bottom"ip>'
+                        "dom": 'rt<"bottom"ip>',
+                        "columnDefs": [{
+                            "targets": "_all",
+                            "render": function(data, type, row) {
+                                if (type === 'sort') {
+                                    // Retirer les unités et symboles pour le tri
+                                    return data.replace(/[^\d.-]/g, '');
+                                }
+                                return data;
+                            }
+                        }]
                     });
                 });
+                function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                localStorage.setItem(header.textContent.trim(), 'closed');
+            } else {
+                content.style.display = 'block';
+                localStorage.setItem(header.textContent.trim(), 'open');
+            }
+        }
+        
+        // Restaurer l'état des sections au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                const state = localStorage.getItem(header.textContent.trim());
+                
+                if (state === 'open') {
+                    header.classList.add('active');
+                    content.style.display = 'block';
+                }
+            });
+        });
             </script>
         </body>
         </html>
-        
+    

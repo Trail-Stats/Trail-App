@@ -20,23 +20,73 @@
                     z-index: 1000;
                     border-bottom: 1px solid #dee2e6;
                 }
-                .nav-section {
-                    border-bottom: 1px solid #dee2e6;
-                    margin-bottom: 1rem;
+                .card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
                 }
-                .nav-section a {
-                    color: #6c757d;
-                    text-decoration: none;
-                    padding: 0.5rem 1rem;
-                    display: inline-block;
+                .card-title {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 0.5rem;
                 }
-                .nav-section a:hover {
-                    color: #0d6efd;
+                .list-unstyled strong {
+                    color: #2c3e50;
+                    display: block;
+                    margin-bottom: 0.25rem;
                 }
-                .nav-section .active {
-                    color: #0d6efd;
-                    border-bottom: 2px solid #0d6efd;
+                .text-muted {
+                    color: #6c757d !important;
                 }
+                .alert-info {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    border-radius: 4px;
+                }
+                .formula {
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    margin: 1rem 0;
+                }
+                @media print {
+                    .card { break-inside: avoid; }
+                    .no-print { display: none; }
+                }
+                .collapsible-header {
+                cursor: pointer;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s ease;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .collapsible-header:hover {
+                background-color: #e9ecef;
+            }
+            
+            .collapsible-content {
+                display: none;
+                padding: 1rem;
+            }
+            
+            .collapsible-header .toggle-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .collapsible-header.active .toggle-icon {
+                transform: rotate(180deg);
+            }
+            
+            .card-title {
+                margin-bottom: 0 !important;
+            }
+                
             </style>
         </head>
         <body>
@@ -56,38 +106,80 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="nav-section">
-                    <div class="container-fluid">
-                        <div class="row">
         
-                            <div class="col">
-                                <h4>Progression</h4>
-            <a href="progression_globale_metiss_trail.html" class="">Progression globale</a><a href="progression_sections_metiss_trail.html" class="">Progression entre points</a>
+                <div class="container-fluid mb-4">
+            <div class="card">
+                <div class="collapsible-header" onclick="toggleSection(this)">
+                    <h3 class="card-title mb-0" style="font-size: 14px;">🏃 Comprendre la Vitesse Effort</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6">
+                                    <h5>📊 Calcul de la vitesse effort</h5>
+                                    <p>La vitesse effort est une métrique qui prend en compte le dénivelé pour donner une meilleure indication de l'intensité réelle de l'effort.</p>
+
+                                    <div class="formula">
+                                        Distance équivalente = Distance horizontale + (D+ × 10) + (D- × 2)<br>
+                                        Vitesse effort = Distance équivalente / Temps
+                                    </div>
+
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>Coefficient D+ (×10)</strong><br>
+                                            <small class="text-muted">
+                                                100m de dénivelé positif équivaut à 1km de distance horizontale
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Coefficient D- (×2)</strong><br>
+                                            <small class="text-muted">
+                                                100m de dénivelé négatif équivaut à 0.2km de distance horizontale
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h5>💡 Pourquoi utiliser la vitesse effort ?</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>Comparaison équitable</strong><br>
+                                            <small class="text-muted">
+                                                Permet de comparer des performances sur des sections avec des profils différents
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Intensité réelle</strong><br>
+                                            <small class="text-muted">
+                                                Reflète mieux l'effort physique fourni que la vitesse pure
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-            
-                            <div class="col">
-                                <h4>Dénivelés</h4>
-            <a href="grimpeurs_metiss_trail.html" class="">Top Grimpeurs</a><a href="descendeurs_metiss_trail.html" class="">Top Descendeurs</a>
+
+                            <div class="alert alert-info mt-3">
+                                <strong>📝 Note importante:</strong>
+                                <p class="mb-0">
+                                    Cette métrique est particulièrement pertinente en trail où le dénivelé joue un rôle majeur.
+                                    Elle permet de mieux comprendre et comparer les performances réelles des coureurs sur différents types de terrain.
+                                </p>
                             </div>
-            
-                            <div class="col">
-                                <h4>Vitesses</h4>
-            <a href="vitesse_moyenne_metiss_trail.html" class="">Vitesse moyenne</a><a href="vitesse_effort_metiss_trail.html" class="">Vitesse effort</a><a href="vitesse_sections_metiss_trail.html" class="">Vitesse par section</a>
-                            </div>
-            
                         </div>
                     </div>
                 </div>
-
+            </div>
+            
                 <table id="analysisTable" class="table table-striped">
                     <thead>
                         <tr>
-        <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Vitesse effort</th>
+        <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>État</th><th>Vitesse effort</th>
                         </tr>
                     </thead>
                     <tbody>
-        <tr><td>1</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>12.1 km/h</td></tr><tr><td>2</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>11.6 km/h</td></tr><tr><td>3</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>11.5 km/h</td></tr><tr><td>4</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>11.4 km/h</td></tr><tr><td>5</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>11.2 km/h</td></tr><tr><td>6</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>10.7 km/h</td></tr><tr><td>7</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>10.6 km/h</td></tr><tr><td>8</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>10.6 km/h</td></tr><tr><td>9</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>10.5 km/h</td></tr><tr><td>10</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>10.5 km/h</td></tr><tr><td>11</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>10.3 km/h</td></tr><tr><td>12</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>10.3 km/h</td></tr><tr><td>13</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>10.2 km/h</td></tr><tr><td>14</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>10.1 km/h</td></tr><tr><td>15</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>10.0 km/h</td></tr><tr><td>16</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>10.0 km/h</td></tr><tr><td>17</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>9.9 km/h</td></tr><tr><td>18</td><td>7236</td><td>Gilles SIMON</td><td>Metiss Trail</td><td>9.8 km/h</td></tr><tr><td>19</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>9.6 km/h</td></tr><tr><td>20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>9.6 km/h</td></tr>
+        <tr><td>1</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>Finisher</td><td>12.1 km/h</td></tr><tr><td>2</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>Finisher</td><td>11.6 km/h</td></tr><tr><td>3</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>Finisher</td><td>11.5 km/h</td></tr><tr><td>4</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>Finisher</td><td>11.4 km/h</td></tr><tr><td>5</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>Finisher</td><td>11.2 km/h</td></tr><tr><td>6</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>Finisher</td><td>10.7 km/h</td></tr><tr><td>7</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>Finisher</td><td>10.6 km/h</td></tr><tr><td>8</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>Finisher</td><td>10.6 km/h</td></tr><tr><td>9</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>Finisher</td><td>10.5 km/h</td></tr><tr><td>10</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>Finisher</td><td>10.5 km/h</td></tr><tr><td>11</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>Finisher</td><td>10.3 km/h</td></tr><tr><td>12</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>Finisher</td><td>10.3 km/h</td></tr><tr><td>13</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>Finisher</td><td>10.2 km/h</td></tr><tr><td>14</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>Finisher</td><td>10.1 km/h</td></tr><tr><td>15</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>Finisher</td><td>10.0 km/h</td></tr><tr><td>16</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>Finisher</td><td>10.0 km/h</td></tr><tr><td>17</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>Finisher</td><td>9.9 km/h</td></tr><tr><td>18</td><td>7236</td><td>Gilles SIMON</td><td>Metiss Trail</td><td>Finisher</td><td>9.8 km/h</td></tr><tr><td>19</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>Finisher</td><td>9.6 km/h</td></tr><tr><td>20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>Finisher</td><td>9.6 km/h</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -101,6 +193,7 @@
                         'vitesse_moyenne': 'vitesse_moyenne',
                         'vitesse_effort': 'vitesse_effort',
                         'vitesse_sections': 'vitesse_sections',
+                        'vitesse_regularite': 'vitesse_regularite',
                         'progression_globale': 'progression_globale',
                         'progression_sections': 'progression_sections',
                         'grimpeurs': 'grimpeurs',
@@ -142,10 +235,46 @@
                             "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
                         },
                         "order": [[0, "asc"]],
-                        "dom": 'rt<"bottom"ip>'
+                        "dom": 'rt<"bottom"ip>',
+                        "columnDefs": [{
+                            "targets": "_all",
+                            "render": function(data, type, row) {
+                                if (type === 'sort') {
+                                    // Retirer les unités et symboles pour le tri
+                                    return data.replace(/[^\d.-]/g, '');
+                                }
+                                return data;
+                            }
+                        }]
                     });
                 });
+                function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                localStorage.setItem(header.textContent.trim(), 'closed');
+            } else {
+                content.style.display = 'block';
+                localStorage.setItem(header.textContent.trim(), 'open');
+            }
+        }
+        
+        // Restaurer l'état des sections au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                const state = localStorage.getItem(header.textContent.trim());
+                
+                if (state === 'open') {
+                    header.classList.add('active');
+                    content.style.display = 'block';
+                }
+            });
+        });
             </script>
         </body>
         </html>
-        
+    
