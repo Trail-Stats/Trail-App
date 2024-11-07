@@ -1,0 +1,282 @@
+
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Classement des Coureurs</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                :root {
+                    --primary-color: #2c3e50;
+                    --secondary-color: #34495e;
+                    --accent-color: #3498db;
+                    --light-bg: #f8f9fa;
+                }
+
+                body {
+                    background-color: #f5f6fa;
+                    color: var(--primary-color);
+                }
+
+                .header-section {
+                    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                    color: white;
+                    padding: 2rem 0;
+                    margin-bottom: 2rem;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                }
+
+                .analysis-section {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .analysis-section:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                }
+
+                .section-title {
+                    color: var(--primary-color);
+                    font-weight: 600;
+                    margin-bottom: 1.2rem;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 2px solid var(--accent-color);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .analysis-links {
+                    list-style: none;
+                    padding-left: 0;
+                }
+
+                .analysis-links li {
+                    margin-bottom: 0.8rem;
+                }
+
+                .analysis-links a {
+                    color: var(--secondary-color);
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    padding: 0.5rem;
+                    border-radius: 6px;
+                    transition: background-color 0.2s ease;
+                }
+
+                .analysis-links a:hover {
+                    background-color: var(--light-bg);
+                    color: var(--accent-color);
+                }
+
+                .analysis-links a i {
+                    margin-right: 0.5rem;
+                    color: var(--accent-color);
+                }
+
+                #courseSelect {
+                    background-color: white;
+                    border: 2px solid var(--accent-color);
+                    border-radius: 6px;
+                    padding: 0.5rem;
+                    width: auto;
+                    min-width: 200px;
+                }
+
+                .back-button {
+                    background-color: white;
+                    color: var(--primary-color);
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    transition: background-color 0.2s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .back-button:hover {
+                    background-color: var(--light-bg);
+                    color: var(--accent-color);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="mb-0">Classement des Coureurs</h1>
+                    <p class="mb-0 text-light info-text">Analyses détaillées des performances</p>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="container py-4">
+                <h1>Classement des Coureurs</h1>
+                <div class="mb-4">
+                    <a href="../index.html" class="btn btn-secondary">← Retour au tableau des coureurs</a>
+                </div>
+                
+                <div class="row">
+                    <!-- TOP Vitesses -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="analysis-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-gauge-high"></i>
+                                TOP Vitesses
+                            </h3>
+                            <ul class="analysis-links">
+                                <li>
+                                    <a href="vitesse_moyenne.html">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Vitesse moyenne
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="vitesse_effort.html">
+                                        <i class="fas fa-fire"></i>
+                                        Vitesse effort
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="vitesse_regularite.html">
+                                        <i class="fas fa-chart-line"></i>
+                                        Régularité
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="vitesse_sections.html">
+                                        <i class="fas fa-flag-checkered"></i>
+                                        Vitesse par section
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- TOP D+ et D- -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="analysis-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-mountain"></i>
+                                TOP - D+ et D-
+                            </h3>
+                            <ul class="analysis-links">
+                                <li>
+                                    <a href="grimpeurs.html">
+                                        <i class="fas fa-angle-up"></i>
+                                        Top Grimpeurs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="descendeurs.html">
+                                        <i class="fas fa-angle-down"></i>
+                                        Top Descendeurs
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- TOP Progression -->
+<div class="col-md-6 col-lg-4">
+    <div class="analysis-section">
+        <h3 class="section-title">
+            <i class="fas fa-chart-line"></i>
+            TOP - Progression
+        </h3>
+        <ul class="analysis-links">
+            <li>
+                <a href="depart_explosif.html">
+                    <i class="fas fa-rocket"></i>
+                    Départ Explosif
+                </a>
+            </li>
+            <li>
+                <a href="progression_globale.html">
+                    <i class="fas fa-arrow-trend-up"></i>
+                    Progression Globale
+                </a>
+            </li>
+            <li>
+                <a href="progression_sections.html">
+                    <i class="fas fa-route"></i>
+                    Progression Entre Points
+                </a>
+            </li>
+            <li>
+                <a href="finish_explosif.html">
+                    <i class="fas fa-flag-checkered"></i>
+                    Finish Explosif
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                    <!-- TOP Sections -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="analysis-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-map-marked-alt"></i>
+                                TOP Sections
+                            </h3>
+                            <ul class="analysis-links">
+                                <li>
+                                    <a href="analyse_sections.html">
+                                        <i class="fas fa-map-signs"></i>
+                                        Analyse par section
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+                document.getElementById('courseSelect') && document.getElementById('courseSelect').addEventListener('change', function() {
+                    const course = this.value;
+                    const suffix = course === 'Toutes les courses' ? '' : '_' + course.toLowerCase().replace(/ /g, '_');
+                    updateLinks(suffix);
+                });
+
+                function updateLinks(suffix) {
+                    const links = {
+                        'vitesse_moyenne': 'vitesse_moyenne',
+                        'vitesse_effort': 'vitesse_effort',
+                        'vitesse_regularite': 'vitesse_regularite',
+                        'vitesse_sections': 'vitesse_sections',
+                        'progression_globale': 'progression_globale',
+                        'progression_sections': 'progression_sections',
+                        'depart_explosif': 'depart_explosif',
+                        'finish_explosif': 'finish_explosif',
+                        'grimpeurs': 'grimpeurs',
+                        'descendeurs': 'descendeurs'
+                    };
+
+                    for (const [baseLink, pageType] of Object.entries(links)) {
+                        const elements = document.querySelectorAll(`a[href^="${baseLink}"]`);
+                        elements.forEach(element => {
+                            element.href = `${pageType}${suffix}.html`;
+                        });
+                    }
+                }
+
+                // Initialize links
+                updateLinks('');
+            </script>
+        </body>
+        </html>
+        
