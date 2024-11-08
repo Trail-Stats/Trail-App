@@ -1,0 +1,428 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Segments Techniques - Toutes les courses</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    marginBottom: 2rem;
+                    borderRadius: 12px;
+                    boxShadow: 0 2px 4px rgba(0,0,0,0.05);
+                }
+                .collapsible-header {
+                    cursor: pointer;
+                    padding: 1rem;
+                    backgroundColor: #f8f9fa;
+                    borderRadius: 8px 8px 0 0;
+                    transition: backgroundColor 0.3s ease;
+                    userSelect: none;
+                    display: flex;
+                    alignItems: center;
+                    justifyContent: space-between;
+                }
+                .collapsible-header:hover {
+                    backgroundColor: #e9ecef;
+                }
+                .collapsible-content {
+                    display: none;
+                    padding: 1.5rem;
+                    border: 1px solid #dee2e6;
+                    borderTop: none;
+                    borderRadius: 0 0 8px 8px;
+                }
+                .card-title {
+                    marginBottom: 0 !important;
+                    fontSize: 1.1rem;
+                    color: #2c3e50;
+                }
+                .toggle-icon {
+                    transition: transform 0.3s ease;
+                }
+                .active .toggle-icon {
+                    transform: rotate(180deg);
+                }
+                .explanation-item {
+                    padding: 1rem;
+                    backgroundColor: #f8f9fa;
+                    borderRadius: 8px;
+                    marginBottom: 1rem;
+                }
+                .header-section {
+                    background: linear-gradient(135deg, #2c3e50, #34495e);
+                    color: white;
+                    padding: 2rem 0;
+                    marginBottom: 2rem;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <div class="section-card mb-4">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <h3 class="card-title">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Comprendre l'analyse des segments techniques
+                        </h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="explanation-item">
+                                    <h4 class="h5 mb-3">
+                                        <i class="fas fa-chart-bar text-primary me-2"></i>
+                                        Qu'est-ce qu'un segment technique ?
+                                    </h4>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>Définition</strong><br>
+                                            <small class="text-muted">
+                                                Un segment est considéré comme technique lorsqu'il présente un grand écart 
+                                                entre la vitesse pure et la vitesse effort des coureurs.
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Critères d'analyse</strong><br>
+                                            <small class="text-muted">
+                                                - Écart entre vitesse pure et vitesse effort<br>
+                                                - Variabilité des performances entre coureurs<br>
+                                                - Impact du terrain sur l'effort
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="explanation-item">
+                                    <h4 class="h5 mb-3">
+                                        <i class="fas fa-lightbulb text-primary me-2"></i>
+                                        Interprétation
+                                    </h4>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>Grand écart technique</strong><br>
+                                            <small class="text-muted">
+                                                Plus l'écart est important, plus le segment demande de compétences techniques.
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Profil des coureurs</strong><br>
+                                            <small class="text-muted">
+                                                Permet d'identifier les coureurs qui excellent techniquement et ceux qui 
+                                                pourraient améliorer leur technique.
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-3">
+                    <select id="courseSelect" class="form-select" style="width: auto;" onchange="changeCourse(this.value)">
+        <option value="Toutes les courses" selected>Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" >Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Trail de Bourbon" >Trail de Bourbon</option>
+                    </select>
+                </div>
+
+                <!-- Tableau des segments -->
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Segment</th>
+                                <th>Écart technique</th>
+                                <th>Meilleure gestion</th>
+                                <th>Plus en difficulté</th>
+                                <th>Profil</th>
+                                <th>Nb coureurs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+            <tr>
+                <td>1</td>
+                <td>Chemin Ratinaud → La possession</td>
+                <td>91.0%</td>
+                <td>Nicolas MARCY (4398)<br>
+                    (12.0/12.5 km/h)</td>
+                <td>Camille LECAT (7164)<br>
+                    (4.1/8.0 km/h)</td>
+                <td>8.3km<br>+837m</td>
+                <td>160</td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>Sentier Taïbit → Marla</td>
+                <td>79.8%</td>
+                <td>Nicolas RIVIERE (6132)<br>
+                    (12.0/12.6 km/h)</td>
+                <td>Laura TRENTANI (2688)<br>
+                    (3.3/6.1 km/h)</td>
+                <td>5.9km<br>+1365m</td>
+                <td>80</td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td>Ilet Savannah → Chemin Ratinaud</td>
+                <td>22.0%</td>
+                <td>Marie MEEÛS (6178)<br>
+                    (6.0/6.0 km/h)</td>
+                <td>Jeremy RIVIERE (7215)<br>
+                    (10.0/12.2 km/h)</td>
+                <td>6.8km<br>+869m</td>
+                <td>120</td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td>Ilet des orangers → Piton des orangers</td>
+                <td>20.7%</td>
+                <td>Marie MEEÛS (6178)<br>
+                    (3.7/9.1 km/h)</td>
+                <td>Julie MARINI (2867)<br>
+                    (3.0/8.0 km/h)</td>
+                <td>7.8km<br>+1451m</td>
+                <td>80</td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td>Le Colorado → St Denis La Redoute</td>
+                <td>16.7%</td>
+                <td>Eric CONCÉ (5043)<br>
+                    (5.7/10.6 km/h)</td>
+                <td>Valerie RIVIERE (7158)<br>
+                    (3.8/7.7 km/h)</td>
+                <td>3.9km<br>+665m</td>
+                <td>160</td>
+            </tr>
+            
+            <tr>
+                <td>6</td>
+                <td>Marla → Plaine des Merles</td>
+                <td>16.0%</td>
+                <td>Julie MARINI (2867)<br>
+                    (3.4/8.2 km/h)</td>
+                <td>Solenn MICHEL (5776)<br>
+                    (3.5/9.0 km/h)</td>
+                <td>6.5km<br>+745m</td>
+                <td>80</td>
+            </tr>
+            
+            <tr>
+                <td>7</td>
+                <td>Passerelle d'Oussy → Ilet des orangers</td>
+                <td>15.6%</td>
+                <td>Geraldine LACHAPELLE (2023)<br>
+                    (3.2/3.5 km/h)</td>
+                <td>Emma BATAILLE (6166)<br>
+                    (4.8/6.0 km/h)</td>
+                <td>5.7km<br>+1208m</td>
+                <td>80</td>
+            </tr>
+            
+            <tr>
+                <td>8</td>
+                <td>Plaine des Merles → Sentier Scout</td>
+                <td>15.2%</td>
+                <td>Samira ADJAOUD (5986)<br>
+                    (4.7/7.9 km/h)</td>
+                <td>Emma OTTE (3556)<br>
+                    (6.6/12.1 km/h)</td>
+                <td>2.0km<br>+217m</td>
+                <td>120</td>
+            </tr>
+            
+            <tr>
+                <td>9</td>
+                <td>Piton des orangers → Ilet Savannah</td>
+                <td>14.5%</td>
+                <td>Romain BARDEUR (5706)<br>
+                    (3.8/9.4 km/h)</td>
+                <td>Chloé COENYE (2219)<br>
+                    (2.1/5.5 km/h)</td>
+                <td>17.2km<br>+1967m</td>
+                <td>80</td>
+            </tr>
+            
+            <tr>
+                <td>10</td>
+                <td>Sentier Scout → Aurère</td>
+                <td>14.5%</td>
+                <td>Christophe DELSOL (6158)<br>
+                    (6.8/7.4 km/h)</td>
+                <td>Gisele RIVIERE (3706)<br>
+                    (6.0/7.4 km/h)</td>
+                <td>8.7km<br>+1490m</td>
+                <td>120</td>
+            </tr>
+            
+            <tr>
+                <td>11</td>
+                <td>Croisée coteaux Kerveguen → Le Bloc</td>
+                <td>10.0%</td>
+                <td>Magali VIONNET (1789)<br>
+                    (2.7/5.6 km/h)</td>
+                <td>Laura TRENTANI (2688)<br>
+                    (2.3/5.0 km/h)</td>
+                <td>4.0km<br>+1097m</td>
+                <td>40</td>
+            </tr>
+            
+            <tr>
+                <td>12</td>
+                <td>Aurère → Passerelle d'Oussy</td>
+                <td>9.3%</td>
+                <td>Florence CHARLOT (6192)<br>
+                    (6.0/8.2 km/h)</td>
+                <td>Aline COQUARD (2290)<br>
+                    (5.0/7.3 km/h)</td>
+                <td>3.9km<br>+639m</td>
+                <td>80</td>
+            </tr>
+            
+            <tr>
+                <td>13</td>
+                <td>Grande Chaloupe → Le Colorado</td>
+                <td>8.7%</td>
+                <td>Melanie HAUSS (3304)<br>
+                    (5.2/7.4 km/h)</td>
+                <td>Lisa BOILLETOT (7245)<br>
+                    (5.1/7.7 km/h)</td>
+                <td>8.5km<br>+970m</td>
+                <td>160</td>
+            </tr>
+            
+            <tr>
+                <td>14</td>
+                <td>La possession → Grande Chaloupe</td>
+                <td>7.8%</td>
+                <td>Emma BATAILLE (6166)<br>
+                    (5.1/6.0 km/h)</td>
+                <td>Camille LECAT (7164)<br>
+                    (5.1/6.4 km/h)</td>
+                <td>7.3km<br>+644m</td>
+                <td>160</td>
+            </tr>
+            
+            <tr>
+                <td>15</td>
+                <td>Dos d'Ane → Chemin Ratinaud</td>
+                <td>6.8%</td>
+                <td>Margaux BEYRE (4527)<br>
+                    (3.9/9.9 km/h)</td>
+                <td>Camille SAPELIER (3964)<br>
+                    (3.3/8.6 km/h)</td>
+                <td>3.4km<br>+431m</td>
+                <td>40</td>
+            </tr>
+            
+            <tr>
+                <td>16</td>
+                <td>Plateau des chênes → Cilaos (Stade)</td>
+                <td>4.3%</td>
+                <td>Julie PUTHOSTE (591)<br>
+                    (4.4/7.3 km/h)</td>
+                <td>Marie Laure THIEUX (1024)<br>
+                    (4.7/8.0 km/h)</td>
+                <td>2.4km<br>+186m</td>
+                <td>40</td>
+            </tr>
+            
+            <tr>
+                <td>17</td>
+                <td>Notre Dame de la Paix → Parking Aire Nez de Boeuf</td>
+                <td>4.0%</td>
+                <td>Magali VIONNET (1789)<br>
+                    (6.0/10.0 km/h)</td>
+                <td>Marion FLAMENT (2212)<br>
+                    (5.8/9.9 km/h)</td>
+                <td>12.0km<br>+859m</td>
+                <td>40</td>
+            </tr>
+            
+            <tr>
+                <td>18</td>
+                <td>Coteaux Kerveguen → Croisée coteaux Kerveguen</td>
+                <td>3.9%</td>
+                <td>Magali VIONNET (1789)<br>
+                    (4.6/7.8 km/h)</td>
+                <td>Sophie GERBELOT LEGRIS (858)<br>
+                    (4.9/8.5 km/h)</td>
+                <td>2.5km<br>+290m</td>
+                <td>40</td>
+            </tr>
+            
+            <tr>
+                <td>19</td>
+                <td>Parking Aire Nez de Boeuf → Mare à Boue</td>
+                <td>3.4%</td>
+                <td>Lauriane PICART (2643)<br>
+                    (5.8/8.6 km/h)</td>
+                <td>Marine GIVERNAUD (684)<br>
+                    (5.8/8.8 km/h)</td>
+                <td>10.3km<br>+479m</td>
+                <td>40</td>
+            </tr>
+            
+            <tr>
+                <td>20</td>
+                <td>Aurère → Deux Bras</td>
+                <td>3.1%</td>
+                <td>Laetitia AUBRY (3369)<br>
+                    (6.4/8.8 km/h)</td>
+                <td>Camille GUY (4380)<br>
+                    (6.4/9.0 km/h)</td>
+                <td>6.4km<br>+801m</td>
+                <td>40</td>
+            </tr>
+            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <script>
+            function toggleSection(header) {
+    header.classList.toggle('active');
+    const content = header.nextElementSibling;
+    
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+    } else {
+        content.style.display = 'block';
+    }
+
+    // Sauvegarder l'état dans le localStorage
+    const sectionId = header.textContent.trim();
+    localStorage.setItem(sectionId, content.style.display === 'block');
+}
+
+// Au chargement de la page, restaurer l'état des sections
+document.addEventListener('DOMContentLoaded', function() {
+    const headers = document.querySelectorAll('.collapsible-header');
+    headers.forEach(header => {
+        const sectionId = header.textContent.trim();
+        const isOpen = localStorage.getItem(sectionId) === 'true';
+        if (isOpen) {
+            header.classList.add('active');
+            header.nextElementSibling.style.display = 'block';
+        }
+    });
+});
+            </script>
+        </body>
+        </html>
+        

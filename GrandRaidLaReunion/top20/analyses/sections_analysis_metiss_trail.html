@@ -1,0 +1,785 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Analyse des sections - Metiss Trail</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    margin-bottom: 1rem;
+                    border: 1px solid #dee2e6;
+                    border-radius: 0.25rem;
+                }
+                .section-header {
+                    padding: 1rem;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .section-content {
+                    display: none;
+                    padding: 1rem;
+                }
+                .section-info {
+                    display: flex;
+                    gap: 2rem;
+                    color: #666;
+                    margin: 1rem 0;
+                }
+                .toggle-icon { 
+                    font-size: 1.2rem;
+                    transition: transform 0.3s;
+                }
+                .toggle-icon.active {
+                    transform: rotate(180deg);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <h1 class="mb-4">Analyse des sections - Metiss Trail</h1>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-4">
+                    <label for="courseSelect" class="form-label">Sélectionner une course:</label>
+                    <select id="courseSelect" class="form-select" style="width: auto;">
+        <option value="Toutes les courses" >Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" >Mascareignes</option><option value="Metiss Trail" selected>Metiss Trail</option><option value="Trail de Bourbon" >Trail de Bourbon</option>
+                    </select>
+                </div>
+        
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Saint Paul → Ecole Bellemène</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.9 km</div>
+                            <div>D+: 406 m</div>
+                            <div>D-: 7 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-saint-paul-→-ecole-bellemène" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>00:33:52</td><td>10.5 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>00:33:54</td><td>10.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>00:35:22</td><td>10.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>00:36:24</td><td>9.7 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>00:37:08</td><td>9.5 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>00:37:12</td><td>9.5 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>00:39:47</td><td>8.9 km/h</td></tr><tr><td class="progression-positive">+8</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>00:39:50</td><td>8.9 km/h</td></tr><tr><td class="progression-positive">+9</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>00:39:57</td><td>8.9 km/h</td></tr><tr><td class="progression-positive">+10</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>00:40:04</td><td>8.8 km/h</td></tr><tr><td class="progression-positive">+11</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>00:40:11</td><td>8.8 km/h</td></tr><tr><td class="progression-positive">+12</td><td>7236</td><td>Gilles SIMON</td><td>Metiss Trail</td><td>00:40:33</td><td>8.7 km/h</td></tr><tr><td class="progression-positive">+13</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>00:40:44</td><td>8.7 km/h</td></tr><tr><td class="progression-positive">+14</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>00:40:46</td><td>8.7 km/h</td></tr><tr><td class="progression-positive">+15</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>00:41:49</td><td>8.5 km/h</td></tr><tr><td class="progression-positive">+16</td><td>7474</td><td>Marie QUILLEVERE</td><td>Metiss Trail</td><td>00:42:00</td><td>8.4 km/h</td></tr><tr><td class="progression-positive">+17</td><td>7107</td><td>Quentin GIRARD</td><td>Metiss Trail</td><td>00:42:19</td><td>8.4 km/h</td></tr><tr><td class="progression-positive">+18</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>00:43:06</td><td>8.2 km/h</td></tr><tr><td class="progression-positive">+19</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>00:43:27</td><td>8.1 km/h</td></tr><tr><td class="progression-positive">+20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>00:43:36</td><td>8.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-saint-paul-→-ecole-bellemène')) {
+                        const table = $('#temps-saint-paul-→-ecole-bellemène').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-saint-paul-→-ecole-bellemène" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>0</td><td>0 → 1</td></tr><tr><td class="progression-positive">+2</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>0</td><td>0 → 2</td></tr><tr><td class="progression-positive">+3</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>0</td><td>0 → 5</td></tr><tr><td class="progression-positive">+4</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>0</td><td>0 → 11</td></tr><tr><td class="progression-positive">+5</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>0</td><td>0 → 4</td></tr><tr><td class="progression-positive">+6</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>0</td><td>0 → 12</td></tr><tr><td class="progression-positive">+7</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>0</td><td>0 → 17</td></tr><tr><td class="progression-positive">+8</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>0</td><td>0 → 10</td></tr><tr><td class="progression-positive">+9</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>0</td><td>0 → 14</td></tr><tr><td class="progression-positive">+10</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>0</td><td>0 → 18</td></tr><tr><td class="progression-positive">+11</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>0</td><td>0 → 13</td></tr><tr><td class="progression-positive">+12</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>0</td><td>0 → 7</td></tr><tr><td class="progression-positive">+13</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>0</td><td>0 → 36</td></tr><tr><td class="progression-positive">+14</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>0</td><td>0 → 28</td></tr><tr><td class="progression-positive">+15</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>0</td><td>0 → 20</td></tr><tr><td class="progression-positive">+16</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>0</td><td>0 → 30</td></tr><tr><td class="progression-positive">+17</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>0</td><td>0 → 8</td></tr><tr><td class="progression-positive">+18</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>0</td><td>0 → 55</td></tr><tr><td class="progression-positive">+19</td><td>7236</td><td>Gilles SIMON</td><td>Metiss Trail</td><td>0</td><td>0 → 16</td></tr><tr><td class="progression-positive">+20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>0</td><td>0 → 33</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-saint-paul-→-ecole-bellemène')) {
+                        const table = $('#progression-saint-paul-→-ecole-bellemène').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Ecole Bellemène → Ilet Savannah</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 9.5 km</div>
+                            <div>D+: 200 m</div>
+                            <div>D-: 480 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-ecole-bellemène-→-ilet-savannah" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>00:43:05</td><td>13.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>00:46:18</td><td>12.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>00:47:40</td><td>12.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>00:48:26</td><td>11.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>00:49:05</td><td>11.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>00:49:26</td><td>11.5 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>00:50:16</td><td>11.3 km/h</td></tr><tr><td class="progression-positive">+8</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>00:51:23</td><td>11.1 km/h</td></tr><tr><td class="progression-positive">+9</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>00:53:02</td><td>10.7 km/h</td></tr><tr><td class="progression-positive">+10</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>00:53:22</td><td>10.7 km/h</td></tr><tr><td class="progression-positive">+11</td><td>7107</td><td>Quentin GIRARD</td><td>Metiss Trail</td><td>00:53:24</td><td>10.7 km/h</td></tr><tr><td class="progression-positive">+12</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>00:53:52</td><td>10.6 km/h</td></tr><tr><td class="progression-positive">+13</td><td>7236</td><td>Gilles SIMON</td><td>Metiss Trail</td><td>00:53:52</td><td>10.6 km/h</td></tr><tr><td class="progression-positive">+14</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>00:54:09</td><td>10.5 km/h</td></tr><tr><td class="progression-positive">+15</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>00:54:18</td><td>10.5 km/h</td></tr><tr><td class="progression-positive">+16</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>00:54:20</td><td>10.5 km/h</td></tr><tr><td class="progression-positive">+17</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>00:56:17</td><td>10.1 km/h</td></tr><tr><td class="progression-positive">+18</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>00:56:27</td><td>10.1 km/h</td></tr><tr><td class="progression-positive">+19</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td>00:56:33</td><td>10.1 km/h</td></tr><tr><td class="progression-positive">+20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>00:56:42</td><td>10.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-ecole-bellemène-→-ilet-savannah')) {
+                        const table = $('#temps-ecole-bellemène-→-ilet-savannah').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-ecole-bellemène-→-ilet-savannah" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td class="progression-positive">+71</td><td>249 → 178</td></tr><tr><td class="progression-positive">+2</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td class="progression-positive">+39</td><td>177 → 138</td></tr><tr><td class="progression-positive">+3</td><td>7055</td><td>Marie ALEKSANDROWICZ</td><td>Metiss Trail</td><td class="progression-positive">+24</td><td>89 → 65</td></tr><tr><td class="progression-positive">+4</td><td>7046</td><td>Cecile DE LASSAT DE PRESSIGNY</td><td>Metiss Trail</td><td class="progression-positive">+23</td><td>126 → 103</td></tr><tr><td class="progression-positive">+5</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td class="progression-positive">+17</td><td>79 → 62</td></tr><tr><td class="progression-positive">+6</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td class="progression-positive">+16</td><td>47 → 31</td></tr><tr><td class="progression-positive">+7</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td class="progression-positive">+10</td><td>55 → 45</td></tr><tr><td class="progression-positive">+8</td><td>7392</td><td>Charline ICART</td><td>Metiss Trail</td><td class="progression-positive">+10</td><td>80 → 70</td></tr><tr><td class="progression-positive">+9</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td class="progression-positive">+9</td><td>28 → 19</td></tr><tr><td class="progression-positive">+10</td><td>7069</td><td>Farida RAHOUTI OLLIER</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>49 → 41</td></tr><tr><td class="progression-positive">+11</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+7</td><td>33 → 26</td></tr><tr><td class="progression-positive">+12</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td class="progression-positive">+6</td><td>30 → 24</td></tr><tr><td class="progression-positive">+13</td><td>7107</td><td>Quentin GIRARD</td><td>Metiss Trail</td><td class="progression-positive">+6</td><td>24 → 18</td></tr><tr><td class="progression-positive">+14</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td class="progression-positive">+6</td><td>199 → 193</td></tr><tr><td class="progression-positive">+15</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>20 → 17</td></tr><tr><td class="progression-positive">+16</td><td>7413</td><td>Celia SEYCHELLES</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>64 → 61</td></tr><tr><td class="progression-positive">+17</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>18 → 16</td></tr><tr><td class="progression-positive">+18</td><td>7090</td><td>Estelle LAMARQUE</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>58 → 56</td></tr><tr><td class="progression-positive">+19</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>11 → 10</td></tr><tr><td class="progression-positive">+20</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>12 → 11</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-ecole-bellemène-→-ilet-savannah')) {
+                        const table = $('#progression-ecole-bellemène-→-ilet-savannah').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Ilet Savannah → Chemin Ratinaud</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.6 km</div>
+                            <div>D+: 612 m</div>
+                            <div>D-: 266 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-ilet-savannah-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>00:56:49</td><td>7.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>01:01:20</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>01:02:04</td><td>6.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>01:05:51</td><td>6.0 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>01:07:01</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>01:07:29</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>01:07:53</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+8</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>01:08:31</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+9</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>01:09:26</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+10</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>01:09:39</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+11</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>01:10:03</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+12</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>01:10:11</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+13</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>01:11:04</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+14</td><td>7236</td><td>Gilles SIMON</td><td>Metiss Trail</td><td>01:11:31</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+15</td><td>7150</td><td>Chris Alexandre ROUSSETY</td><td>Metiss Trail</td><td>01:11:59</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+16</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>01:12:24</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+17</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>01:12:30</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+18</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>01:13:06</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+19</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>01:16:08</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+20</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>01:16:08</td><td>5.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-ilet-savannah-→-chemin-ratinaud')) {
+                        const table = $('#temps-ilet-savannah-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-ilet-savannah-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7158</td><td>Valerie RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+82</td><td>209 → 127</td></tr><tr><td class="progression-positive">+2</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td class="progression-positive">+69</td><td>193 → 124</td></tr><tr><td class="progression-positive">+3</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td class="progression-positive">+61</td><td>178 → 117</td></tr><tr><td class="progression-positive">+4</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td class="progression-positive">+33</td><td>130 → 97</td></tr><tr><td class="progression-positive">+5</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td class="progression-positive">+33</td><td>138 → 105</td></tr><tr><td class="progression-positive">+6</td><td>7046</td><td>Cecile DE LASSAT DE PRESSIGNY</td><td>Metiss Trail</td><td class="progression-positive">+27</td><td>103 → 76</td></tr><tr><td class="progression-positive">+7</td><td>7164</td><td>Camille LECAT</td><td>Metiss Trail</td><td class="progression-positive">+26</td><td>151 → 125</td></tr><tr><td class="progression-positive">+8</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td class="progression-positive">+25</td><td>62 → 37</td></tr><tr><td class="progression-positive">+9</td><td>7195</td><td>Aurélie PERRIN-TERRIN</td><td>Metiss Trail</td><td class="progression-positive">+21</td><td>99 → 78</td></tr><tr><td class="progression-positive">+10</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td class="progression-positive">+19</td><td>45 → 26</td></tr><tr><td class="progression-positive">+11</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td class="progression-positive">+18</td><td>110 → 92</td></tr><tr><td class="progression-positive">+12</td><td>7150</td><td>Chris Alexandre ROUSSETY</td><td>Metiss Trail</td><td class="progression-positive">+17</td><td>39 → 22</td></tr><tr><td class="progression-positive">+13</td><td>7090</td><td>Estelle LAMARQUE</td><td>Metiss Trail</td><td class="progression-positive">+17</td><td>56 → 39</td></tr><tr><td class="progression-positive">+14</td><td>7055</td><td>Marie ALEKSANDROWICZ</td><td>Metiss Trail</td><td class="progression-positive">+16</td><td>65 → 49</td></tr><tr><td class="progression-positive">+15</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td class="progression-positive">+15</td><td>35 → 20</td></tr><tr><td class="progression-positive">+16</td><td>7392</td><td>Charline ICART</td><td>Metiss Trail</td><td class="progression-positive">+10</td><td>70 → 60</td></tr><tr><td class="progression-positive">+17</td><td>7413</td><td>Celia SEYCHELLES</td><td>Metiss Trail</td><td class="progression-positive">+7</td><td>61 → 54</td></tr><tr><td class="progression-positive">+18</td><td>7023</td><td>Jennifer IMBERT</td><td>Metiss Trail</td><td class="progression-positive">+6</td><td>72 → 66</td></tr><tr><td class="progression-positive">+19</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td class="progression-positive">+5</td><td>19 → 14</td></tr><tr><td class="progression-positive">+20</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>31 → 27</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-ilet-savannah-→-chemin-ratinaud')) {
+                        const table = $('#progression-ilet-savannah-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Chemin Ratinaud → La possession</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.1 km</div>
+                            <div>D+: 195 m</div>
+                            <div>D-: 662 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>00:57:58</td><td>8.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>01:00:39</td><td>8.0 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>01:01:35</td><td>7.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>01:02:27</td><td>7.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>01:03:17</td><td>7.7 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>01:03:34</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>01:03:35</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+8</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>01:04:42</td><td>7.5 km/h</td></tr><tr><td class="progression-positive">+9</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>01:07:01</td><td>7.3 km/h</td></tr><tr><td class="progression-positive">+10</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>01:07:41</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+11</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>01:07:55</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+12</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>01:08:09</td><td>7.1 km/h</td></tr><tr><td class="progression-positive">+13</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>01:09:50</td><td>7.0 km/h</td></tr><tr><td class="progression-positive">+14</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>01:11:01</td><td>6.8 km/h</td></tr><tr><td class="progression-positive">+15</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>01:11:22</td><td>6.8 km/h</td></tr><tr><td class="progression-positive">+16</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>01:12:11</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+17</td><td>7236</td><td>Gilles SIMON</td><td>Metiss Trail</td><td>01:12:47</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+18</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>01:12:54</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+19</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>01:13:02</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+20</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>01:14:00</td><td>6.6 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#temps-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td class="progression-positive">+27</td><td>117 → 90</td></tr><tr><td class="progression-positive">+2</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td class="progression-positive">+18</td><td>97 → 79</td></tr><tr><td class="progression-positive">+3</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td class="progression-positive">+12</td><td>124 → 112</td></tr><tr><td class="progression-positive">+4</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td class="progression-positive">+10</td><td>105 → 95</td></tr><tr><td class="progression-positive">+5</td><td>7046</td><td>Cecile DE LASSAT DE PRESSIGNY</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>76 → 68</td></tr><tr><td class="progression-positive">+6</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>92 → 84</td></tr><tr><td class="progression-positive">+7</td><td>7413</td><td>Celia SEYCHELLES</td><td>Metiss Trail</td><td class="progression-positive">+7</td><td>54 → 47</td></tr><tr><td class="progression-positive">+8</td><td>7164</td><td>Camille LECAT</td><td>Metiss Trail</td><td class="progression-positive">+6</td><td>125 → 119</td></tr><tr><td class="progression-positive">+9</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>26 → 22</td></tr><tr><td class="progression-positive">+10</td><td>7195</td><td>Aurélie PERRIN-TERRIN</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>78 → 74</td></tr><tr><td class="progression-positive">+11</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>9 → 6</td></tr><tr><td class="progression-positive">+12</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>15 → 12</td></tr><tr><td class="progression-positive">+13</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>24 → 21</td></tr><tr><td class="progression-positive">+14</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>37 → 34</td></tr><tr><td class="progression-positive">+15</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>19 → 17</td></tr><tr><td class="progression-positive">+16</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>20 → 18</td></tr><tr><td class="progression-positive">+17</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>25 → 23</td></tr><tr><td class="progression-positive">+18</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>11 → 10</td></tr><tr><td class="progression-positive">+19</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>14 → 13</td></tr><tr><td class="progression-positive">+20</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>27 → 26</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#progression-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">La possession → Grande Chaloupe</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 7.0 km</div>
+                            <div>D+: 339 m</div>
+                            <div>D-: 333 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>00:57:57</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>00:58:28</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>00:59:37</td><td>7.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>01:00:58</td><td>6.9 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>01:01:30</td><td>6.8 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>01:02:37</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>01:02:48</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+8</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>01:03:09</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+9</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>01:03:17</td><td>6.6 km/h</td></tr><tr><td class="progression-positive">+10</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>01:04:56</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+11</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>01:05:01</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+12</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>01:06:39</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+13</td><td>7209</td><td>Matthieu THOMAS</td><td>Metiss Trail</td><td>01:07:03</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+14</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td>01:08:27</td><td>6.1 km/h</td></tr><tr><td class="progression-positive">+15</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>01:08:42</td><td>6.1 km/h</td></tr><tr><td class="progression-positive">+16</td><td>7150</td><td>Chris Alexandre ROUSSETY</td><td>Metiss Trail</td><td>01:10:24</td><td>6.0 km/h</td></tr><tr><td class="progression-positive">+17</td><td>7474</td><td>Marie QUILLEVERE</td><td>Metiss Trail</td><td>01:10:33</td><td>6.0 km/h</td></tr><tr><td class="progression-positive">+18</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>01:10:43</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+19</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>01:10:46</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+20</td><td>7282</td><td>Alexandre CHARLETTINE</td><td>Metiss Trail</td><td>01:13:10</td><td>5.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-la-possession-→-grande-chaloupe')) {
+                        const table = $('#temps-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7158</td><td>Valerie RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+27</td><td>154 → 127</td></tr><tr><td class="progression-positive">+2</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td class="progression-positive">+14</td><td>112 → 98</td></tr><tr><td class="progression-positive">+3</td><td>7164</td><td>Camille LECAT</td><td>Metiss Trail</td><td class="progression-positive">+13</td><td>119 → 106</td></tr><tr><td class="progression-positive">+4</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td class="progression-positive">+11</td><td>84 → 73</td></tr><tr><td class="progression-positive">+5</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td class="progression-positive">+10</td><td>34 → 24</td></tr><tr><td class="progression-positive">+6</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td class="progression-positive">+10</td><td>95 → 85</td></tr><tr><td class="progression-positive">+7</td><td>7474</td><td>Marie QUILLEVERE</td><td>Metiss Trail</td><td class="progression-positive">+9</td><td>37 → 28</td></tr><tr><td class="progression-positive">+8</td><td>7413</td><td>Celia SEYCHELLES</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>47 → 39</td></tr><tr><td class="progression-positive">+9</td><td>7046</td><td>Cecile DE LASSAT DE PRESSIGNY</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>68 → 60</td></tr><tr><td class="progression-positive">+10</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td class="progression-positive">+7</td><td>19 → 12</td></tr><tr><td class="progression-positive">+11</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>17 → 13</td></tr><tr><td class="progression-positive">+12</td><td>7150</td><td>Chris Alexandre ROUSSETY</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>25 → 21</td></tr><tr><td class="progression-positive">+13</td><td>7055</td><td>Marie ALEKSANDROWICZ</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>53 → 49</td></tr><tr><td class="progression-positive">+14</td><td>7023</td><td>Jennifer IMBERT</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>72 → 68</td></tr><tr><td class="progression-positive">+15</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>18 → 15</td></tr><tr><td class="progression-positive">+16</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>20 → 17</td></tr><tr><td class="progression-positive">+17</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>22 → 19</td></tr><tr><td class="progression-positive">+18</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>8 → 6</td></tr><tr><td class="progression-positive">+19</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>10 → 8</td></tr><tr><td class="progression-positive">+20</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>12 → 10</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-la-possession-→-grande-chaloupe')) {
+                        const table = $('#progression-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grande Chaloupe → Le Colorado</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.1 km</div>
+                            <div>D+: 819 m</div>
+                            <div>D-: 147 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>01:31:39</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>01:33:54</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>01:34:30</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>01:34:38</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>01:34:53</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>01:36:14</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>01:37:57</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+8</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>01:39:15</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+9</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td>01:39:46</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+10</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>01:40:16</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+11</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>01:42:04</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+12</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>01:42:17</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+13</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>01:42:21</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+14</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>01:42:34</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+15</td><td>7354</td><td>Céline LOUIS</td><td>Metiss Trail</td><td>01:43:10</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+16</td><td>7474</td><td>Marie QUILLEVERE</td><td>Metiss Trail</td><td>01:43:29</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+17</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>01:44:50</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+18</td><td>7150</td><td>Chris Alexandre ROUSSETY</td><td>Metiss Trail</td><td>01:45:07</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+19</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td>01:46:32</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+20</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td>01:47:19</td><td>4.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#temps-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7158</td><td>Valerie RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+22</td><td>127 → 105</td></tr><tr><td class="progression-positive">+2</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td class="progression-positive">+20</td><td>82 → 62</td></tr><tr><td class="progression-positive">+3</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td class="progression-positive">+16</td><td>89 → 73</td></tr><tr><td class="progression-positive">+4</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td class="progression-positive">+15</td><td>98 → 83</td></tr><tr><td class="progression-positive">+5</td><td>7164</td><td>Camille LECAT</td><td>Metiss Trail</td><td class="progression-positive">+14</td><td>106 → 92</td></tr><tr><td class="progression-positive">+6</td><td>7046</td><td>Cecile DE LASSAT DE PRESSIGNY</td><td>Metiss Trail</td><td class="progression-positive">+13</td><td>60 → 47</td></tr><tr><td class="progression-positive">+7</td><td>7023</td><td>Jennifer IMBERT</td><td>Metiss Trail</td><td class="progression-positive">+11</td><td>68 → 57</td></tr><tr><td class="progression-positive">+8</td><td>7413</td><td>Celia SEYCHELLES</td><td>Metiss Trail</td><td class="progression-positive">+9</td><td>39 → 30</td></tr><tr><td class="progression-positive">+9</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td class="progression-positive">+6</td><td>73 → 67</td></tr><tr><td class="progression-positive">+10</td><td>7195</td><td>Aurélie PERRIN-TERRIN</td><td>Metiss Trail</td><td class="progression-positive">+6</td><td>84 → 78</td></tr><tr><td class="progression-positive">+11</td><td>7090</td><td>Estelle LAMARQUE</td><td>Metiss Trail</td><td class="progression-positive">+5</td><td>46 → 41</td></tr><tr><td class="progression-positive">+12</td><td>7474</td><td>Marie QUILLEVERE</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>28 → 24</td></tr><tr><td class="progression-positive">+13</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>10 → 7</td></tr><tr><td class="progression-positive">+14</td><td>7315</td><td>Alexandre CAER</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>17 → 14</td></tr><tr><td class="progression-positive">+15</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>20 → 17</td></tr><tr><td class="progression-positive">+16</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>85 → 82</td></tr><tr><td class="progression-positive">+17</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>6 → 4</td></tr><tr><td class="progression-positive">+18</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>8 → 6</td></tr><tr><td class="progression-positive">+19</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>12 → 10</td></tr><tr><td class="progression-positive">+20</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>13 → 11</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#progression-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Colorado → St Denis La Redoute</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.3 km</div>
+                            <div>D+: 28 m</div>
+                            <div>D-: 661 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td>00:35:59</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td>00:36:03</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td>00:37:32</td><td>6.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>00:37:46</td><td>6.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td>00:40:36</td><td>6.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>00:41:40</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7156</td><td>Julien WEISSENBACHER</td><td>Metiss Trail</td><td>00:41:42</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+8</td><td>7026</td><td>Yannick IMBROSCIANO</td><td>Metiss Trail</td><td>00:42:01</td><td>6.1 km/h</td></tr><tr><td class="progression-positive">+9</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>00:42:08</td><td>6.1 km/h</td></tr><tr><td class="progression-positive">+10</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td>00:42:47</td><td>6.0 km/h</td></tr><tr><td class="progression-positive">+11</td><td>7373</td><td>Marcelle PUY</td><td>Metiss Trail</td><td>00:44:14</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+12</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td>00:44:22</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+13</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td>00:45:10</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+14</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td>00:46:36</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+15</td><td>7252</td><td>Sabrina SAUVE</td><td>Metiss Trail</td><td>00:48:20</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+16</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td>00:48:32</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+17</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td>00:48:32</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+18</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td>00:48:35</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+19</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td>00:48:43</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+20</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td>00:48:49</td><td>5.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#temps-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7245</td><td>Lisa BOILLETOT</td><td>Metiss Trail</td><td class="progression-positive">+9</td><td>67 → 58</td></tr><tr><td class="progression-positive">+2</td><td>7062</td><td>Emilie DIETRICH</td><td>Metiss Trail</td><td class="progression-positive">+9</td><td>73 → 64</td></tr><tr><td class="progression-positive">+3</td><td>7158</td><td>Valerie RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>105 → 97</td></tr><tr><td class="progression-positive">+4</td><td>7280</td><td>Ophélie TAILLEUR</td><td>Metiss Trail</td><td class="progression-positive">+7</td><td>62 → 55</td></tr><tr><td class="progression-positive">+5</td><td>7200</td><td>Noéline CAROFF</td><td>Metiss Trail</td><td class="progression-positive">+5</td><td>82 → 77</td></tr><tr><td class="progression-positive">+6</td><td>7415</td><td>Anne-Claire BENARD</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>83 → 79</td></tr><tr><td class="progression-positive">+7</td><td>7552</td><td>Tristan ROUX</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>10 → 7</td></tr><tr><td class="progression-positive">+8</td><td>7427</td><td>Brice Antoine DIJOUX</td><td>Metiss Trail</td><td class="progression-positive">+2</td><td>16 → 14</td></tr><tr><td class="progression-positive">+9</td><td>7491</td><td>Grégoire RUYSSEN</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>4 → 3</td></tr><tr><td class="progression-positive">+10</td><td>7153</td><td>Jonathan COTTE</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>5 → 4</td></tr><tr><td class="progression-positive">+11</td><td>7256</td><td>Vincent OPALA</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>11 → 10</td></tr><tr><td class="progression-positive">+12</td><td>7186</td><td>Yassin KOO PIN HIN</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>12 → 11</td></tr><tr><td class="progression-positive">+13</td><td>7378</td><td>Ivans LALIRON</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>17 → 16</td></tr><tr><td class="progression-positive">+14</td><td>7215</td><td>Jeremy RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>21 → 20</td></tr><tr><td class="progression-positive">+15</td><td>7258</td><td>Elise DUCHEZ</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>25 → 24</td></tr><tr><td class="progression-positive">+16</td><td>7055</td><td>Marie ALEKSANDROWICZ</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>50 → 49</td></tr><tr><td class="progression-positive">+17</td><td>7109</td><td>Corentin FOURNI</td><td>Metiss Trail</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+18</td><td>7284</td><td>Leo SERCA</td><td>Metiss Trail</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+19</td><td>7411</td><td>Jean-Pierre CHOW-SHI-YEE</td><td>Metiss Trail</td><td>0</td><td>6 → 6</td></tr><tr><td class="progression-positive">+20</td><td>7044</td><td>Jean Stéphane NARBÉ</td><td>Metiss Trail</td><td>0</td><td>13 → 13</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#progression-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <script>
+                function toggleSection(header) {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.textContent = '▼';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.textContent = '▲';
+                        icon.classList.add('active');
+                    }
+                }
+
+                document.getElementById('courseSelect').addEventListener('change', function() {
+                    const course = this.value;
+                    const suffix = course === 'Toutes les courses' ? '' 
+                                 : '_' + course.toLowerCase().replace(/ /g, '_');
+                    window.location.href = `sections_analysis${suffix}.html`;
+                });
+            </script>
+        </body>
+        </html>
+        
