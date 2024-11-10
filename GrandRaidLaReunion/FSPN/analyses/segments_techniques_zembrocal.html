@@ -532,16 +532,26 @@ Cédric LABAISSE (Relai 3) (8137)<br>
 
 // Au chargement de la page, restaurer l'état des sections
 document.addEventListener('DOMContentLoaded', function() {
-    const headers = document.querySelectorAll('.collapsible-header');
-    headers.forEach(header => {
-        const sectionId = header.textContent.trim();
-        const isOpen = localStorage.getItem(sectionId) === 'true';
-        if (isOpen) {
-            header.classList.add('active');
-            header.nextElementSibling.style.display = 'block';
+        const courseSelect = document.getElementById('courseSelect');
+        if (courseSelect) {
+            courseSelect.addEventListener('change', function() {
+                const course = this.value;
+                let newPage = '';
+                
+                if (course === "Toutes les courses") {
+                    newPage = "segments_techniques.html";
+                } else {
+                    const normalizedCourse = course.toLowerCase()
+                        .replace(/ /g, '_')
+                        .normalize('NFD')
+                        .replace(/[̀-ͯ]/g, '');
+                    newPage = `segments_techniques_${normalizedCourse}.html`;
+                }
+                
+                window.location.href = newPage;
+            });
         }
     });
-});
             </script>
         </body>
         </html>
