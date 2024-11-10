@@ -1,0 +1,230 @@
+
+        <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyses TOP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+                .progression-positive { color: green; }
+                .progression-negative { color: red; }
+                .sticky-controls {
+                    position: sticky;
+                    top: 0;
+                    background: white;
+                    padding: 1rem 0;
+                    z-index: 1000;
+                    border-bottom: 1px solid #dee2e6;
+                }
+                .card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
+                }
+                .card-title {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 0.5rem;
+                }
+                .list-unstyled strong {
+                    color: #2c3e50;
+                    display: block;
+                    margin-bottom: 0.25rem;
+                }
+                .text-muted {
+                    color: #6c757d !important;
+                }
+                .alert-info {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    border-radius: 4px;
+                }
+                .formula {
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    margin: 1rem 0;
+                }
+                @media print {
+                    .card { break-inside: avoid; }
+                    .no-print { display: none; }
+                }
+                .collapsible-header {
+                cursor: pointer;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s ease;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .collapsible-header:hover {
+                background-color: #e9ecef;
+            }
+            
+            .collapsible-content {
+                display: none;
+                padding: 1rem;
+            }
+            
+            .collapsible-header .toggle-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .collapsible-header.active .toggle-icon {
+                transform: rotate(180deg);
+            }
+            
+            .card-title {
+                margin-bottom: 0 !important;
+            }
+            
+            .header-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+                
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="sticky-controls">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                        </div>
+                        <div class="col">
+                            <h2 class="mb-0">Finish Explosif</h2>
+                        </div>
+                        <div class="col-auto">
+                            <select id="courseSelect" class="form-select">
+        <option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" selected>Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Toutes les courses" >Toutes les courses</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" >Zembrocal</option>
+                                    </select>
+                                    <script>
+                                        document.getElementById('courseSelect').addEventListener('change', function() {
+                                            changeCourse(this.value);
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                
+                <table id="analysisTable" class="table table-striped">
+                    <thead>
+                        <tr>
+        <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse effort</th><th>Class. Grande Chaloupe</th><th>Class. Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr><td>1</td><td>4398</td><td>Nicolas MARCY</td><td>Mascareignes</td><td>01:41:34</td><td>13.5 km/h</td><td>4</td><td>2</td></tr><tr><td>2</td><td>4506</td><td>Antoine COMPAROT</td><td>Mascareignes</td><td>01:44:23</td><td>13.1 km/h</td><td>5</td><td>3</td></tr><tr><td>3</td><td>3172</td><td>Jean Charles BRETON</td><td>Mascareignes</td><td>01:46:28</td><td>12.8 km/h</td><td>7</td><td>5</td></tr><tr><td>4</td><td>3759</td><td>Alexandre DEPECHE</td><td>Mascareignes</td><td>01:48:42</td><td>12.6 km/h</td><td>2</td><td>1</td></tr><tr><td>5</td><td>4609</td><td>Ludovic JASMIN</td><td>Mascareignes</td><td>01:57:07</td><td>11.7 km/h</td><td>8</td><td>7</td></tr><tr><td>6</td><td>4376</td><td>Mathieu COQUIERE</td><td>Mascareignes</td><td>01:58:47</td><td>11.5 km/h</td><td>23</td><td>15</td></tr><tr><td>7</td><td>3953</td><td>Pierre BEINCHET</td><td>Mascareignes</td><td>02:00:04</td><td>11.4 km/h</td><td>22</td><td>17</td></tr><tr><td>8</td><td>4457</td><td>Matis FUGIER</td><td>Mascareignes</td><td>02:01:07</td><td>11.3 km/h</td><td>1</td><td>4</td></tr><tr><td>9</td><td>3865</td><td>Nicolas COURT</td><td>Mascareignes</td><td>02:02:34</td><td>11.2 km/h</td><td>10</td><td>9</td></tr><tr><td>10</td><td>4111</td><td>Jonathan SCHEUBER</td><td>Mascareignes</td><td>02:02:56</td><td>11.1 km/h</td><td>19</td><td>14</td></tr><tr><td>11</td><td>4319</td><td>Titouan FORT</td><td>Mascareignes</td><td>02:03:29</td><td>11.1 km/h</td><td>17</td><td>12</td></tr><tr><td>12</td><td>4452</td><td>Matthieu ROL</td><td>Mascareignes</td><td>02:03:30</td><td>11.1 km/h</td><td>16</td><td>13</td></tr><tr><td>13</td><td>4160</td><td>Rivosoa Hobilalaina ANDRIANIRINA</td><td>Mascareignes</td><td>02:04:58</td><td>10.9 km/h</td><td>3</td><td>6</td></tr><tr><td>14</td><td>4510</td><td>Jean Jérôme MUSSARD</td><td>Mascareignes</td><td>02:05:33</td><td>10.9 km/h</td><td>18</td><td>16</td></tr><tr><td>15</td><td>4450</td><td>Johny VALIN</td><td>Mascareignes</td><td>02:06:26</td><td>10.8 km/h</td><td>13</td><td>11</td></tr><tr><td>16</td><td>4139</td><td>Adrien Karim CHOUCHOU</td><td>Mascareignes</td><td>02:07:34</td><td>10.7 km/h</td><td>12</td><td>10</td></tr><tr><td>17</td><td>4204</td><td>Paolo VELLE</td><td>Mascareignes</td><td>02:07:55</td><td>10.7 km/h</td><td>6</td><td>8</td></tr><tr><td>18</td><td>3285</td><td>Laure REBUFFET</td><td>Mascareignes</td><td>02:12:09</td><td>10.3 km/h</td><td>24</td><td>22</td></tr><tr><td>19</td><td>4491</td><td>Bastien CHÉNEAU</td><td>Mascareignes</td><td>02:12:23</td><td>10.3 km/h</td><td>15</td><td>19</td></tr><tr><td>20</td><td>4444</td><td>Urko LARRANAGA</td><td>Mascareignes</td><td>02:13:37</td><td>10.2 km/h</td><td>14</td><td>18</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                function changeCourse(course) {
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.split('/').slice(0, -1).join('/');
+    const currentFile = currentPath.split('/').pop();
+
+    const pageTypes = {
+        'vitesse_moyenne': 'vitesse_moyenne',
+        'vitesse_effort': 'vitesse_effort',
+        'vitesse_sections': 'vitesse_sections',
+        'vitesse_regularite': 'vitesse_regularite',
+        'progression_globale': 'progression_globale',
+        'progression_sections': 'progression_sections',
+        'depart_explosif': 'depart_explosif',
+        'finish_explosif': 'finish_explosif',
+        'grimpeurs': 'grimpeurs',
+        'descendeurs': 'descendeurs',
+        'segments_techniques': 'segments_techniques',
+        'segments_decisifs': 'segments_decisifs'
+    };
+
+                    let pageType = '';
+                    for (const type in pageTypes) {
+                        if (currentFile.startsWith(type)) {
+                            pageType = type;
+                            break;
+                        }
+                    }
+
+                    if (!pageType) {
+                        console.error('Type de page non reconnu:', currentFile);
+                        return;
+                    }
+
+                    let newPage;
+                    if (course === "Toutes les courses") {
+                        newPage = `${pageType}.html`;
+                    } else {
+                        const normalizedCourse = course.toLowerCase()
+                            .replace(/ /g, '_')
+                            .normalize('NFD')
+                            .replace(/[̀-ͯ]/g, '');
+                        newPage = `${pageType}_${normalizedCourse}.html`;
+                    }
+
+                    window.location.href = `${basePath}/${newPage}`;
+                }
+
+                $(document).ready(function() {
+                    const table = $('#analysisTable').DataTable({
+                        "pageLength": 20,
+                        "lengthMenu": [20],
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                        },
+                        "order": [[0, "asc"]],
+                        "dom": 'rt<"bottom"ip>',
+                        "columnDefs": [{
+                            "targets": "_all",
+                            "render": function(data, type, row) {
+                                if (type === 'sort') {
+                                    // Retirer les unités et symboles pour le tri
+                                    return data.replace(/[^\d.-]/g, '');
+                                }
+                                return data;
+                            }
+                        }]
+                    });
+                });
+                function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                localStorage.setItem(header.textContent.trim(), 'closed');
+            } else {
+                content.style.display = 'block';
+                localStorage.setItem(header.textContent.trim(), 'open');
+            }
+        }
+        
+        // Restaurer l'état des sections au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                const state = localStorage.getItem(header.textContent.trim());
+                
+                if (state === 'open') {
+                    header.classList.add('active');
+                    content.style.display = 'block';
+                }
+            });
+        });
+            </script>
+        </body>
+        </html>
+    

@@ -1,0 +1,3491 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Analyse des sections - Zembrocal</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    margin-bottom: 1rem;
+                    border: 1px solid #dee2e6;
+                    border-radius: 0.25rem;
+                }
+                .section-header {
+                    padding: 1rem;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .section-content {
+                    display: none;
+                    padding: 1rem;
+                }
+                .section-info {
+                    display: flex;
+                    gap: 2rem;
+                    color: #666;
+                    margin: 1rem 0;
+                }
+                .toggle-icon { 
+                    font-size: 1.2rem;
+                    transition: transform 0.3s;
+                }
+                .toggle-icon.active {
+                    transform: rotate(180deg);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <h1 class="mb-4">Analyse des sections - Zembrocal</h1>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-4">
+                    <label for="courseSelect" class="form-label">Sélectionner une course:</label>
+                    <select id="courseSelect" class="form-select" style="width: auto;">
+        <option value="Toutes les courses" >Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" >Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" selected>Zembrocal</option>
+                    </select>
+                </div>
+        
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Saint Joseph → Grand Galet Ecole</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 14.2 km</div>
+                            <div>D+: 644 m</div>
+                            <div>D-: 179 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-saint-joseph-→-grand-galet-ecole" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>01:09:36</td><td>12.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:17:36</td><td>11.0 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:19:56</td><td>10.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:22:11</td><td>10.4 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:25:41</td><td>9.9 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:31:07</td><td>9.4 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:31:39</td><td>9.3 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:35:50</td><td>8.9 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:37:43</td><td>8.7 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:49:30</td><td>7.8 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-saint-joseph-→-grand-galet-ecole')) {
+                        const table = $('#temps-saint-joseph-→-grand-galet-ecole').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-saint-joseph-→-grand-galet-ecole" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 1</td></tr><tr><td class="progression-positive">+2</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 10</td></tr><tr><td class="progression-positive">+3</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 4</td></tr><tr><td class="progression-positive">+4</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 129</td></tr><tr><td class="progression-positive">+5</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 41</td></tr><tr><td class="progression-positive">+6</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 6</td></tr><tr><td class="progression-positive">+7</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 53</td></tr><tr><td class="progression-positive">+8</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 21</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 40</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 60</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-saint-joseph-→-grand-galet-ecole')) {
+                        const table = $('#progression-saint-joseph-→-grand-galet-ecole').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grand Galet Ecole → Pas de sable</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 14.7 km</div>
+                            <div>D+: 1888 m</div>
+                            <div>D-: 50 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grand-galet-ecole-→-pas-de-sable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>02:35:20</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>02:50:35</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>02:54:03</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>02:56:04</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>03:32:34</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>03:32:53</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>03:38:15</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>03:42:32</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>03:46:12</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>04:09:48</td><td>3.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grand-galet-ecole-→-pas-de-sable')) {
+                        const table = $('#temps-grand-galet-ecole-→-pas-de-sable').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grand-galet-ecole-→-pas-de-sable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+27</td><td>129 → 102</td></tr><tr><td class="progression-positive">+2</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+21</td><td>53 → 32</td></tr><tr><td class="progression-positive">+3</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+13</td><td>60 → 47</td></tr><tr><td class="progression-positive">+4</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+11</td><td>41 → 30</td></tr><tr><td class="progression-positive">+5</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>40 → 36</td></tr><tr><td class="progression-positive">+6</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>10 → 8</td></tr><tr><td class="progression-positive">+7</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>6 → 4</td></tr><tr><td class="progression-positive">+8</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>4 → 3</td></tr><tr><td class="progression-positive">+9</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+10</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-8</td><td>21 → 29</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grand-galet-ecole-→-pas-de-sable')) {
+                        const table = $('#progression-grand-galet-ecole-→-pas-de-sable').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Pas de sable → Parking Aire Nez de Boeuf</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 9.2 km</div>
+                            <div>D+: 143 m</div>
+                            <div>D-: 455 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-pas-de-sable-→-parking-aire-nez-de-boeuf" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:53:58</td><td>10.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:59:43</td><td>9.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:01:52</td><td>8.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:07:08</td><td>8.2 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:21:25</td><td>6.8 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:22:04</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:26:20</td><td>6.4 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:36:20</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:38:01</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:47:11</td><td>5.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-pas-de-sable-→-parking-aire-nez-de-boeuf')) {
+                        const table = $('#temps-pas-de-sable-→-parking-aire-nez-de-boeuf').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-pas-de-sable-→-parking-aire-nez-de-boeuf" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>30 → 24</td></tr><tr><td class="progression-positive">+2</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>8 → 4</td></tr><tr><td class="progression-positive">+3</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>32 → 29</td></tr><tr><td class="progression-positive">+4</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>36 → 34</td></tr><tr><td class="progression-positive">+5</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>3 → 2</td></tr><tr><td class="progression-positive">+6</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>102 → 101</td></tr><tr><td class="progression-positive">+7</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>4 → 6</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-6</td><td>47 → 53</td></tr><tr><td class="progression-positive">+10</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-7</td><td>29 → 36</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-pas-de-sable-→-parking-aire-nez-de-boeuf')) {
+                        const table = $('#progression-pas-de-sable-→-parking-aire-nez-de-boeuf').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Parking Aire Nez de Boeuf → Mare à Boue</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 10.4 km</div>
+                            <div>D+: 31 m</div>
+                            <div>D-: 453 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-parking-aire-nez-de-boeuf-→-mare-à-boue" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:50:11</td><td>12.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:52:27</td><td>11.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:57:02</td><td>10.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:03:41</td><td>9.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:05:59</td><td>9.5 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:06:30</td><td>9.4 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:08:10</td><td>9.2 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:09:29</td><td>9.0 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:13:14</td><td>8.5 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:13:41</td><td>8.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-parking-aire-nez-de-boeuf-→-mare-à-boue')) {
+                        const table = $('#temps-parking-aire-nez-de-boeuf-→-mare-à-boue').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-parking-aire-nez-de-boeuf-→-mare-à-boue" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+14</td><td>101 → 87</td></tr><tr><td class="progression-positive">+2</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+8</td><td>24 → 16</td></tr><tr><td class="progression-positive">+3</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+7</td><td>36 → 29</td></tr><tr><td class="progression-positive">+4</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>34 → 28</td></tr><tr><td class="progression-positive">+5</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>29 → 24</td></tr><tr><td class="progression-positive">+6</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>53 → 49</td></tr><tr><td class="progression-positive">+7</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>6 → 4</td></tr><tr><td class="progression-positive">+8</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>4 → 3</td></tr><tr><td class="progression-positive">+9</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+10</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-parking-aire-nez-de-boeuf-→-mare-à-boue')) {
+                        const table = $('#progression-parking-aire-nez-de-boeuf-→-mare-à-boue').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Mare à Boue → Coteaux Kerveguen</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 9.7 km</div>
+                            <div>D+: 650 m</div>
+                            <div>D-: 66 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-mare-à-boue-→-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:24:17</td><td>6.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:26:20</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>01:28:35</td><td>6.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:50:12</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:55:40</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:57:06</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:57:08</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:57:42</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:58:00</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:59:44</td><td>4.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-mare-à-boue-→-coteaux-kerveguen')) {
+                        const table = $('#temps-mare-à-boue-→-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-mare-à-boue-→-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+16</td><td>49 → 33</td></tr><tr><td class="progression-positive">+2</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+14</td><td>87 → 73</td></tr><tr><td class="progression-positive">+3</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>24 → 19</td></tr><tr><td class="progression-positive">+4</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>29 → 24</td></tr><tr><td class="progression-positive">+5</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>28 → 23</td></tr><tr><td class="progression-positive">+6</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>16 → 14</td></tr><tr><td class="progression-positive">+7</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+8</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+9</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+10</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-mare-à-boue-→-coteaux-kerveguen')) {
+                        const table = $('#progression-mare-à-boue-→-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Coteaux Kerveguen → Croisée coteaux Kerveguen</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.5 km</div>
+                            <div>D+: 316 m</div>
+                            <div>D-: 17 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:41:27</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:45:25</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:46:40</td><td>3.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>00:57:17</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>00:57:45</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>00:58:31</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>00:58:53</td><td>2.5 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>00:59:32</td><td>2.5 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:01:31</td><td>2.4 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:02:01</td><td>2.4 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen')) {
+                        const table = $('#temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+10</td><td>73 → 63</td></tr><tr><td class="progression-positive">+2</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>19 → 14</td></tr><tr><td class="progression-positive">+3</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>33 → 30</td></tr><tr><td class="progression-positive">+4</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>24 → 22</td></tr><tr><td class="progression-positive">+5</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>23 → 21</td></tr><tr><td class="progression-positive">+6</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>14 → 13</td></tr><tr><td class="progression-positive">+7</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+8</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+9</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+10</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen')) {
+                        const table = $('#progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Croisée coteaux Kerveguen → Le Bloc</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.0 km</div>
+                            <div>D+: 15 m</div>
+                            <div>D-: 1113 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-croisée-coteaux-kerveguen-→-le-bloc" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:43:04</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:44:04</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>00:44:44</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:45:29</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>00:46:12</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>00:51:04</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>00:52:07</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:01:34</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:04:51</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:05:36</td><td>3.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-croisée-coteaux-kerveguen-→-le-bloc')) {
+                        const table = $('#temps-croisée-coteaux-kerveguen-→-le-bloc').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-croisée-coteaux-kerveguen-→-le-bloc" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+20</td><td>63 → 43</td></tr><tr><td class="progression-positive">+2</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+8</td><td>22 → 14</td></tr><tr><td class="progression-positive">+3</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>30 → 24</td></tr><tr><td class="progression-positive">+4</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>13 → 11</td></tr><tr><td class="progression-positive">+5</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>21 → 20</td></tr><tr><td class="progression-positive">+6</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+7</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+8</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+9</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+10</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>14 → 16</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-croisée-coteaux-kerveguen-→-le-bloc')) {
+                        const table = $('#progression-croisée-coteaux-kerveguen-→-le-bloc').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Bloc → Cilaos (Stade)</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.5 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 171 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-bloc-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:29:49</td><td>9.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:30:45</td><td>8.8 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:32:51</td><td>8.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>00:35:24</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>00:37:36</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>00:39:50</td><td>6.8 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>00:42:38</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>00:42:41</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>00:48:02</td><td>5.6 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-bloc-→-cilaos-(stade)')) {
+                        const table = $('#temps-le-bloc-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-bloc-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>20 → 18</td></tr><tr><td class="progression-positive">+2</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>24 → 22</td></tr><tr><td class="progression-positive">+3</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>14 → 13</td></tr><tr><td class="progression-positive">+4</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+5</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+6</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+7</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>11 → 11</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+9</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>0</td><td>16 → 16</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-bloc-→-cilaos-(stade)')) {
+                        const table = $('#progression-le-bloc-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Cilaos (Stade) → Sentier Taïbit</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.9 km</div>
+                            <div>D+: 518 m</div>
+                            <div>D-: 474 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-cilaos-(stade)-→-sentier-taïbit" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>01:04:18</td><td>8.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:04:19</td><td>8.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:06:09</td><td>8.1 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:07:19</td><td>7.9 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:08:20</td><td>7.8 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:09:22</td><td>7.7 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:09:48</td><td>7.7 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:20:18</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:23:45</td><td>6.4 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:25:35</td><td>6.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-cilaos-(stade)-→-sentier-taïbit')) {
+                        const table = $('#temps-cilaos-(stade)-→-sentier-taïbit').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-cilaos-(stade)-→-sentier-taïbit" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+7</td><td>37 → 30</td></tr><tr><td class="progression-positive">+2</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>16 → 12</td></tr><tr><td class="progression-positive">+3</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>18 → 14</td></tr><tr><td class="progression-positive">+4</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>11 → 10</td></tr><tr><td class="progression-positive">+5</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+6</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+7</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>22 → 22</td></tr><tr><td class="progression-positive">+10</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>13 → 15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-cilaos-(stade)-→-sentier-taïbit')) {
+                        const table = $('#progression-cilaos-(stade)-→-sentier-taïbit').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Sentier Taïbit → Marla</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.9 km</div>
+                            <div>D+: 817 m</div>
+                            <div>D-: 450 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-sentier-taïbit-→-marla" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:06:46</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:08:13</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:08:40</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>01:08:43</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:13:01</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:13:18</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:13:43</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:21:39</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:24:52</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:30:26</td><td>3.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-sentier-taïbit-→-marla')) {
+                        const table = $('#temps-sentier-taïbit-→-marla').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-sentier-taïbit-→-marla" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>30 → 25</td></tr><tr><td class="progression-positive">+2</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>12 → 10</td></tr><tr><td class="progression-positive">+3</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>14 → 12</td></tr><tr><td class="progression-positive">+4</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>10 → 9</td></tr><tr><td class="progression-positive">+5</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>15 → 14</td></tr><tr><td class="progression-positive">+6</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+7</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+8</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+9</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>22 → 22</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-sentier-taïbit-→-marla')) {
+                        const table = $('#progression-sentier-taïbit-→-marla').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Marla → Plaine des Merles</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.6 km</div>
+                            <div>D+: 467 m</div>
+                            <div>D-: 282 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-marla-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:58:50</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:59:44</td><td>6.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:00:04</td><td>6.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:01:04</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:05:43</td><td>6.0 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:10:07</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:11:00</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:13:56</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:21:00</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:23:29</td><td>4.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-marla-→-plaine-des-merles')) {
+                        const table = $('#temps-marla-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-marla-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>25 → 19</td></tr><tr><td class="progression-positive">+2</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>10 → 9</td></tr><tr><td class="progression-positive">+3</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>14 → 13</td></tr><tr><td class="progression-positive">+4</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>12 → 11</td></tr><tr><td class="progression-positive">+5</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+6</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+7</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+9</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>9 → 10</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>22 → 23</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-marla-→-plaine-des-merles')) {
+                        const table = $('#progression-marla-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Plaine des Merles → Sentier Scout</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.2 km</div>
+                            <div>D+: 99 m</div>
+                            <div>D-: 251 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>00:12:24</td><td>10.6 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:12:44</td><td>10.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:13:23</td><td>9.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:14:09</td><td>9.3 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>00:15:17</td><td>8.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>00:15:24</td><td>8.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>00:16:30</td><td>8.0 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>00:17:09</td><td>7.7 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>00:17:37</td><td>7.5 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>00:20:13</td><td>6.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#temps-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>19 → 14</td></tr><tr><td class="progression-positive">+2</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>10 → 7</td></tr><tr><td class="progression-positive">+3</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>9 → 8</td></tr><tr><td class="progression-positive">+4</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+5</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+6</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+7</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+8</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>13 → 13</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>11 → 11</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>23 → 23</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#progression-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Sentier Scout → Aurère</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.7 km</div>
+                            <div>D+: 408 m</div>
+                            <div>D-: 1162 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:00:13</td><td>8.7 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>01:03:27</td><td>8.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:03:47</td><td>8.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:05:34</td><td>8.0 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:13:01</td><td>7.1 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:14:23</td><td>7.0 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:19:55</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:21:35</td><td>6.4 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:22:45</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:33:35</td><td>5.6 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-sentier-scout-→-aurère')) {
+                        const table = $('#temps-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>23 → 20</td></tr><tr><td class="progression-positive">+2</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>14 → 12</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>3 → 2</td></tr><tr><td class="progression-positive">+4</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>8 → 7</td></tr><tr><td class="progression-positive">+5</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>11 → 10</td></tr><tr><td class="progression-positive">+6</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+7</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+8</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>2 → 3</td></tr><tr><td class="progression-positive">+9</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>7 → 9</td></tr><tr><td class="progression-positive">+10</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>13 → 15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-sentier-scout-→-aurère')) {
+                        const table = $('#progression-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Aurère → Deux Bras</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.7 km</div>
+                            <div>D+: 193 m</div>
+                            <div>D-: 826 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-aurère-→-deux-bras" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:39:23</td><td>10.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>00:42:14</td><td>9.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:42:42</td><td>9.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:45:32</td><td>8.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>00:50:55</td><td>7.9 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>00:52:04</td><td>7.7 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>00:52:37</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>00:55:47</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>00:58:40</td><td>6.9 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:05:10</td><td>6.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-aurère-→-deux-bras')) {
+                        const table = $('#temps-aurère-→-deux-bras').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-aurère-→-deux-bras" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>20 → 18</td></tr><tr><td class="progression-positive">+2</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>12 → 11</td></tr><tr><td class="progression-positive">+3</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>10 → 9</td></tr><tr><td class="progression-positive">+4</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+5</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+6</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+7</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+8</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>0</td><td>7 → 7</td></tr><tr><td class="progression-positive">+9</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>15 → 15</td></tr><tr><td class="progression-positive">+10</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>9 → 10</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-aurère-→-deux-bras')) {
+                        const table = $('#progression-aurère-→-deux-bras').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Deux Bras → Dos d'Ane</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.1 km</div>
+                            <div>D+: 907 m</div>
+                            <div>D-: 306 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-deux-bras-→-dos-d'ane" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>01:05:09</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:10:21</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:16:18</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:17:37</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:17:49</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:24:58</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:31:43</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:36:36</td><td>3.2 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:38:15</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:38:28</td><td>3.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-deux-bras-→-dos-d'ane')) {
+                        const table = $('#temps-deux-bras-→-dos-d'ane').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-deux-bras-→-dos-d'ane" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>11 → 8</td></tr><tr><td class="progression-positive">+2</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>18 → 16</td></tr><tr><td class="progression-positive">+3</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>7 → 6</td></tr><tr><td class="progression-positive">+4</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>15 → 14</td></tr><tr><td class="progression-positive">+5</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+6</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+7</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>9 → 10</td></tr><tr><td class="progression-positive">+10</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>10 → 12</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-deux-bras-→-dos-d'ane')) {
+                        const table = $('#progression-deux-bras-→-dos-d'ane').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Dos d'Ane → Chemin Ratinaud</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 3.3 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 394 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-dos-d'ane-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:13:38</td><td>14.5 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:13:56</td><td>14.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:14:50</td><td>13.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>00:16:57</td><td>11.7 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>00:17:21</td><td>11.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>00:17:32</td><td>11.3 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>00:18:38</td><td>10.6 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>00:20:07</td><td>9.8 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>00:20:23</td><td>9.7 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>00:33:13</td><td>6.0 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-dos-d'ane-→-chemin-ratinaud')) {
+                        const table = $('#temps-dos-d'ane-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-dos-d'ane-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>12 → 10</td></tr><tr><td class="progression-positive">+2</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>8 → 7</td></tr><tr><td class="progression-positive">+3</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>14 → 13</td></tr><tr><td class="progression-positive">+4</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>10 → 9</td></tr><tr><td class="progression-positive">+5</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+6</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+7</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+9</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>0</td><td>6 → 6</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>16 → 16</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-dos-d'ane-→-chemin-ratinaud')) {
+                        const table = $('#progression-dos-d'ane-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Chemin Ratinaud → La possession</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.3 km</div>
+                            <div>D+: 131 m</div>
+                            <div>D-: 595 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:49:48</td><td>10.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:52:18</td><td>9.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:53:37</td><td>9.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:01:14</td><td>8.1 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:03:29</td><td>7.8 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:05:21</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:05:48</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:07:25</td><td>7.4 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:08:42</td><td>7.2 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:16:37</td><td>6.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#temps-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>10 → 8</td></tr><tr><td class="progression-positive">+2</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>13 → 11</td></tr><tr><td class="progression-positive">+3</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>3 → 2</td></tr><tr><td class="progression-positive">+4</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>7 → 6</td></tr><tr><td class="progression-positive">+5</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>6 → 5</td></tr><tr><td class="progression-positive">+6</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>16 → 15</td></tr><tr><td class="progression-positive">+7</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>9 → 9</td></tr><tr><td class="progression-positive">+10</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>2 → 3</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#progression-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">La possession → Grande Chaloupe</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 7.4 km</div>
+                            <div>D+: 293 m</div>
+                            <div>D-: 286 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:53:02</td><td>8.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:53:53</td><td>8.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>00:57:02</td><td>7.8 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:58:08</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:02:17</td><td>7.1 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:07:08</td><td>6.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:10:41</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:16:11</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:20:38</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>01:25:17</td><td>5.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-la-possession-→-grande-chaloupe')) {
+                        const table = $('#temps-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>11 → 8</td></tr><tr><td class="progression-positive">+2</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>15 → 13</td></tr><tr><td class="progression-positive">+3</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>6 → 5</td></tr><tr><td class="progression-positive">+4</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>8 → 7</td></tr><tr><td class="progression-positive">+5</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+6</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+7</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+8</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>9 → 9</td></tr><tr><td class="progression-positive">+10</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>5 → 6</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-la-possession-→-grande-chaloupe')) {
+                        const table = $('#progression-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grande Chaloupe → Le Colorado</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.5 km</div>
+                            <div>D+: 789 m</div>
+                            <div>D-: 126 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>01:13:56</td><td>6.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>01:22:54</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>01:23:30</td><td>6.1 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>01:26:26</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>01:35:06</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>01:52:47</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>01:58:57</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:59:33</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>02:00:51</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>02:17:22</td><td>3.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#temps-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>13 → 10</td></tr><tr><td class="progression-positive">+2</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>7 → 5</td></tr><tr><td class="progression-positive">+3</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>3 → 2</td></tr><tr><td class="progression-positive">+4</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>5 → 4</td></tr><tr><td class="progression-positive">+5</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+6</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>8 → 8</td></tr><tr><td class="progression-positive">+7</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>9 → 9</td></tr><tr><td class="progression-positive">+8</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>2 → 3</td></tr><tr><td class="progression-positive">+9</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>6 → 7</td></tr><tr><td class="progression-positive">+10</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>4 → 6</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#progression-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Colorado → St Denis La Redoute</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.2 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 627 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>00:31:09</td><td>8.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>00:36:25</td><td>6.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>00:42:18</td><td>6.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>00:42:56</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>00:44:08</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>00:49:43</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+7</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>00:50:44</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+8</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>00:55:13</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>01:02:15</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>01:20:53</td><td>3.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#temps-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8008</td><td>Yoann MARTIN (Relai 1)
+Jean-Philippe BOUL (Relai 2)
+Nicolas DRAPPIER (Relai 3)
+Lucas DESILVE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>1 → 1</td></tr><tr><td class="progression-positive">+2</td><td>8178</td><td>Victor DURANDE (Relai 1)
+Florian DURQUE (Relai 2)
+Mickael MAGALHAES (Relai 3)
+Gilles SENI (Relai 3)</td><td>Zembrocal</td><td>0</td><td>2 → 2</td></tr><tr><td class="progression-positive">+3</td><td>8157</td><td>Arthur CELLIÉ (Relai 1)
+Benjamin DEGRES (Relai 2)
+Aubin LOPEO (Relai 3)
+Grégory LAMOLY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>3 → 3</td></tr><tr><td class="progression-positive">+4</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>0</td><td>4 → 4</td></tr><tr><td class="progression-positive">+5</td><td>8067</td><td>Tiphane MARCHEGAY (Relai 1)
+Nicolas CADEDDU (Relai 2)
+François GOBARD (Relai 3)
+Victoria DEVOUGE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>5 → 5</td></tr><tr><td class="progression-positive">+6</td><td>8036</td><td>Jonathan OLIVIER (Relai 1)
+Timothée DAMOUR (Relai 2)
+Julien ELISABETH (Relai 3)
+Julien MOUTOUSSAMY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>6 → 6</td></tr><tr><td class="progression-positive">+7</td><td>8163</td><td>Claire CRIDELICH (Relai 1)
+Adeline VILLACAMPA (Relai 2)
+Sébastien BILOCQ (Relai 3)
+Florian DOUX (Relai 3)</td><td>Zembrocal</td><td>0</td><td>7 → 7</td></tr><tr><td class="progression-positive">+8</td><td>8149</td><td>Xena PAYET (Relai 1)
+Camille LAMBERT (Relai 2)
+Marie MANIERE (Relai 3)
+Claire TAURINES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>8 → 8</td></tr><tr><td class="progression-positive">+9</td><td>8004</td><td>Clément SORRES (Relai 1)
+Alain DESCORSIER (Relai 2)
+Étienne CHEFIARE (Relai 3)
+Jean-Marc JACQUES (Relai 3)</td><td>Zembrocal</td><td>0</td><td>9 → 9</td></tr><tr><td class="progression-positive">+10</td><td>8210</td><td>Mathilde LEPETIT (Relai 1)
+Judith CAMHI (Relai 2)
+Floriane SABATTE (Relai 3)
+Laurianne JOUFFREY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>10 → 10</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#progression-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Bloc → Plateau des chênes</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.1 km</div>
+                            <div>D+: 108 m</div>
+                            <div>D-: 116 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-bloc-→-plateau-des-chênes" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>00:20:06</td><td>6.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-bloc-→-plateau-des-chênes')) {
+                        const table = $('#temps-le-bloc-→-plateau-des-chênes').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-bloc-→-plateau-des-chênes" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+30</td><td>43 → 13</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-bloc-→-plateau-des-chênes')) {
+                        const table = $('#progression-le-bloc-→-plateau-des-chênes').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Plateau des chênes → Cilaos (Stade)</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.4 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 171 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-plateau-des-chênes-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td>00:15:14</td><td>9.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-plateau-des-chênes-→-cilaos-(stade)')) {
+                        const table = $('#temps-plateau-des-chênes-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-plateau-des-chênes-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8077</td><td>Salomé DROPSY (Relai 1)
+Anaïs PIETTRE (Relai 2)
+Axelle HENRY (Relai 3)
+Uhaina VERDIER (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-24</td><td>13 → 37</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-plateau-des-chênes-→-cilaos-(stade)')) {
+                        const table = $('#progression-plateau-des-chênes-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <script>
+                function toggleSection(header) {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.textContent = '▼';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.textContent = '▲';
+                        icon.classList.add('active');
+                    }
+                }
+
+                document.getElementById('courseSelect').addEventListener('change', function() {
+                    const course = this.value;
+                    const suffix = course === 'Toutes les courses' ? '' 
+                                 : '_' + course.toLowerCase().replace(/ /g, '_');
+                    window.location.href = `sections_analysis${suffix}.html`;
+                });
+            </script>
+        </body>
+        </html>
+        
