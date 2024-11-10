@@ -1,0 +1,531 @@
+
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Détails coureur 8184</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                :root {
+                    --primary-color: #2c3e50;
+                    --secondary-color: #34495e;
+                    --accent-color: #3498db;
+                    --light-bg: #f8f9fa;
+                    --success-color: #28a745;
+                    --danger-color: #dc3545;
+                    --warning-color: #ffc107;
+                }
+
+                body {
+                    background-color: #f5f6fa;
+                    color: var(--primary-color);
+                }
+
+                .header-section {
+                    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                    color: white;
+                    padding: 2rem 0;
+                    margin-bottom: 2rem;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                }
+
+                .info-card {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                }
+
+                .runner-info-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 1rem;
+                }
+
+                .info-item {
+                    padding: 1rem;
+                    border-radius: 8px;
+                    background-color: var(--light-bg);
+                }
+
+                .info-label {
+                    font-weight: 600;
+                    color: var(--secondary-color);
+                    margin-bottom: 0.5rem;
+                    font-size: 0.9rem;
+                }
+
+                .info-value {
+                    font-size: 1.1rem;
+                    color: var(--primary-color);
+                }
+
+                .back-button {
+                    background-color: white;
+                    color: var(--primary-color);
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 6px;
+                    text-decoration: none;
+                    transition: background-color 0.2s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                .back-button:hover {
+                    background-color: var(--light-bg);
+                    color: var(--accent-color);
+                    text-decoration: none;
+                }
+
+                .table {
+                    margin-top: 1rem;
+                    background-color: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+
+                .table thead th {
+                    background-color: var(--light-bg);
+                    color: var(--primary-color);
+                    font-weight: 600;
+                    white-space: nowrap;
+                }
+
+                .table tbody tr:hover {
+                    background-color: rgba(52, 152, 219, 0.05);
+                }
+
+                .section-title {
+                    color: var(--primary-color);
+                    font-weight: 600;
+                    margin-bottom: 1.2rem;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 2px solid var(--accent-color);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .positive-evolution { 
+                    color: var(--success-color);
+                    font-weight: 500;
+                }
+
+                .negative-evolution { 
+                    color: var(--danger-color);
+                    font-weight: 500;
+                }
+
+                .neutral-evolution {
+                    color: var(--secondary-color);
+                    font-weight: 500;
+                }
+
+                .status-badge {
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 50px;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    text-align: center;
+                }
+
+                .status-finisher {
+                    background-color: #d4edda;
+                    color: #155724;
+                }
+
+                .status-running {
+                    background-color: #cce5ff;
+                    color: #004085;
+                }
+
+                .status-dnf {
+                    background-color: #f8d7da;
+                    color: #721c24;
+                }
+
+                .status-dns {
+                    background-color: #e2e3e5;
+                    color: #383d41;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h2 class="mb-0">
+                                <i class="fas fa-user-runner"></i>
+                                Coureur 8184 - Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <a href="../index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> 
+                    Retour au tableau des coureurs
+                </a>
+
+                <div class="info-card">
+                    <h3 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Informations coureur
+                    </h3>
+                    <div class="runner-info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Course</div>
+                            <div class="info-value">Zembrocal</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Catégorie</div>
+                            <div class="info-value">Zembrocal</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">État</div>
+                            <div class="info-value">
+                                <span class="status-badge status-finisher">
+                                    Finisher
+                                </span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Temps</div>
+                            <div class="info-value">27h31</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Classement Général</div>
+                            <div class="info-value">15</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Classement Sexe</div>
+                            <div class="info-value">8</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Classement Catégorie</div>
+                            <div class="info-value">8</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Dénivelé total</div>
+                            <div class="info-value">D+ 8309m / D- 8283m</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="info-card">
+                    <h3 class="section-title">
+                        <i class="fas fa-flag-checkered"></i>
+                        Points de passage
+                    </h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Point</th>
+                                    <th>KM</th>
+                                    <th>Heure passage</th>
+                                    <th>Temps course</th>
+                                    <th>Vitesse</th>
+                                    <th>Vitesse effort</th>
+                                    <th>D+</th>
+                                    <th>D-</th>
+                                    <th>Class.</th>
+                                    <th>Évolution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+            
+                    <tr>
+                        <td>Saint Joseph</td>
+                        <td>0.0</td>
+                        <td>jeu. 17:00</td>
+                        <td>0:00:00</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>0m</td>
+                        <td>0m</td>
+                        <td>None</td>
+                        <td class="neutral-evolution">-</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Grand Galet Ecole</td>
+                        <td>14.2</td>
+                        <td>jeu. 18:33</td>
+                        <td>1:32:53</td>
+                        <td>9.2 km/h</td>
+                        <td>13.3 km/h</td>
+                        <td>644m</td>
+                        <td>179m</td>
+                        <td>45</td>
+                        <td class="neutral-evolution">-</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Pas de sable</td>
+                        <td>28.9</td>
+                        <td>jeu. 22:27</td>
+                        <td>5:26:50</td>
+                        <td>3.8 km/h</td>
+                        <td>8.6 km/h</td>
+                        <td>1888m</td>
+                        <td>50m</td>
+                        <td>52</td>
+                        <td class="negative-evolution">-7</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Parking Aire Nez de Boeuf</td>
+                        <td>38.1</td>
+                        <td>jeu. 23:56</td>
+                        <td>6:55:52</td>
+                        <td>6.2 km/h</td>
+                        <td>7.1 km/h</td>
+                        <td>143m</td>
+                        <td>455m</td>
+                        <td>50</td>
+                        <td class="positive-evolution">+2</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Mare à Boue</td>
+                        <td>48.5</td>
+                        <td>ven. 01:05</td>
+                        <td>8:05:10</td>
+                        <td>9 km/h</td>
+                        <td>9.2 km/h</td>
+                        <td>31m</td>
+                        <td>453m</td>
+                        <td>41</td>
+                        <td class="positive-evolution">+9</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Coteaux Kerveguen</td>
+                        <td>58.2</td>
+                        <td>ven. 03:04</td>
+                        <td>10:03:35</td>
+                        <td>4.9 km/h</td>
+                        <td>8.2 km/h</td>
+                        <td>650m</td>
+                        <td>66m</td>
+                        <td>28</td>
+                        <td class="positive-evolution">+13</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Croisée coteaux Kerveguen</td>
+                        <td>60.7</td>
+                        <td>ven. 04:06</td>
+                        <td>11:06:18</td>
+                        <td>2.4 km/h</td>
+                        <td>5.4 km/h</td>
+                        <td>316m</td>
+                        <td>17m</td>
+                        <td>28</td>
+                        <td class="neutral-evolution">-</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Le Bloc</td>
+                        <td>64.7</td>
+                        <td>ven. 05:02</td>
+                        <td>12:01:42</td>
+                        <td>4.4 km/h</td>
+                        <td>4.5 km/h</td>
+                        <td>15m</td>
+                        <td>1113m</td>
+                        <td>25</td>
+                        <td class="positive-evolution">+3</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Cilaos (Stade)</td>
+                        <td>69.2</td>
+                        <td>ven. 05:39</td>
+                        <td>12:38:41</td>
+                        <td>7.3 km/h</td>
+                        <td>9 km/h</td>
+                        <td>0m</td>
+                        <td>171m</td>
+                        <td>23</td>
+                        <td class="positive-evolution">+2</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Sentier Taïbit</td>
+                        <td>78.1</td>
+                        <td>ven. 06:54</td>
+                        <td>13:54:16</td>
+                        <td>7.1 km/h</td>
+                        <td>11.2 km/h</td>
+                        <td>518m</td>
+                        <td>474m</td>
+                        <td>18</td>
+                        <td class="positive-evolution">+5</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Marla</td>
+                        <td>84.0</td>
+                        <td>ven. 08:15</td>
+                        <td>15:15:28</td>
+                        <td>4.4 km/h</td>
+                        <td>10.4 km/h</td>
+                        <td>817m</td>
+                        <td>450m</td>
+                        <td>17</td>
+                        <td class="positive-evolution">+1</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Plaine des Merles</td>
+                        <td>90.6</td>
+                        <td>ven. 09:31</td>
+                        <td>16:30:32</td>
+                        <td>5.2 km/h</td>
+                        <td>9 km/h</td>
+                        <td>467m</td>
+                        <td>282m</td>
+                        <td>15</td>
+                        <td class="positive-evolution">+2</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Sentier Scout</td>
+                        <td>92.8</td>
+                        <td>ven. 09:51</td>
+                        <td>16:50:33</td>
+                        <td>6.4 km/h</td>
+                        <td>9.4 km/h</td>
+                        <td>99m</td>
+                        <td>251m</td>
+                        <td>17</td>
+                        <td class="negative-evolution">-2</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Aurère</td>
+                        <td>101.5</td>
+                        <td>ven. 11:04</td>
+                        <td>18:04:21</td>
+                        <td>7.1 km/h</td>
+                        <td>10.4 km/h</td>
+                        <td>408m</td>
+                        <td>1162m</td>
+                        <td>14</td>
+                        <td class="positive-evolution">+3</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Deux Bras</td>
+                        <td>108.2</td>
+                        <td>ven. 11:55</td>
+                        <td>18:55:27</td>
+                        <td>7.8 km/h</td>
+                        <td>10.1 km/h</td>
+                        <td>193m</td>
+                        <td>826m</td>
+                        <td>14</td>
+                        <td class="neutral-evolution">-</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Dos d'Ane</td>
+                        <td>113.3</td>
+                        <td>ven. 13:33</td>
+                        <td>20:33:12</td>
+                        <td>3.1 km/h</td>
+                        <td>8.7 km/h</td>
+                        <td>907m</td>
+                        <td>306m</td>
+                        <td>15</td>
+                        <td class="negative-evolution">-1</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Chemin Ratinaud</td>
+                        <td>116.6</td>
+                        <td>ven. 13:55</td>
+                        <td>20:54:38</td>
+                        <td>9.3 km/h</td>
+                        <td>9.3 km/h</td>
+                        <td>0m</td>
+                        <td>394m</td>
+                        <td>14</td>
+                        <td class="positive-evolution">+1</td>
+                    </tr>
+                
+                    <tr>
+                        <td>La possession</td>
+                        <td>124.9</td>
+                        <td>ven. 15:19</td>
+                        <td>22:19:11</td>
+                        <td>5.9 km/h</td>
+                        <td>6.8 km/h</td>
+                        <td>131m</td>
+                        <td>595m</td>
+                        <td>14</td>
+                        <td class="neutral-evolution">-</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Grande Chaloupe</td>
+                        <td>132.3</td>
+                        <td>ven. 16:44</td>
+                        <td>23:44:30</td>
+                        <td>5.2 km/h</td>
+                        <td>7.2 km/h</td>
+                        <td>293m</td>
+                        <td>286m</td>
+                        <td>14</td>
+                        <td class="neutral-evolution">-</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Le Colorado</td>
+                        <td>140.8</td>
+                        <td>ven. 19:08</td>
+                        <td>26:07:52</td>
+                        <td>3.6 km/h</td>
+                        <td>6.9 km/h</td>
+                        <td>789m</td>
+                        <td>126m</td>
+                        <td>12</td>
+                        <td class="positive-evolution">+2</td>
+                    </tr>
+                
+                    <tr>
+                        <td>St Denis La Redoute</td>
+                        <td>145.0</td>
+                        <td>ven. 20:31</td>
+                        <td>27:31:24</td>
+                        <td>3 km/h</td>
+                        <td>3 km/h</td>
+                        <td>0m</td>
+                        <td>627m</td>
+                        <td>15</td>
+                        <td class="negative-evolution">-3</td>
+                    </tr>
+                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+            </div>
+        </body>
+        </html>
+        
