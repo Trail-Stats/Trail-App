@@ -1,0 +1,293 @@
+
+        <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyses TOP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+                .progression-positive { color: green; }
+                .progression-negative { color: red; }
+                .sticky-controls {
+                    position: sticky;
+                    top: 0;
+                    background: white;
+                    padding: 1rem 0;
+                    z-index: 1000;
+                    border-bottom: 1px solid #dee2e6;
+                }
+                .card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
+                }
+                .card-title {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 0.5rem;
+                }
+                .list-unstyled strong {
+                    color: #2c3e50;
+                    display: block;
+                    margin-bottom: 0.25rem;
+                }
+                .text-muted {
+                    color: #6c757d !important;
+                }
+                .alert-info {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    border-radius: 4px;
+                }
+                .formula {
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    margin: 1rem 0;
+                }
+                @media print {
+                    .card { break-inside: avoid; }
+                    .no-print { display: none; }
+                }
+                .collapsible-header {
+                cursor: pointer;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s ease;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .collapsible-header:hover {
+                background-color: #e9ecef;
+            }
+            
+            .collapsible-content {
+                display: none;
+                padding: 1rem;
+            }
+            
+            .collapsible-header .toggle-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .collapsible-header.active .toggle-icon {
+                transform: rotate(180deg);
+            }
+            
+            .card-title {
+                margin-bottom: 0 !important;
+            }
+            
+            .header-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+                
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="sticky-controls">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                        </div>
+                        <div class="col">
+                            <h2 class="mb-0">Top Descendeurs</h2>
+                        </div>
+                        <div class="col-auto">
+                            <select id="courseSelect" class="form-select">
+        <option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" selected>Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Toutes les courses" >Toutes les courses</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" >Zembrocal</option>
+                                    </select>
+                                    <script>
+                                        document.getElementById('courseSelect').addEventListener('change', function() {
+                                            changeCourse(this.value);
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                
+                <div class="container-fluid mb-4">
+            <div class="card">
+                <div class="collapsible-header" onclick="toggleSection(this)">
+                    <h3 class="card-title mb-0" style="font-size: 14px;">🏃 Comprendre la Vitesse Effort</h3>
+
+                            <span class="toggle-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="card-body">
+                        <div class="row">
+                                <div class="col-md-6">
+                                    <h5>📊 Métriques analysées</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>D- total</strong><br>
+                                            <small class="text-muted">
+                                                Dénivelé négatif total accumulé sur la section
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Vitesse verticale</strong><br>
+                                            <small class="text-muted">
+                                                Vitesse de progression en descente (m/h) = D- / Temps
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Pente moyenne</strong><br>
+                                            <small class="text-muted">
+                                                Pourcentage moyen de la pente sur la section
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h5>💡 Interprétation</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>Vitesse verticale élevée</strong><br>
+                                            <small class="text-muted">
+                                                Indique une forte capacité technique en descente
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Pente et technique</strong><br>
+                                            <small class="text-muted">
+                                                La difficulté technique augmente avec la pente
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-info mt-3">
+                                <strong>📝 Note:</strong>
+                                <p class="mb-0">
+                                    L'analyse ne considère que les sections avec un dénivelé négatif significatif (>100m).
+                                    Les performances sont calculées sur des sections entières pour une meilleure représentativité.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <table id="analysisTable" class="table table-striped">
+                    <thead>
+                        <tr>
+        <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>D- total</th><th>Temps</th><th>Vitesse</th><th>Pente moy.</th><th>Tendance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr><td>1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>414m</td><td>00:23:18</td><td>1066.1 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>2</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>224m</td><td>00:14:24</td><td>933.3 m/h</td><td>10.2%</td><td>Plaine des Merles → Sentier Scout</td></tr><tr><td>3</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>414m</td><td>00:26:48</td><td>926.9 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>4</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>1064m</td><td>01:14:37</td><td>855.6 m/h</td><td>12.1%</td><td>Sentier Scout → Aurère</td></tr><tr><td>5</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>727m</td><td>00:51:41</td><td>844.0 m/h</td><td>11.4%</td><td>Aurère → Deux Bras</td></tr><tr><td>6</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>414m</td><td>00:30:29</td><td>814.9 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>7</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>414m</td><td>00:31:32</td><td>787.7 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>8</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>414m</td><td>00:32:59</td><td>753.1 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>9</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>414m</td><td>00:33:13</td><td>747.8 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>10</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>414m</td><td>00:35:15</td><td>704.7 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>11</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>414m</td><td>00:36:10</td><td>686.8 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>12</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>629m</td><td>00:56:00</td><td>673.9 m/h</td><td>13.7%</td><td>Le Colorado → St Denis La Redoute</td></tr><tr><td>13</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>1064m</td><td>01:35:15</td><td>670.2 m/h</td><td>12.1%</td><td>Sentier Scout → Aurère</td></tr><tr><td>14</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>414m</td><td>00:37:12</td><td>667.7 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>15</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>629m</td><td>00:57:03</td><td>661.5 m/h</td><td>13.7%</td><td>Le Colorado → St Denis La Redoute</td></tr><tr><td>16</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>727m</td><td>01:06:10</td><td>659.2 m/h</td><td>11.4%</td><td>Aurère → Deux Bras</td></tr><tr><td>17</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>1064m</td><td>01:37:32</td><td>654.5 m/h</td><td>12.1%</td><td>Sentier Scout → Aurère</td></tr><tr><td>18</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>414m</td><td>00:38:00</td><td>653.7 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>19</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>414m</td><td>00:39:08</td><td>634.8 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr><tr><td>20</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>414m</td><td>00:39:24</td><td>630.5 m/h</td><td>12.2%</td><td>Dos d'Ane → Chemin Ratinaud</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                function changeCourse(course) {
+                    const currentPath = window.location.pathname;
+                    const basePath = currentPath.split('/').slice(0, -1).join('/');
+                    const currentFile = currentPath.split('/').pop();
+
+                    const pageTypes = {
+                        'vitesse_moyenne': 'vitesse_moyenne',
+                        'vitesse_effort': 'vitesse_effort',
+                        'vitesse_sections': 'vitesse_sections',
+                        'vitesse_regularite': 'vitesse_regularite',
+                        'progression_globale': 'progression_globale',
+                        'progression_sections': 'progression_sections',
+                        'depart_explosif': 'depart_explosif',
+                        'finish_explosif': 'finish_explosif',
+                        'grimpeurs': 'grimpeurs',
+                        'descendeurs': 'descendeurs'
+                    };
+
+                    let pageType = '';
+                    for (const type in pageTypes) {
+                        if (currentFile.startsWith(type)) {
+                            pageType = type;
+                            break;
+                        }
+                    }
+
+                    if (!pageType) {
+                        console.error('Type de page non reconnu:', currentFile);
+                        return;
+                    }
+
+                    let newPage;
+                    if (course === "Toutes les courses") {
+                        newPage = `${pageType}.html`;
+                    } else {
+                        const normalizedCourse = course.toLowerCase()
+                            .replace(/ /g, '_')
+                            .normalize('NFD')
+                            .replace(/[̀-ͯ]/g, '');
+                        newPage = `${pageType}_${normalizedCourse}.html`;
+                    }
+
+                    window.location.href = `${basePath}/${newPage}`;
+                }
+
+                $(document).ready(function() {
+                    const table = $('#analysisTable').DataTable({
+                        "pageLength": 20,
+                        "lengthMenu": [20],
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                        },
+                        "order": [[0, "asc"]],
+                        "dom": 'rt<"bottom"ip>',
+                        "columnDefs": [{
+                            "targets": "_all",
+                            "render": function(data, type, row) {
+                                if (type === 'sort') {
+                                    // Retirer les unités et symboles pour le tri
+                                    return data.replace(/[^\d.-]/g, '');
+                                }
+                                return data;
+                            }
+                        }]
+                    });
+                });
+                function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                localStorage.setItem(header.textContent.trim(), 'closed');
+            } else {
+                content.style.display = 'block';
+                localStorage.setItem(header.textContent.trim(), 'open');
+            }
+        }
+        
+        // Restaurer l'état des sections au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                const state = localStorage.getItem(header.textContent.trim());
+                
+                if (state === 'open') {
+                    header.classList.add('active');
+                    content.style.display = 'block';
+                }
+            });
+        });
+            </script>
+        </body>
+        </html>
+    

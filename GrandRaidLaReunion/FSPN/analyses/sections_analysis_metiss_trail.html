@@ -1,0 +1,785 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Analyse des sections - Metiss Trail</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    margin-bottom: 1rem;
+                    border: 1px solid #dee2e6;
+                    border-radius: 0.25rem;
+                }
+                .section-header {
+                    padding: 1rem;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .section-content {
+                    display: none;
+                    padding: 1rem;
+                }
+                .section-info {
+                    display: flex;
+                    gap: 2rem;
+                    color: #666;
+                    margin: 1rem 0;
+                }
+                .toggle-icon { 
+                    font-size: 1.2rem;
+                    transition: transform 0.3s;
+                }
+                .toggle-icon.active {
+                    transform: rotate(180deg);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <h1 class="mb-4">Analyse des sections - Metiss Trail</h1>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-4">
+                    <label for="courseSelect" class="form-label">Sélectionner une course:</label>
+                    <select id="courseSelect" class="form-select" style="width: auto;">
+        <option value="Toutes les courses" >Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" >Mascareignes</option><option value="Metiss Trail" selected>Metiss Trail</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" >Zembrocal</option>
+                    </select>
+                </div>
+        
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Saint Paul → Ecole Bellemène</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.9 km</div>
+                            <div>D+: 406 m</div>
+                            <div>D-: 7 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-saint-paul-→-ecole-bellemène" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>00:56:39</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>00:57:29</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>00:57:32</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>01:01:22</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>01:01:52</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td>01:11:46</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7445</td><td>Thierry HOAREAU</td><td>Metiss Trail</td><td>01:12:19</td><td>4.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-saint-paul-→-ecole-bellemène')) {
+                        const table = $('#temps-saint-paul-→-ecole-bellemène').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-saint-paul-→-ecole-bellemène" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>0</td><td>0 → 245</td></tr><tr><td class="progression-positive">+2</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>0</td><td>0 → 272</td></tr><tr><td class="progression-positive">+3</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>0</td><td>0 → 356</td></tr><tr><td class="progression-positive">+4</td><td>7445</td><td>Thierry HOAREAU</td><td>Metiss Trail</td><td>0</td><td>0 → 486</td></tr><tr><td class="progression-positive">+5</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>0</td><td>0 → 362</td></tr><tr><td class="progression-positive">+6</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>0</td><td>0 → 271</td></tr><tr><td class="progression-positive">+7</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td>0</td><td>0 → 482</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-saint-paul-→-ecole-bellemène')) {
+                        const table = $('#progression-saint-paul-→-ecole-bellemène').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Ecole Bellemène → Ilet Savannah</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 9.5 km</div>
+                            <div>D+: 200 m</div>
+                            <div>D-: 480 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-ecole-bellemène-→-ilet-savannah" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>01:17:06</td><td>7.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>01:20:37</td><td>7.1 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>01:21:52</td><td>7.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>01:22:13</td><td>6.9 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>01:26:27</td><td>6.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td>01:42:39</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>7445</td><td>Thierry HOAREAU</td><td>Metiss Trail</td><td>01:54:58</td><td>5.0 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-ecole-bellemène-→-ilet-savannah')) {
+                        const table = $('#temps-ecole-bellemène-→-ilet-savannah').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-ecole-bellemène-→-ilet-savannah" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td class="progression-positive">+39</td><td>362 → 323</td></tr><tr><td class="progression-positive">+2</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td class="progression-positive">+37</td><td>245 → 208</td></tr><tr><td class="progression-positive">+3</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td class="progression-positive">+17</td><td>272 → 255</td></tr><tr><td class="progression-positive">+4</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+10</td><td>482 → 472</td></tr><tr><td class="progression-positive">+5</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td class="progression-positive">+3</td><td>271 → 268</td></tr><tr><td class="progression-positive">+6</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>0</td><td>356 → 356</td></tr><tr><td class="progression-positive">+7</td><td>7445</td><td>Thierry HOAREAU</td><td>Metiss Trail</td><td class="progression-negative">-7</td><td>486 → 493</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-ecole-bellemène-→-ilet-savannah')) {
+                        const table = $('#progression-ecole-bellemène-→-ilet-savannah').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Ilet Savannah → Chemin Ratinaud</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.6 km</div>
+                            <div>D+: 612 m</div>
+                            <div>D-: 266 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-ilet-savannah-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>01:42:05</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>01:45:41</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>01:50:33</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>01:51:39</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>01:56:46</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td>02:25:47</td><td>2.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-ilet-savannah-→-chemin-ratinaud')) {
+                        const table = $('#temps-ilet-savannah-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-ilet-savannah-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td class="progression-positive">+45</td><td>255 → 210</td></tr><tr><td class="progression-positive">+2</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td class="progression-positive">+39</td><td>323 → 284</td></tr><tr><td class="progression-positive">+3</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td class="progression-positive">+17</td><td>356 → 339</td></tr><tr><td class="progression-positive">+4</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>472 → 464</td></tr><tr><td class="progression-positive">+5</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td class="progression-positive">+4</td><td>268 → 264</td></tr><tr><td class="progression-positive">+6</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td class="progression-positive">+1</td><td>208 → 207</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-ilet-savannah-→-chemin-ratinaud')) {
+                        const table = $('#progression-ilet-savannah-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Chemin Ratinaud → La possession</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.1 km</div>
+                            <div>D+: 195 m</div>
+                            <div>D-: 662 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>01:49:20</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>02:03:31</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>02:14:41</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>02:20:19</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>02:28:12</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td>02:52:10</td><td>2.8 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#temps-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td class="progression-positive">+23</td><td>284 → 261</td></tr><tr><td class="progression-positive">+2</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td class="progression-negative">-12</td><td>464 → 476</td></tr><tr><td class="progression-positive">+3</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td class="progression-negative">-48</td><td>210 → 258</td></tr><tr><td class="progression-positive">+4</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td class="progression-negative">-49</td><td>339 → 388</td></tr><tr><td class="progression-positive">+5</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td class="progression-negative">-68</td><td>264 → 332</td></tr><tr><td class="progression-positive">+6</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td class="progression-negative">-103</td><td>207 → 310</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#progression-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">La possession → Grande Chaloupe</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 7.0 km</div>
+                            <div>D+: 339 m</div>
+                            <div>D-: 333 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>01:38:41</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>01:52:55</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>01:57:55</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>01:59:19</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>02:20:43</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+6</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td>03:22:38</td><td>2.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-la-possession-→-grande-chaloupe')) {
+                        const table = $('#temps-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td class="progression-positive">+57</td><td>258 → 201</td></tr><tr><td class="progression-positive">+2</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td class="progression-positive">+53</td><td>388 → 335</td></tr><tr><td class="progression-positive">+3</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td class="progression-positive">+40</td><td>332 → 292</td></tr><tr><td class="progression-positive">+4</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td class="progression-positive">+36</td><td>310 → 274</td></tr><tr><td class="progression-positive">+5</td><td>7146</td><td>Carine RIVIERE</td><td>Metiss Trail</td><td class="progression-positive">+7</td><td>476 → 469</td></tr><tr><td class="progression-positive">+6</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td class="progression-negative">-30</td><td>261 → 291</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-la-possession-→-grande-chaloupe')) {
+                        const table = $('#progression-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grande Chaloupe → Le Colorado</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.1 km</div>
+                            <div>D+: 819 m</div>
+                            <div>D-: 147 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>02:04:37</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>02:20:02</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>02:31:57</td><td>3.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>02:35:13</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>02:38:29</td><td>3.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#temps-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td class="progression-positive">+66</td><td>274 → 208</td></tr><tr><td class="progression-positive">+2</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td class="progression-positive">+47</td><td>291 → 244</td></tr><tr><td class="progression-positive">+3</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td class="progression-positive">+21</td><td>292 → 271</td></tr><tr><td class="progression-positive">+4</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td class="progression-positive">+19</td><td>335 → 316</td></tr><tr><td class="progression-positive">+5</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td class="progression-negative">-5</td><td>201 → 206</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#progression-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Colorado → St Denis La Redoute</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.3 km</div>
+                            <div>D+: 28 m</div>
+                            <div>D-: 661 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td>01:00:50</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td>01:10:57</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td>01:15:38</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td>01:26:57</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+5</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td>01:42:52</td><td>2.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#temps-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>7344</td><td>Luciano BUNDY</td><td>Metiss Trail</td><td class="progression-positive">+23</td><td>208 → 185</td></tr><tr><td class="progression-positive">+2</td><td>7407</td><td>Bruno VAVELIN</td><td>Metiss Trail</td><td class="progression-positive">+17</td><td>271 → 254</td></tr><tr><td class="progression-positive">+3</td><td>7219</td><td>Roland CARPAYE</td><td>Metiss Trail</td><td class="progression-positive">+8</td><td>206 → 198</td></tr><tr><td class="progression-positive">+4</td><td>7017</td><td>Anne POTIGNON</td><td>Metiss Trail</td><td class="progression-negative">-8</td><td>244 → 252</td></tr><tr><td class="progression-positive">+5</td><td>7042</td><td>Karine ESPARON</td><td>Metiss Trail</td><td class="progression-negative">-17</td><td>316 → 333</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#progression-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <script>
+                function toggleSection(header) {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.textContent = '▼';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.textContent = '▲';
+                        icon.classList.add('active');
+                    }
+                }
+
+                document.getElementById('courseSelect').addEventListener('change', function() {
+                    const course = this.value;
+                    const suffix = course === 'Toutes les courses' ? '' 
+                                 : '_' + course.toLowerCase().replace(/ /g, '_');
+                    window.location.href = `sections_analysis${suffix}.html`;
+                });
+            </script>
+        </body>
+        </html>
+        

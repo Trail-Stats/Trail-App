@@ -1,0 +1,1085 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Analyse des sections - Mascareignes</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    margin-bottom: 1rem;
+                    border: 1px solid #dee2e6;
+                    border-radius: 0.25rem;
+                }
+                .section-header {
+                    padding: 1rem;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .section-content {
+                    display: none;
+                    padding: 1rem;
+                }
+                .section-info {
+                    display: flex;
+                    gap: 2rem;
+                    color: #666;
+                    margin: 1rem 0;
+                }
+                .toggle-icon { 
+                    font-size: 1.2rem;
+                    transition: transform 0.3s;
+                }
+                .toggle-icon.active {
+                    transform: rotate(180deg);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <h1 class="mb-4">Analyse des sections - Mascareignes</h1>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-4">
+                    <label for="courseSelect" class="form-label">Sélectionner une course:</label>
+                    <select id="courseSelect" class="form-select" style="width: auto;">
+        <option value="Toutes les courses" >Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" selected>Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" >Zembrocal</option>
+                    </select>
+                </div>
+        
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Hell-Bourg → Plaine des Merles</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 15.9 km</div>
+                            <div>D+: 1304 m</div>
+                            <div>D-: 492 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-hell-bourg-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>02:17:05</td><td>7.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>02:52:35</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>02:58:23</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>03:14:44</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>03:15:42</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>03:18:01</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+7</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>03:18:37</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>03:20:54</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>03:29:53</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+10</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td>03:35:20</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+11</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>03:43:24</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+12</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>03:52:08</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+13</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>03:56:10</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+14</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>03:57:04</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>04:06:34</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+16</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td>04:08:40</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+17</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>04:28:19</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+18</td><td>4557</td><td>Ludovic FIORE</td><td>Mascareignes</td><td>04:31:09</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+19</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>04:34:18</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+20</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>04:35:03</td><td>3.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-hell-bourg-→-plaine-des-merles')) {
+                        const table = $('#temps-hell-bourg-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-hell-bourg-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>0</td><td>0 → 1245</td></tr><tr><td class="progression-positive">+2</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>0</td><td>0 → 1193</td></tr><tr><td class="progression-positive">+3</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>0</td><td>0 → 905</td></tr><tr><td class="progression-positive">+4</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>0</td><td>0 → 860</td></tr><tr><td class="progression-positive">+5</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>0</td><td>0 → 787</td></tr><tr><td class="progression-positive">+6</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>0</td><td>0 → 512</td></tr><tr><td class="progression-positive">+7</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>0</td><td>0 → 813</td></tr><tr><td class="progression-positive">+8</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>0</td><td>0 → 421</td></tr><tr><td class="progression-positive">+9</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>0</td><td>0 → 1279</td></tr><tr><td class="progression-positive">+10</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td>0</td><td>0 → 1110</td></tr><tr><td class="progression-positive">+11</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>0</td><td>0 → 1266</td></tr><tr><td class="progression-positive">+12</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>0</td><td>0 → 1040</td></tr><tr><td class="progression-positive">+13</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td>0</td><td>0 → 1371</td></tr><tr><td class="progression-positive">+14</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>0</td><td>0 → 1353</td></tr><tr><td class="progression-positive">+15</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>0</td><td>0 → 88</td></tr><tr><td class="progression-positive">+16</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>0</td><td>0 → 850</td></tr><tr><td class="progression-positive">+17</td><td>4557</td><td>Ludovic FIORE</td><td>Mascareignes</td><td>0</td><td>0 → 1472</td></tr><tr><td class="progression-positive">+18</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>0</td><td>0 → 1466</td></tr><tr><td class="progression-positive">+19</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>0</td><td>0 → 1484</td></tr><tr><td class="progression-positive">+20</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>0</td><td>0 → 1480</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-hell-bourg-→-plaine-des-merles')) {
+                        const table = $('#progression-hell-bourg-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Plaine des Merles → Sentier Scout</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.2 km</div>
+                            <div>D+: 48 m</div>
+                            <div>D-: 224 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>00:14:24</td><td>9.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>00:24:47</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>00:25:35</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>00:26:00</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>00:26:21</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+6</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>00:26:24</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+7</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>00:26:55</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td>00:27:04</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>00:27:32</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+10</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>00:28:12</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+11</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>00:29:35</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+12</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>00:29:39</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+13</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>00:30:13</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+14</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>00:32:12</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>00:33:35</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+16</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>00:33:50</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+17</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td>00:35:31</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+18</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>00:36:10</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+19</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>00:39:16</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+20</td><td>4557</td><td>Ludovic FIORE</td><td>Mascareignes</td><td>00:59:54</td><td>2.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#temps-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-positive">+99</td><td>1193 → 1094</td></tr><tr><td class="progression-positive">+2</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-positive">+92</td><td>860 → 768</td></tr><tr><td class="progression-positive">+3</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-positive">+66</td><td>1040 → 974</td></tr><tr><td class="progression-positive">+4</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td class="progression-positive">+64</td><td>1371 → 1307</td></tr><tr><td class="progression-positive">+5</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td class="progression-positive">+64</td><td>850 → 786</td></tr><tr><td class="progression-positive">+6</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td class="progression-positive">+62</td><td>787 → 725</td></tr><tr><td class="progression-positive">+7</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-positive">+51</td><td>1353 → 1302</td></tr><tr><td class="progression-positive">+8</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-positive">+43</td><td>1466 → 1423</td></tr><tr><td class="progression-positive">+9</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-positive">+40</td><td>905 → 865</td></tr><tr><td class="progression-positive">+10</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+40</td><td>1266 → 1226</td></tr><tr><td class="progression-positive">+11</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+19</td><td>1484 → 1465</td></tr><tr><td class="progression-positive">+12</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-positive">+17</td><td>88 → 71</td></tr><tr><td class="progression-positive">+13</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+17</td><td>1480 → 1463</td></tr><tr><td class="progression-positive">+14</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+6</td><td>421 → 415</td></tr><tr><td class="progression-positive">+15</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-positive">+4</td><td>512 → 508</td></tr><tr><td class="progression-positive">+16</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>0</td><td>1279 → 1279</td></tr><tr><td class="progression-positive">+17</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td>0</td><td>1110 → 1110</td></tr><tr><td class="progression-positive">+18</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td class="progression-negative">-10</td><td>1245 → 1255</td></tr><tr><td class="progression-positive">+19</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-10</td><td>813 → 823</td></tr><tr><td class="progression-positive">+20</td><td>4557</td><td>Ludovic FIORE</td><td>Mascareignes</td><td class="progression-negative">-30</td><td>1472 → 1502</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#progression-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Sentier Scout → Aurère</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.8 km</div>
+                            <div>D+: 345 m</div>
+                            <div>D-: 1064 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>01:14:37</td><td>7.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>01:35:15</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>01:37:32</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>01:41:37</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>01:45:54</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>01:48:16</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+7</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>01:49:29</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>01:51:25</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+9</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td>01:55:45</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+10</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>01:55:46</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+11</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>01:57:15</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+12</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>01:57:19</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+13</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>01:58:01</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+14</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>02:06:53</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+15</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>02:12:03</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+16</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>02:15:04</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+17</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>02:15:39</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+18</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>02:16:04</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+19</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td>02:21:50</td><td>3.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-sentier-scout-→-aurère')) {
+                        const table = $('#temps-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-positive">+94</td><td>1279 → 1185</td></tr><tr><td class="progression-positive">+2</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td class="progression-positive">+69</td><td>725 → 656</td></tr><tr><td class="progression-positive">+3</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+48</td><td>1226 → 1178</td></tr><tr><td class="progression-positive">+4</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-positive">+44</td><td>1302 → 1258</td></tr><tr><td class="progression-positive">+5</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+24</td><td>1465 → 1441</td></tr><tr><td class="progression-positive">+6</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+21</td><td>1463 → 1442</td></tr><tr><td class="progression-positive">+7</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-positive">+12</td><td>1423 → 1411</td></tr><tr><td class="progression-positive">+8</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+1</td><td>415 → 414</td></tr><tr><td class="progression-positive">+9</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td class="progression-negative">-5</td><td>1110 → 1115</td></tr><tr><td class="progression-positive">+10</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-negative">-5</td><td>71 → 76</td></tr><tr><td class="progression-positive">+11</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-8</td><td>823 → 831</td></tr><tr><td class="progression-positive">+12</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-13</td><td>768 → 781</td></tr><tr><td class="progression-positive">+13</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-negative">-18</td><td>508 → 526</td></tr><tr><td class="progression-positive">+14</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-negative">-24</td><td>1094 → 1118</td></tr><tr><td class="progression-positive">+15</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td class="progression-negative">-39</td><td>1255 → 1294</td></tr><tr><td class="progression-positive">+16</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-negative">-64</td><td>865 → 929</td></tr><tr><td class="progression-positive">+17</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td class="progression-negative">-79</td><td>1307 → 1386</td></tr><tr><td class="progression-positive">+18</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td class="progression-negative">-88</td><td>786 → 874</td></tr><tr><td class="progression-positive">+19</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-negative">-171</td><td>974 → 1145</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-sentier-scout-→-aurère')) {
+                        const table = $('#progression-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Aurère → Deux Bras</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.4 km</div>
+                            <div>D+: 74 m</div>
+                            <div>D-: 727 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-aurère-→-deux-bras" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>00:51:41</td><td>7.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>01:06:10</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>01:09:19</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>01:20:44</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>01:22:43</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>01:23:40</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+7</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>01:25:17</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>01:25:25</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>01:25:33</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+10</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>01:28:11</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+11</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>01:29:22</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+12</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>01:29:45</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+13</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>01:30:11</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+14</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>01:31:39</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>01:33:06</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+16</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td>01:35:08</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+17</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>01:40:26</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+18</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>01:40:32</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+19</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td>01:59:08</td><td>3.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-aurère-→-deux-bras')) {
+                        const table = $('#temps-aurère-→-deux-bras').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-aurère-→-deux-bras" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-positive">+78</td><td>1118 → 1040</td></tr><tr><td class="progression-positive">+2</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+77</td><td>1178 → 1101</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td class="progression-positive">+63</td><td>656 → 593</td></tr><tr><td class="progression-positive">+4</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-positive">+40</td><td>1258 → 1218</td></tr><tr><td class="progression-positive">+5</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-positive">+31</td><td>1185 → 1154</td></tr><tr><td class="progression-positive">+6</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-positive">+29</td><td>1145 → 1116</td></tr><tr><td class="progression-positive">+7</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-positive">+27</td><td>1411 → 1384</td></tr><tr><td class="progression-positive">+8</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td class="progression-positive">+24</td><td>1294 → 1270</td></tr><tr><td class="progression-positive">+9</td><td>3665</td><td>Yohan RIVIERE</td><td>Mascareignes</td><td class="progression-positive">+18</td><td>1386 → 1368</td></tr><tr><td class="progression-positive">+10</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+16</td><td>414 → 398</td></tr><tr><td class="progression-positive">+11</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-positive">+9</td><td>76 → 67</td></tr><tr><td class="progression-positive">+12</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+7</td><td>1442 → 1435</td></tr><tr><td class="progression-positive">+13</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+5</td><td>1441 → 1436</td></tr><tr><td class="progression-positive">+14</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-negative">-3</td><td>929 → 932</td></tr><tr><td class="progression-positive">+15</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-30</td><td>831 → 861</td></tr><tr><td class="progression-positive">+16</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-33</td><td>781 → 814</td></tr><tr><td class="progression-positive">+17</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td class="progression-negative">-57</td><td>874 → 931</td></tr><tr><td class="progression-positive">+18</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-negative">-117</td><td>526 → 643</td></tr><tr><td class="progression-positive">+19</td><td>4184</td><td>Laurent LOTHE</td><td>Mascareignes</td><td class="progression-negative">-121</td><td>1115 → 1236</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-aurère-→-deux-bras')) {
+                        const table = $('#progression-aurère-→-deux-bras').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Deux Bras → Dos d'Ane</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.7 km</div>
+                            <div>D+: 742 m</div>
+                            <div>D-: 140 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-deux-bras-→-dos-d'ane" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>01:29:21</td><td>3.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>01:32:45</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>01:52:10</td><td>2.5 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>01:55:16</td><td>2.4 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>01:57:14</td><td>2.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>02:05:28</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+7</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>02:05:50</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>02:06:00</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>02:06:43</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+10</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>02:09:10</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+11</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>02:14:01</td><td>2.1 km/h</td></tr><tr><td class="progression-positive">+12</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>02:16:51</td><td>2.1 km/h</td></tr><tr><td class="progression-positive">+13</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>02:17:39</td><td>2.0 km/h</td></tr><tr><td class="progression-positive">+14</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>02:18:29</td><td>2.0 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>02:18:30</td><td>2.0 km/h</td></tr><tr><td class="progression-positive">+16</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>02:39:07</td><td>1.8 km/h</td></tr><tr><td class="progression-positive">+17</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>02:39:14</td><td>1.8 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-deux-bras-→-dos-d'ane')) {
+                        const table = $('#temps-deux-bras-→-dos-d'ane').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-deux-bras-→-dos-d'ane" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-positive">+61</td><td>932 → 871</td></tr><tr><td class="progression-positive">+2</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-positive">+56</td><td>1116 → 1060</td></tr><tr><td class="progression-positive">+3</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+41</td><td>398 → 357</td></tr><tr><td class="progression-positive">+4</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-positive">+39</td><td>1154 → 1115</td></tr><tr><td class="progression-positive">+5</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+39</td><td>1436 → 1397</td></tr><tr><td class="progression-positive">+6</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+39</td><td>1435 → 1396</td></tr><tr><td class="progression-positive">+7</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-positive">+35</td><td>1218 → 1183</td></tr><tr><td class="progression-positive">+8</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-positive">+26</td><td>1040 → 1014</td></tr><tr><td class="progression-positive">+9</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td class="progression-positive">+12</td><td>931 → 919</td></tr><tr><td class="progression-positive">+10</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+4</td><td>1101 → 1097</td></tr><tr><td class="progression-positive">+11</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-positive">+3</td><td>643 → 640</td></tr><tr><td class="progression-positive">+12</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td class="progression-negative">-2</td><td>593 → 595</td></tr><tr><td class="progression-positive">+13</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-2</td><td>861 → 863</td></tr><tr><td class="progression-positive">+14</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-negative">-6</td><td>1384 → 1390</td></tr><tr><td class="progression-positive">+15</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-negative">-20</td><td>67 → 87</td></tr><tr><td class="progression-positive">+16</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-53</td><td>814 → 867</td></tr><tr><td class="progression-positive">+17</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td class="progression-negative">-58</td><td>1270 → 1328</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-deux-bras-→-dos-d'ane')) {
+                        const table = $('#progression-deux-bras-→-dos-d'ane').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Dos d'Ane → Chemin Ratinaud</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 3.4 km</div>
+                            <div>D+: 17 m</div>
+                            <div>D-: 414 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-dos-d'ane-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>00:23:18</td><td>8.8 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>00:26:48</td><td>7.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>00:30:29</td><td>6.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>00:31:32</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>00:32:59</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>00:33:13</td><td>6.1 km/h</td></tr><tr><td class="progression-positive">+7</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>00:35:15</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>00:36:10</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>00:37:12</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+10</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>00:38:00</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+11</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>00:39:08</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+12</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>00:39:24</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+13</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>00:41:43</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+14</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>00:42:43</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>00:42:55</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+16</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>00:42:57</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+17</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>00:43:47</td><td>4.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-dos-d'ane-→-chemin-ratinaud')) {
+                        const table = $('#temps-dos-d'ane-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-dos-d'ane-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+31</td><td>1097 → 1066</td></tr><tr><td class="progression-positive">+2</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-positive">+20</td><td>1115 → 1095</td></tr><tr><td class="progression-positive">+3</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-positive">+12</td><td>871 → 859</td></tr><tr><td class="progression-positive">+4</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-positive">+11</td><td>1390 → 1379</td></tr><tr><td class="progression-positive">+5</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td class="progression-positive">+9</td><td>1328 → 1319</td></tr><tr><td class="progression-positive">+6</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td class="progression-positive">+3</td><td>595 → 592</td></tr><tr><td class="progression-positive">+7</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-positive">+3</td><td>87 → 84</td></tr><tr><td class="progression-positive">+8</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+3</td><td>1397 → 1394</td></tr><tr><td class="progression-positive">+9</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+3</td><td>1396 → 1393</td></tr><tr><td class="progression-positive">+10</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-negative">-1</td><td>357 → 358</td></tr><tr><td class="progression-positive">+11</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-negative">-2</td><td>1014 → 1016</td></tr><tr><td class="progression-positive">+12</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td class="progression-negative">-4</td><td>919 → 923</td></tr><tr><td class="progression-positive">+13</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-negative">-8</td><td>1183 → 1191</td></tr><tr><td class="progression-positive">+14</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-9</td><td>863 → 872</td></tr><tr><td class="progression-positive">+15</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-negative">-10</td><td>640 → 650</td></tr><tr><td class="progression-positive">+16</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-negative">-21</td><td>1060 → 1081</td></tr><tr><td class="progression-positive">+17</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-30</td><td>867 → 897</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-dos-d'ane-→-chemin-ratinaud')) {
+                        const table = $('#progression-dos-d'ane-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Chemin Ratinaud → La possession</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.5 km</div>
+                            <div>D+: 189 m</div>
+                            <div>D-: 651 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>01:21:29</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>01:33:56</td><td>5.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>01:51:11</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>02:05:46</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>02:08:57</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>02:10:14</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+7</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>02:10:50</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>02:13:00</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>02:17:37</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+10</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td>02:20:53</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+11</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>02:20:57</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+12</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>02:26:04</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+13</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>02:26:17</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+14</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>02:30:02</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>02:39:55</td><td>3.2 km/h</td></tr><tr><td class="progression-positive">+16</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>02:49:38</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+17</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>03:09:01</td><td>2.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#temps-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+31</td><td>358 → 327</td></tr><tr><td class="progression-positive">+2</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+23</td><td>1394 → 1371</td></tr><tr><td class="progression-positive">+3</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+21</td><td>1393 → 1372</td></tr><tr><td class="progression-positive">+4</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-positive">+6</td><td>84 → 78</td></tr><tr><td class="progression-positive">+5</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-positive">+3</td><td>1379 → 1376</td></tr><tr><td class="progression-positive">+6</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>0</td><td>1016 → 1016</td></tr><tr><td class="progression-positive">+7</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>0</td><td>592 → 592</td></tr><tr><td class="progression-positive">+8</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-negative">-6</td><td>1081 → 1087</td></tr><tr><td class="progression-positive">+9</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-negative">-11</td><td>1191 → 1202</td></tr><tr><td class="progression-positive">+10</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-22</td><td>872 → 894</td></tr><tr><td class="progression-positive">+11</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-30</td><td>897 → 927</td></tr><tr><td class="progression-positive">+12</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-negative">-33</td><td>859 → 892</td></tr><tr><td class="progression-positive">+13</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-negative">-42</td><td>650 → 692</td></tr><tr><td class="progression-positive">+14</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td class="progression-negative">-45</td><td>1319 → 1364</td></tr><tr><td class="progression-positive">+15</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-negative">-50</td><td>1066 → 1116</td></tr><tr><td class="progression-positive">+16</td><td>3170</td><td>Daniel SAUTRON</td><td>Mascareignes</td><td class="progression-negative">-69</td><td>923 → 992</td></tr><tr><td class="progression-positive">+17</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-negative">-163</td><td>1095 → 1258</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#progression-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">La possession → Grande Chaloupe</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 7.4 km</div>
+                            <div>D+: 323 m</div>
+                            <div>D-: 316 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>01:26:46</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>01:32:49</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>01:34:52</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>01:44:22</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>01:46:42</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>01:51:59</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+7</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>02:00:06</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>02:05:15</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+9</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>02:07:00</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+10</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>02:07:14</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+11</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>02:13:29</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+12</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>02:15:20</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+13</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>02:17:24</td><td>3.2 km/h</td></tr><tr><td class="progression-positive">+14</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td>02:25:57</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>02:31:04</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+16</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>02:35:34</td><td>2.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-la-possession-→-grande-chaloupe')) {
+                        const table = $('#temps-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-positive">+114</td><td>1258 → 1144</td></tr><tr><td class="progression-positive">+2</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+110</td><td>1116 → 1006</td></tr><tr><td class="progression-positive">+3</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-positive">+91</td><td>892 → 801</td></tr><tr><td class="progression-positive">+4</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td class="progression-positive">+71</td><td>592 → 521</td></tr><tr><td class="progression-positive">+5</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-positive">+67</td><td>1087 → 1020</td></tr><tr><td class="progression-positive">+6</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+54</td><td>1372 → 1318</td></tr><tr><td class="progression-positive">+7</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+52</td><td>1371 → 1319</td></tr><tr><td class="progression-positive">+8</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-positive">+45</td><td>1376 → 1331</td></tr><tr><td class="progression-positive">+9</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-positive">+38</td><td>1016 → 978</td></tr><tr><td class="progression-positive">+10</td><td>4291</td><td>Alexandre APAYA GADABAYA</td><td>Mascareignes</td><td class="progression-positive">+30</td><td>1364 → 1334</td></tr><tr><td class="progression-positive">+11</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+22</td><td>327 → 305</td></tr><tr><td class="progression-positive">+12</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-negative">-3</td><td>78 → 81</td></tr><tr><td class="progression-positive">+13</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-10</td><td>927 → 937</td></tr><tr><td class="progression-positive">+14</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-negative">-11</td><td>1202 → 1213</td></tr><tr><td class="progression-positive">+15</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-negative">-29</td><td>692 → 721</td></tr><tr><td class="progression-positive">+16</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-83</td><td>894 → 977</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-la-possession-→-grande-chaloupe')) {
+                        const table = $('#progression-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grande Chaloupe → Le Colorado</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.5 km</div>
+                            <div>D+: 814 m</div>
+                            <div>D-: 142 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>02:01:51</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>02:03:16</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>02:14:36</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>02:45:01</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>02:45:58</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>02:50:05</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+7</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>02:50:47</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>02:52:08</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>02:56:19</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+10</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>02:58:17</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+11</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>02:58:33</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+12</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>02:59:46</td><td>2.8 km/h</td></tr><tr><td class="progression-positive">+13</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>03:09:41</td><td>2.7 km/h</td></tr><tr><td class="progression-positive">+14</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>03:10:09</td><td>2.7 km/h</td></tr><tr><td class="progression-positive">+15</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td>04:07:37</td><td>2.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#temps-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+56</td><td>1006 → 950</td></tr><tr><td class="progression-positive">+2</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-positive">+51</td><td>977 → 926</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td class="progression-positive">+50</td><td>521 → 471</td></tr><tr><td class="progression-positive">+4</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-positive">+49</td><td>1144 → 1095</td></tr><tr><td class="progression-positive">+5</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+38</td><td>1319 → 1281</td></tr><tr><td class="progression-positive">+6</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-positive">+36</td><td>1318 → 1282</td></tr><tr><td class="progression-positive">+7</td><td>4365</td><td>Annick VIRAMA</td><td>Mascareignes</td><td class="progression-positive">+32</td><td>1331 → 1299</td></tr><tr><td class="progression-positive">+8</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+26</td><td>305 → 279</td></tr><tr><td class="progression-positive">+9</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-positive">+17</td><td>1020 → 1003</td></tr><tr><td class="progression-positive">+10</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-positive">+13</td><td>978 → 965</td></tr><tr><td class="progression-positive">+11</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-positive">+6</td><td>801 → 795</td></tr><tr><td class="progression-positive">+12</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-positive">+1</td><td>1213 → 1212</td></tr><tr><td class="progression-positive">+13</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-negative">-13</td><td>81 → 94</td></tr><tr><td class="progression-positive">+14</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-25</td><td>937 → 962</td></tr><tr><td class="progression-positive">+15</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-negative">-38</td><td>721 → 759</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#progression-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Colorado → St Denis La Redoute</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.6 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 629 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td>00:56:00</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td>00:57:03</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+3</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>01:10:48</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td>01:31:02</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+5</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>01:33:49</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+6</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>01:33:53</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+7</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td>01:47:39</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+8</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td>01:57:59</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+9</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>01:58:15</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+10</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td>02:03:47</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+11</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td>02:06:32</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+12</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td>02:12:43</td><td>2.1 km/h</td></tr><tr><td class="progression-positive">+13</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td>03:26:49</td><td>1.3 km/h</td></tr><tr><td class="progression-positive">+14</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td>03:26:58</td><td>1.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#temps-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td class="progression-positive">+73</td><td>1095 → 1022</td></tr><tr><td class="progression-positive">+2</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td class="progression-positive">+41</td><td>950 → 909</td></tr><tr><td class="progression-positive">+3</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td class="progression-positive">+16</td><td>965 → 949</td></tr><tr><td class="progression-positive">+4</td><td>4309</td><td>David ROBERT</td><td>Mascareignes</td><td class="progression-positive">+13</td><td>1212 → 1199</td></tr><tr><td class="progression-positive">+5</td><td>4436</td><td>Julien HERVIO</td><td>Mascareignes</td><td class="progression-positive">+12</td><td>279 → 267</td></tr><tr><td class="progression-positive">+6</td><td>3061</td><td>Roland FIDJI</td><td>Mascareignes</td><td class="progression-positive">+3</td><td>759 → 756</td></tr><tr><td class="progression-positive">+7</td><td>3392</td><td>Muriel RISER</td><td>Mascareignes</td><td class="progression-positive">+1</td><td>1003 → 1002</td></tr><tr><td class="progression-positive">+8</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>0</td><td>471 → 471</td></tr><tr><td class="progression-positive">+9</td><td>4443</td><td>Alain FOISSARD</td><td>Mascareignes</td><td class="progression-negative">-2</td><td>1281 → 1283</td></tr><tr><td class="progression-positive">+10</td><td>4429</td><td>Karine FOISSARD</td><td>Mascareignes</td><td class="progression-negative">-2</td><td>1282 → 1284</td></tr><tr><td class="progression-positive">+11</td><td>4292</td><td>Jean-Willy ROUGET</td><td>Mascareignes</td><td class="progression-negative">-6</td><td>94 → 100</td></tr><tr><td class="progression-positive">+12</td><td>3367</td><td>Christophe BENOIT</td><td>Mascareignes</td><td class="progression-negative">-7</td><td>962 → 969</td></tr><tr><td class="progression-positive">+13</td><td>3692</td><td>Allison BARTHÉLEMY</td><td>Mascareignes</td><td class="progression-negative">-25</td><td>795 → 820</td></tr><tr><td class="progression-positive">+14</td><td>3151</td><td>Guillaume FOK YIN</td><td>Mascareignes</td><td class="progression-negative">-31</td><td>926 → 957</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#progression-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <script>
+                function toggleSection(header) {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.textContent = '▼';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.textContent = '▲';
+                        icon.classList.add('active');
+                    }
+                }
+
+                document.getElementById('courseSelect').addEventListener('change', function() {
+                    const course = this.value;
+                    const suffix = course === 'Toutes les courses' ? '' 
+                                 : '_' + course.toLowerCase().replace(/ /g, '_');
+                    window.location.href = `sections_analysis${suffix}.html`;
+                });
+            </script>
+        </body>
+        </html>
+        

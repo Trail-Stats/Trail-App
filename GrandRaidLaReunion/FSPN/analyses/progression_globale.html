@@ -1,0 +1,228 @@
+
+        <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyses TOP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+                .progression-positive { color: green; }
+                .progression-negative { color: red; }
+                .sticky-controls {
+                    position: sticky;
+                    top: 0;
+                    background: white;
+                    padding: 1rem 0;
+                    z-index: 1000;
+                    border-bottom: 1px solid #dee2e6;
+                }
+                .card {
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
+                }
+                .card-title {
+                    color: #2c3e50;
+                    border-bottom: 2px solid #3498db;
+                    padding-bottom: 0.5rem;
+                }
+                .list-unstyled strong {
+                    color: #2c3e50;
+                    display: block;
+                    margin-bottom: 0.25rem;
+                }
+                .text-muted {
+                    color: #6c757d !important;
+                }
+                .alert-info {
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                    border-radius: 4px;
+                }
+                .formula {
+                    background-color: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    font-family: monospace;
+                    margin: 1rem 0;
+                }
+                @media print {
+                    .card { break-inside: avoid; }
+                    .no-print { display: none; }
+                }
+                .collapsible-header {
+                cursor: pointer;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-radius: 8px 8px 0 0;
+                transition: background-color 0.3s ease;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .collapsible-header:hover {
+                background-color: #e9ecef;
+            }
+            
+            .collapsible-content {
+                display: none;
+                padding: 1rem;
+            }
+            
+            .collapsible-header .toggle-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .collapsible-header.active .toggle-icon {
+                transform: rotate(180deg);
+            }
+            
+            .card-title {
+                margin-bottom: 0 !important;
+            }
+            
+            .header-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+                
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="sticky-controls">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                        </div>
+                        <div class="col">
+                            <h2 class="mb-0">Progression Globale</h2>
+                        </div>
+                        <div class="col-auto">
+                            <select id="courseSelect" class="form-select">
+        <option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" >Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Toutes les courses" selected>Toutes les courses</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" >Zembrocal</option>
+                                    </select>
+                                    <script>
+                                        document.getElementById('courseSelect').addEventListener('change', function() {
+                                            changeCourse(this.value);
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                
+                <table id="analysisTable" class="table table-striped">
+                    <thead>
+                        <tr>
+        <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Pos. départ</th><th>Pos. finale</th><th>Progression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr><td>1</td><td>1998</td><td>Alexis DEVAUD</td><td>Diagonale des Fous</td><td>1950</td><td>877</td><td class="progression-positive">+1073</td></tr><tr><td>2</td><td>81</td><td>Guillaume BAERT</td><td>Diagonale des Fous</td><td>2507</td><td>1553</td><td class="progression-positive">+954</td></tr><tr><td>3</td><td>1113</td><td>Ludovic DALLEAU</td><td>Diagonale des Fous</td><td>2374</td><td>1570</td><td class="progression-positive">+804</td></tr><tr><td>4</td><td>2895</td><td>Yohan TECHER</td><td>Diagonale des Fous</td><td>1237</td><td>461</td><td class="progression-positive">+776</td></tr><tr><td>5</td><td>2862</td><td>Sébastien LEBON</td><td>Diagonale des Fous</td><td>2665</td><td>2012</td><td class="progression-positive">+653</td></tr><tr><td>6</td><td>2584</td><td>Raphael VIENNE</td><td>Diagonale des Fous</td><td>2360</td><td>1746</td><td class="progression-positive">+614</td></tr><tr><td>7</td><td>771</td><td>Sébastien LORTHIOIR</td><td>Diagonale des Fous</td><td>721</td><td>220</td><td class="progression-positive">+501</td></tr><tr><td>8</td><td>5052</td><td>Alexandre LORIOUX</td><td>Trail de Bourbon</td><td>826</td><td>336</td><td class="progression-positive">+490</td></tr><tr><td>9</td><td>3183</td><td>Cedric PAYET</td><td>Mascareignes</td><td>1266</td><td>909</td><td class="progression-positive">+357</td></tr><tr><td>10</td><td>1196</td><td>Johan LEPRETRE</td><td>Diagonale des Fous</td><td>1745</td><td>1412</td><td class="progression-positive">+333</td></tr><tr><td>11</td><td>1974</td><td>Henri FONTAINE</td><td>Diagonale des Fous</td><td>2533</td><td>2212</td><td class="progression-positive">+321</td></tr><tr><td>12</td><td>4191</td><td>Claudie BOILEAU</td><td>Mascareignes</td><td>787</td><td>471</td><td class="progression-positive">+316</td></tr><tr><td>13</td><td>2330</td><td>Pierre ENGELVIN</td><td>Diagonale des Fous</td><td>1006</td><td>710</td><td class="progression-positive">+296</td></tr><tr><td>14</td><td>1298</td><td>Julien POMA</td><td>Diagonale des Fous</td><td>2002</td><td>1715</td><td class="progression-positive">+287</td></tr><tr><td>15</td><td>260</td><td>Ricardo RAMACHETTY</td><td>Diagonale des Fous</td><td>874</td><td>606</td><td class="progression-positive">+268</td></tr><tr><td>16</td><td>1421</td><td>Christophe COLLIGNON</td><td>Diagonale des Fous</td><td>1264</td><td>998</td><td class="progression-positive">+266</td></tr><tr><td>17</td><td>86</td><td>Nicolas LALY</td><td>Diagonale des Fous</td><td>1121</td><td>859</td><td class="progression-positive">+262</td></tr><tr><td>18</td><td>3352</td><td>Nicolas JOSEPH</td><td>Mascareignes</td><td>1279</td><td>1022</td><td class="progression-positive">+257</td></tr><tr><td>19</td><td>1009</td><td>Florian DROMARD</td><td>Diagonale des Fous</td><td>1007</td><td>761</td><td class="progression-positive">+246</td></tr><tr><td>20</td><td>3713</td><td>Jainny ARTHUR</td><td>Mascareignes</td><td>1193</td><td>949</td><td class="progression-positive">+244</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                function changeCourse(course) {
+                    const currentPath = window.location.pathname;
+                    const basePath = currentPath.split('/').slice(0, -1).join('/');
+                    const currentFile = currentPath.split('/').pop();
+
+                    const pageTypes = {
+                        'vitesse_moyenne': 'vitesse_moyenne',
+                        'vitesse_effort': 'vitesse_effort',
+                        'vitesse_sections': 'vitesse_sections',
+                        'vitesse_regularite': 'vitesse_regularite',
+                        'progression_globale': 'progression_globale',
+                        'progression_sections': 'progression_sections',
+                        'depart_explosif': 'depart_explosif',
+                        'finish_explosif': 'finish_explosif',
+                        'grimpeurs': 'grimpeurs',
+                        'descendeurs': 'descendeurs'
+                    };
+
+                    let pageType = '';
+                    for (const type in pageTypes) {
+                        if (currentFile.startsWith(type)) {
+                            pageType = type;
+                            break;
+                        }
+                    }
+
+                    if (!pageType) {
+                        console.error('Type de page non reconnu:', currentFile);
+                        return;
+                    }
+
+                    let newPage;
+                    if (course === "Toutes les courses") {
+                        newPage = `${pageType}.html`;
+                    } else {
+                        const normalizedCourse = course.toLowerCase()
+                            .replace(/ /g, '_')
+                            .normalize('NFD')
+                            .replace(/[̀-ͯ]/g, '');
+                        newPage = `${pageType}_${normalizedCourse}.html`;
+                    }
+
+                    window.location.href = `${basePath}/${newPage}`;
+                }
+
+                $(document).ready(function() {
+                    const table = $('#analysisTable').DataTable({
+                        "pageLength": 20,
+                        "lengthMenu": [20],
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                        },
+                        "order": [[0, "asc"]],
+                        "dom": 'rt<"bottom"ip>',
+                        "columnDefs": [{
+                            "targets": "_all",
+                            "render": function(data, type, row) {
+                                if (type === 'sort') {
+                                    // Retirer les unités et symboles pour le tri
+                                    return data.replace(/[^\d.-]/g, '');
+                                }
+                                return data;
+                            }
+                        }]
+                    });
+                });
+                function toggleSection(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                localStorage.setItem(header.textContent.trim(), 'closed');
+            } else {
+                content.style.display = 'block';
+                localStorage.setItem(header.textContent.trim(), 'open');
+            }
+        }
+        
+        // Restaurer l'état des sections au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                const content = header.nextElementSibling;
+                const state = localStorage.getItem(header.textContent.trim());
+                
+                if (state === 'open') {
+                    header.classList.add('active');
+                    content.style.display = 'block';
+                }
+            });
+        });
+            </script>
+        </body>
+        </html>
+    

@@ -1,0 +1,3129 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Analyse des sections - Zembrocal</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    margin-bottom: 1rem;
+                    border: 1px solid #dee2e6;
+                    border-radius: 0.25rem;
+                }
+                .section-header {
+                    padding: 1rem;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .section-content {
+                    display: none;
+                    padding: 1rem;
+                }
+                .section-info {
+                    display: flex;
+                    gap: 2rem;
+                    color: #666;
+                    margin: 1rem 0;
+                }
+                .toggle-icon { 
+                    font-size: 1.2rem;
+                    transition: transform 0.3s;
+                }
+                .toggle-icon.active {
+                    transform: rotate(180deg);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <h1 class="mb-4">Analyse des sections - Zembrocal</h1>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-4">
+                    <label for="courseSelect" class="form-label">Sélectionner une course:</label>
+                    <select id="courseSelect" class="form-select" style="width: auto;">
+        <option value="Toutes les courses" >Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" >Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" selected>Zembrocal</option>
+                    </select>
+                </div>
+        
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Saint Joseph → Grand Galet Ecole</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 14.2 km</div>
+                            <div>D+: 644 m</div>
+                            <div>D-: 179 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-saint-joseph-→-grand-galet-ecole" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:27:42</td><td>9.7 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:32:53</td><td>9.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:36:17</td><td>8.8 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:46:00</td><td>8.0 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:49:43</td><td>7.8 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>02:18:13</td><td>6.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-saint-joseph-→-grand-galet-ecole')) {
+                        const table = $('#temps-saint-joseph-→-grand-galet-ecole').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-saint-joseph-→-grand-galet-ecole" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 214</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 28</td></tr><tr><td class="progression-positive">+3</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 45</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 108</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 131</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>0</td><td>0 → 56</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-saint-joseph-→-grand-galet-ecole')) {
+                        const table = $('#progression-saint-joseph-→-grand-galet-ecole').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grand Galet Ecole → Pas de sable</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 14.7 km</div>
+                            <div>D+: 1888 m</div>
+                            <div>D-: 50 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grand-galet-ecole-→-pas-de-sable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>03:53:57</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>03:55:49</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>03:56:59</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>04:01:17</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>04:21:14</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>04:49:19</td><td>3.0 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grand-galet-ecole-→-pas-de-sable')) {
+                        const table = $('#temps-grand-galet-ecole-→-pas-de-sable').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grand-galet-ecole-→-pas-de-sable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+36</td><td>108 → 72</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+29</td><td>214 → 185</td></tr><tr><td class="progression-positive">+3</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+13</td><td>131 → 118</td></tr><tr><td class="progression-positive">+4</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-3</td><td>56 → 59</td></tr><tr><td class="progression-positive">+5</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-7</td><td>45 → 52</td></tr><tr><td class="progression-positive">+6</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-27</td><td>28 → 55</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grand-galet-ecole-→-pas-de-sable')) {
+                        const table = $('#progression-grand-galet-ecole-→-pas-de-sable').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Pas de sable → Parking Aire Nez de Boeuf</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 9.2 km</div>
+                            <div>D+: 143 m</div>
+                            <div>D-: 455 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-pas-de-sable-→-parking-aire-nez-de-boeuf" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:15:59</td><td>7.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:25:20</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:29:02</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:55:18</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>02:01:52</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>03:12:03</td><td>2.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-pas-de-sable-→-parking-aire-nez-de-boeuf')) {
+                        const table = $('#temps-pas-de-sable-→-parking-aire-nez-de-boeuf').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-pas-de-sable-→-parking-aire-nez-de-boeuf" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+16</td><td>55 → 39</td></tr><tr><td class="progression-positive">+2</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+15</td><td>72 → 57</td></tr><tr><td class="progression-positive">+3</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>185 → 181</td></tr><tr><td class="progression-positive">+4</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>52 → 50</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-6</td><td>118 → 124</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-107</td><td>59 → 166</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-pas-de-sable-→-parking-aire-nez-de-boeuf')) {
+                        const table = $('#progression-pas-de-sable-→-parking-aire-nez-de-boeuf').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Parking Aire Nez de Boeuf → Mare à Boue</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 10.4 km</div>
+                            <div>D+: 31 m</div>
+                            <div>D-: 453 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-parking-aire-nez-de-boeuf-→-mare-à-boue" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:09:18</td><td>9.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:11:53</td><td>8.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:12:59</td><td>8.5 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:13:09</td><td>8.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:18:50</td><td>7.9 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:27:28</td><td>7.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-parking-aire-nez-de-boeuf-→-mare-à-boue')) {
+                        const table = $('#temps-parking-aire-nez-de-boeuf-→-mare-à-boue').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-parking-aire-nez-de-boeuf-→-mare-à-boue" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+19</td><td>166 → 147</td></tr><tr><td class="progression-positive">+2</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+9</td><td>50 → 41</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>39 → 33</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>57 → 51</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>124 → 118</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>181 → 176</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-parking-aire-nez-de-boeuf-→-mare-à-boue')) {
+                        const table = $('#progression-parking-aire-nez-de-boeuf-→-mare-à-boue').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Mare à Boue → Coteaux Kerveguen</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 9.7 km</div>
+                            <div>D+: 650 m</div>
+                            <div>D-: 66 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-mare-à-boue-→-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:58:25</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>02:00:00</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>02:06:30</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>02:12:23</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>02:14:57</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>02:29:40</td><td>3.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-mare-à-boue-→-coteaux-kerveguen')) {
+                        const table = $('#temps-mare-à-boue-→-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-mare-à-boue-→-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+19</td><td>118 → 99</td></tr><tr><td class="progression-positive">+2</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+16</td><td>147 → 131</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+14</td><td>51 → 37</td></tr><tr><td class="progression-positive">+4</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+13</td><td>41 → 28</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+7</td><td>176 → 169</td></tr><tr><td class="progression-positive">+6</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>33 → 31</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-mare-à-boue-→-coteaux-kerveguen')) {
+                        const table = $('#progression-mare-à-boue-→-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Coteaux Kerveguen → Croisée coteaux Kerveguen</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.5 km</div>
+                            <div>D+: 316 m</div>
+                            <div>D-: 17 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:02:43</td><td>2.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:03:23</td><td>2.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:05:18</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:08:30</td><td>2.2 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:09:53</td><td>2.1 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:10:39</td><td>2.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen')) {
+                        const table = $('#temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+16</td><td>99 → 83</td></tr><tr><td class="progression-positive">+2</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>131 → 126</td></tr><tr><td class="progression-positive">+3</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>169 → 169</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>0</td><td>31 → 31</td></tr><tr><td class="progression-positive">+5</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>0</td><td>28 → 28</td></tr><tr><td class="progression-positive">+6</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-4</td><td>37 → 41</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen')) {
+                        const table = $('#progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Croisée coteaux Kerveguen → Le Bloc</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.0 km</div>
+                            <div>D+: 15 m</div>
+                            <div>D-: 1113 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-croisée-coteaux-kerveguen-→-le-bloc" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>00:55:02</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>00:55:24</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:03:44</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:07:57</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:10:58</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:12:21</td><td>3.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-croisée-coteaux-kerveguen-→-le-bloc')) {
+                        const table = $('#temps-croisée-coteaux-kerveguen-→-le-bloc').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-croisée-coteaux-kerveguen-→-le-bloc" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+11</td><td>83 → 72</td></tr><tr><td class="progression-positive">+2</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+8</td><td>126 → 118</td></tr><tr><td class="progression-positive">+3</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+7</td><td>169 → 162</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>41 → 35</td></tr><tr><td class="progression-positive">+5</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>28 → 25</td></tr><tr><td class="progression-positive">+6</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>31 → 33</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-croisée-coteaux-kerveguen-→-le-bloc')) {
+                        const table = $('#progression-croisée-coteaux-kerveguen-→-le-bloc').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Bloc → Plateau des chênes</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.1 km</div>
+                            <div>D+: 108 m</div>
+                            <div>D-: 116 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-bloc-→-plateau-des-chênes" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>00:21:50</td><td>5.8 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>00:25:37</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>00:27:42</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>00:30:19</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>00:30:49</td><td>4.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-bloc-→-plateau-des-chênes')) {
+                        const table = $('#temps-le-bloc-→-plateau-des-chênes').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-bloc-→-plateau-des-chênes" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+29</td><td>118 → 89</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+27</td><td>162 → 135</td></tr><tr><td class="progression-positive">+3</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+26</td><td>72 → 46</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+25</td><td>33 → 8</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+18</td><td>35 → 17</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-bloc-→-plateau-des-chênes')) {
+                        const table = $('#progression-le-bloc-→-plateau-des-chênes').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Plateau des chênes → Cilaos (Stade)</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.4 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 171 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-plateau-des-chênes-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>00:15:10</td><td>9.5 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>00:16:39</td><td>8.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>00:16:54</td><td>8.5 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>00:19:12</td><td>7.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>00:20:35</td><td>7.0 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-plateau-des-chênes-→-cilaos-(stade)')) {
+                        const table = $('#temps-plateau-des-chênes-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-plateau-des-chênes-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-22</td><td>89 → 111</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-23</td><td>46 → 69</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-25</td><td>8 → 33</td></tr><tr><td class="progression-positive">+4</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-27</td><td>135 → 162</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-27</td><td>17 → 44</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-plateau-des-chênes-→-cilaos-(stade)')) {
+                        const table = $('#progression-plateau-des-chênes-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Cilaos (Stade) → Sentier Taïbit</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.9 km</div>
+                            <div>D+: 518 m</div>
+                            <div>D-: 474 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-cilaos-(stade)-→-sentier-taïbit" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:15:35</td><td>7.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:26:59</td><td>6.1 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:35:40</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:40:37</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:46:32</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:49:14</td><td>4.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-cilaos-(stade)-→-sentier-taïbit')) {
+                        const table = $('#temps-cilaos-(stade)-→-sentier-taïbit').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-cilaos-(stade)-→-sentier-taïbit" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>23 → 18</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>33 → 34</td></tr><tr><td class="progression-positive">+3</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>69 → 70</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-6</td><td>44 → 50</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-7</td><td>162 → 169</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-9</td><td>111 → 120</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-cilaos-(stade)-→-sentier-taïbit')) {
+                        const table = $('#progression-cilaos-(stade)-→-sentier-taïbit').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Sentier Taïbit → Marla</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.9 km</div>
+                            <div>D+: 817 m</div>
+                            <div>D-: 450 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-sentier-taïbit-→-marla" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:21:12</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:49:58</td><td>3.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>02:06:37</td><td>2.8 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>02:13:31</td><td>2.7 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>02:17:47</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>02:18:39</td><td>2.6 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-sentier-taïbit-→-marla')) {
+                        const table = $('#temps-sentier-taïbit-→-marla').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-sentier-taïbit-→-marla" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>18 → 17</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-6</td><td>169 → 175</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-10</td><td>34 → 44</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-15</td><td>50 → 65</td></tr><tr><td class="progression-positive">+5</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-15</td><td>120 → 135</td></tr><tr><td class="progression-positive">+6</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-16</td><td>70 → 86</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-sentier-taïbit-→-marla')) {
+                        const table = $('#progression-sentier-taïbit-→-marla').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Marla → Plaine des Merles</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.6 km</div>
+                            <div>D+: 467 m</div>
+                            <div>D-: 282 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-marla-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:15:04</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:41:16</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:48:24</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:52:11</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:56:11</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>02:05:34</td><td>3.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-marla-→-plaine-des-merles')) {
+                        const table = $('#temps-marla-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-marla-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>17 → 15</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>175 → 174</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-5</td><td>44 → 49</td></tr><tr><td class="progression-positive">+4</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-6</td><td>86 → 92</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-8</td><td>65 → 73</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-15</td><td>135 → 150</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-marla-→-plaine-des-merles')) {
+                        const table = $('#progression-marla-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Plaine des Merles → Sentier Scout</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.2 km</div>
+                            <div>D+: 99 m</div>
+                            <div>D-: 251 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>00:20:01</td><td>6.6 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>00:26:20</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>00:31:08</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>00:31:36</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>00:31:49</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>00:31:52</td><td>4.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#temps-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>174 → 174</td></tr><tr><td class="progression-positive">+2</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>0</td><td>150 → 150</td></tr><tr><td class="progression-positive">+3</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>92 → 93</td></tr><tr><td class="progression-positive">+4</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>15 → 17</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>73 → 75</td></tr><tr><td class="progression-positive">+6</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-3</td><td>49 → 52</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#progression-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Sentier Scout → Aurère</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.7 km</div>
+                            <div>D+: 408 m</div>
+                            <div>D-: 1162 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:13:48</td><td>7.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:39:11</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:41:11</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:47:57</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:48:35</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>02:00:58</td><td>4.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-sentier-scout-→-aurère')) {
+                        const table = $('#temps-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>17 → 14</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>174 → 175</td></tr><tr><td class="progression-positive">+3</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>75 → 77</td></tr><tr><td class="progression-positive">+4</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>150 → 152</td></tr><tr><td class="progression-positive">+5</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-3</td><td>93 → 96</td></tr><tr><td class="progression-positive">+6</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-5</td><td>52 → 57</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-sentier-scout-→-aurère')) {
+                        const table = $('#progression-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Aurère → Deux Bras</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.7 km</div>
+                            <div>D+: 193 m</div>
+                            <div>D-: 826 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-aurère-→-deux-bras" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>00:51:06</td><td>7.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:18:10</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:19:36</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:23:44</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:30:32</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:33:54</td><td>4.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-aurère-→-deux-bras')) {
+                        const table = $('#temps-aurère-→-deux-bras').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-aurère-→-deux-bras" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+11</td><td>175 → 164</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>0</td><td>57 → 57</td></tr><tr><td class="progression-positive">+3</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>0</td><td>14 → 14</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-3</td><td>77 → 80</td></tr><tr><td class="progression-positive">+5</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-4</td><td>152 → 156</td></tr><tr><td class="progression-positive">+6</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-5</td><td>96 → 101</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-aurère-→-deux-bras')) {
+                        const table = $('#progression-aurère-→-deux-bras').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Deux Bras → Dos d'Ane</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.1 km</div>
+                            <div>D+: 907 m</div>
+                            <div>D-: 306 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-deux-bras-→-dos-d'ane" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:37:45</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:56:55</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>02:11:44</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>02:13:57</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>02:14:30</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>02:16:51</td><td>2.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-deux-bras-→-dos-d'ane')) {
+                        const table = $('#temps-deux-bras-→-dos-d'ane').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-deux-bras-→-dos-d'ane" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>14 → 15</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>101 → 103</td></tr><tr><td class="progression-positive">+3</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-2</td><td>156 → 158</td></tr><tr><td class="progression-positive">+4</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-4</td><td>164 → 168</td></tr><tr><td class="progression-positive">+5</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-9</td><td>57 → 66</td></tr><tr><td class="progression-positive">+6</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-13</td><td>80 → 93</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-deux-bras-→-dos-d'ane')) {
+                        const table = $('#progression-deux-bras-→-dos-d'ane').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Dos d'Ane → Chemin Ratinaud</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 3.3 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 394 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-dos-d'ane-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>00:21:26</td><td>9.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>00:23:23</td><td>8.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>00:25:51</td><td>7.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>00:31:22</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>00:33:05</td><td>6.0 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-dos-d'ane-→-chemin-ratinaud')) {
+                        const table = $('#temps-dos-d'ane-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-dos-d'ane-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>103 → 97</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+3</td><td>168 → 165</td></tr><tr><td class="progression-positive">+3</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>66 → 64</td></tr><tr><td class="progression-positive">+4</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>15 → 14</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>93 → 92</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-dos-d'ane-→-chemin-ratinaud')) {
+                        const table = $('#progression-dos-d'ane-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Chemin Ratinaud → La possession</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.3 km</div>
+                            <div>D+: 131 m</div>
+                            <div>D-: 595 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:23:30</td><td>6.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:24:33</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:28:39</td><td>5.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:30:37</td><td>5.5 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:55:40</td><td>4.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#temps-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>92 → 91</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>0</td><td>64 → 64</td></tr><tr><td class="progression-positive">+3</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>0</td><td>14 → 14</td></tr><tr><td class="progression-positive">+4</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>0</td><td>97 → 97</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-8</td><td>165 → 173</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#progression-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">La possession → Grande Chaloupe</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 7.4 km</div>
+                            <div>D+: 293 m</div>
+                            <div>D-: 286 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:23:56</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:24:09</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:25:19</td><td>5.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:48:05</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>02:11:32</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>02:33:14</td><td>2.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-la-possession-→-grande-chaloupe')) {
+                        const table = $('#temps-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+12</td><td>97 → 85</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+7</td><td>64 → 57</td></tr><tr><td class="progression-positive">+3</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>0</td><td>173 → 173</td></tr><tr><td class="progression-positive">+4</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>0</td><td>14 → 14</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-5</td><td>91 → 96</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-13</td><td>152 → 165</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-la-possession-→-grande-chaloupe')) {
+                        const table = $('#progression-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grande Chaloupe → Le Colorado</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.5 km</div>
+                            <div>D+: 789 m</div>
+                            <div>D-: 126 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>02:09:21</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>02:16:19</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>02:23:22</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>03:05:17</td><td>2.8 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>03:13:50</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>04:03:34</td><td>2.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#temps-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>85 → 81</td></tr><tr><td class="progression-positive">+2</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>173 → 171</td></tr><tr><td class="progression-positive">+3</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>14 → 12</td></tr><tr><td class="progression-positive">+4</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>57 → 56</td></tr><tr><td class="progression-positive">+5</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-10</td><td>165 → 175</td></tr><tr><td class="progression-positive">+6</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-13</td><td>96 → 109</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#progression-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Colorado → St Denis La Redoute</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.2 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 627 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td>01:05:23</td><td>3.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td>01:12:45</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+3</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:21:35</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+4</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>01:23:32</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td>01:36:58</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+6</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td>01:58:40</td><td>2.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#temps-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+5</td><td>175 → 170</td></tr><tr><td class="progression-positive">+2</td><td>8026</td><td>Christophe LOMBARDOT (Relai 1)
+Eric POTHIN (Relai 2)
+Sylvain MOREL (Relai 3)
+Jean Claude ESPARON (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+4</td><td>56 → 52</td></tr><tr><td class="progression-positive">+3</td><td>8137</td><td>Patrice PAQUIRY (Relai 1)
+Eddy DAMBREVILLE (Relai 2)
+Fabien MAILLOT (Relai 3)
+Cédric LABAISSE (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+1</td><td>81 → 80</td></tr><tr><td class="progression-positive">+4</td><td>8090</td><td>Aurélien LEGRAND (Relai 1)
+Rachid KHODJA (Relai 2)
+Raphaël AUDE (Relai 3)
+Audrey FLEURY (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>171 → 172</td></tr><tr><td class="progression-positive">+5</td><td>8059</td><td>Wilson MALET (Relai 1)
+Johnny MALET (Relai 2)
+Eric GRONDIN (Relai 3)
+Ginot HOARAU (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-1</td><td>109 → 110</td></tr><tr><td class="progression-positive">+6</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-negative">-3</td><td>12 → 15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#progression-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Bloc → Cilaos (Stade)</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.5 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 171 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-bloc-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td>00:36:59</td><td>7.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-bloc-→-cilaos-(stade)')) {
+                        const table = $('#temps-le-bloc-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-bloc-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8184</td><td>Laurent PAYET (Relai 1)
+Mathieu MERLO (Relai 2)
+Olivier BERGON (Relai 3)
+Thomas GIGANT (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+2</td><td>25 → 23</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-bloc-→-cilaos-(stade)')) {
+                        const table = $('#progression-le-bloc-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Dos d'Ane → La possession</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 11.6 km</div>
+                            <div>D+: 131 m</div>
+                            <div>D-: 595 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-dos-d'ane-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td>01:59:32</td><td>5.8 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-dos-d'ane-→-la-possession')) {
+                        const table = $('#temps-dos-d'ane-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-dos-d'ane-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>8001</td><td>Aurore MEYNOT (Relai 1)
+Stephane LANNOY (Relai 2)
+Frederic MIQUEL (Relai 3)
+Louisa YAZID (Relai 3)</td><td>Zembrocal</td><td class="progression-positive">+6</td><td>158 → 152</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-dos-d'ane-→-la-possession')) {
+                        const table = $('#progression-dos-d'ane-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <script>
+                function toggleSection(header) {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.textContent = '▼';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.textContent = '▲';
+                        icon.classList.add('active');
+                    }
+                }
+
+                document.getElementById('courseSelect').addEventListener('change', function() {
+                    const course = this.value;
+                    const suffix = course === 'Toutes les courses' ? '' 
+                                 : '_' + course.toLowerCase().replace(/ /g, '_');
+                    window.location.href = `sections_analysis${suffix}.html`;
+                });
+            </script>
+        </body>
+        </html>
+        

@@ -1,0 +1,296 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Segments Techniques - Mascareignes</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    marginBottom: 2rem;
+                    borderRadius: 12px;
+                    boxShadow: 0 2px 4px rgba(0,0,0,0.05);
+                }
+                .collapsible-header {
+                    cursor: pointer;
+                    padding: 1rem;
+                    backgroundColor: #f8f9fa;
+                    borderRadius: 8px 8px 0 0;
+                    transition: backgroundColor 0.3s ease;
+                    userSelect: none;
+                    display: flex;
+                    alignItems: center;
+                    justifyContent: space-between;
+                }
+                .collapsible-header:hover {
+                    backgroundColor: #e9ecef;
+                }
+                .collapsible-content {
+                    display: none;
+                    padding: 1.5rem;
+                    border: 1px solid #dee2e6;
+                    borderTop: none;
+                    borderRadius: 0 0 8px 8px;
+                }
+                .card-title {
+                    marginBottom: 0 !important;
+                    fontSize: 1.1rem;
+                    color: #2c3e50;
+                }
+                .toggle-icon {
+                    transition: transform 0.3s ease;
+                }
+                .active .toggle-icon {
+                    transform: rotate(180deg);
+                }
+                .explanation-item {
+                    padding: 1rem;
+                    backgroundColor: #f8f9fa;
+                    borderRadius: 8px;
+                    marginBottom: 1rem;
+                }
+                .header-section {
+                    background: linear-gradient(135deg, #2c3e50, #34495e);
+                    color: white;
+                    padding: 2rem 0;
+                    marginBottom: 2rem;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <div class="section-card mb-4">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <h3 class="card-title">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Comprendre l'analyse des segments techniques
+                        </h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="explanation-item">
+                                    <h4 class="h5 mb-3">
+                                        <i class="fas fa-chart-bar text-primary me-2"></i>
+                                        Qu'est-ce qu'un segment technique ?
+                                    </h4>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>Définition</strong><br>
+                                            <small class="text-muted">
+                                                Un segment est considéré comme technique lorsqu'il présente un grand écart 
+                                                entre la vitesse pure et la vitesse effort des coureurs.
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Critères d'analyse</strong><br>
+                                            <small class="text-muted">
+                                                - Écart entre vitesse pure et vitesse effort<br>
+                                                - Variabilité des performances entre coureurs<br>
+                                                - Impact du terrain sur l'effort
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="explanation-item">
+                                    <h4 class="h5 mb-3">
+                                        <i class="fas fa-lightbulb text-primary me-2"></i>
+                                        Interprétation
+                                    </h4>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <strong>Grand écart technique</strong><br>
+                                            <small class="text-muted">
+                                                Plus l'écart est important, plus le segment demande de compétences techniques.
+                                            </small>
+                                        </li>
+                                        <li class="mb-3">
+                                            <strong>Profil des coureurs</strong><br>
+                                            <small class="text-muted">
+                                                Permet d'identifier les coureurs qui excellent techniquement et ceux qui 
+                                                pourraient améliorer leur technique.
+                                            </small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-3">
+                    <select id="courseSelect" class="form-select" style="width: auto;" onchange="changeCourse(this.value)">
+        <option value="Toutes les courses" >Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option><option value="Mascareignes" selected>Mascareignes</option><option value="Metiss Trail" >Metiss Trail</option><option value="Trail de Bourbon" >Trail de Bourbon</option><option value="Zembrocal" >Zembrocal</option>
+                    </select>
+                </div>
+
+                <!-- Tableau des segments -->
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Segment</th>
+                                <th>Écart technique</th>
+                                <th>Meilleure gestion</th>
+                                <th>Plus en difficulté</th>
+                                <th>Profil</th>
+                                <th>Nb coureurs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+            <tr>
+                <td>1</td>
+                <td>Dos d'Ane → Chemin Ratinaud</td>
+                <td>13.0%</td>
+                <td>Roland FIDJI (3061)<br>
+                    (2.5/6.3 km/h)</td>
+                <td>Karine FOISSARD (4429)<br>
+                    (2.0/5.3 km/h)</td>
+                <td>3.4km<br>+431m</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>Plaine des Merles → Sentier Scout</td>
+                <td>5.5%</td>
+                <td>David ROBERT (4309)<br>
+                    (3.9/7.0 km/h)</td>
+                <td>Cedric PAYET (3183)<br>
+                    (4.0/7.4 km/h)</td>
+                <td>2.2km<br>+272m</td>
+                <td>20</td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td>Grande Chaloupe → Le Colorado</td>
+                <td>4.6%</td>
+                <td>Annick VIRAMA (4365)<br>
+                    (3.3/4.7 km/h)</td>
+                <td>Alain FOISSARD (4443)<br>
+                    (3.4/5.0 km/h)</td>
+                <td>8.5km<br>+956m</td>
+                <td>15</td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td>Le Colorado → St Denis La Redoute</td>
+                <td>4.5%</td>
+                <td>Julien HERVIO (4436)<br>
+                    (4.2/8.1 km/h)</td>
+                <td>Claudie BOILEAU (4191)<br>
+                    (3.8/7.5 km/h)</td>
+                <td>4.6km<br>+629m</td>
+                <td>14</td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td>Aurère → Deux Bras</td>
+                <td>3.6%</td>
+                <td>Laurent LOTHE (4184)<br>
+                    (4.6/6.3 km/h)</td>
+                <td>Yohan RIVIERE (3665)<br>
+                    (3.7/5.2 km/h)</td>
+                <td>6.4km<br>+801m</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>6</td>
+                <td>Sentier Scout → Aurère</td>
+                <td>3.5%</td>
+                <td>Allison BARTHÉLEMY (3692)<br>
+                    (4.4/5.3 km/h)</td>
+                <td>Christophe BENOIT (3367)<br>
+                    (5.0/6.2 km/h)</td>
+                <td>8.8km<br>+1409m</td>
+                <td>19</td>
+            </tr>
+            
+            <tr>
+                <td>7</td>
+                <td>La possession → Grande Chaloupe</td>
+                <td>3.0%</td>
+                <td>Christophe BENOIT (3367)<br>
+                    (3.9/4.7 km/h)</td>
+                <td>Cedric PAYET (3183)<br>
+                    (3.4/4.2 km/h)</td>
+                <td>7.4km<br>+639m</td>
+                <td>16</td>
+            </tr>
+            
+            <tr>
+                <td>8</td>
+                <td>Deux Bras → Dos d'Ane</td>
+                <td>2.7%</td>
+                <td>Cedric PAYET (3183)<br>
+                    (4.8/5.3 km/h)</td>
+                <td>Karine FOISSARD (4429)<br>
+                    (3.8/4.3 km/h)</td>
+                <td>4.7km<br>+882m</td>
+                <td>17</td>
+            </tr>
+            
+            <tr>
+                <td>9</td>
+                <td>Chemin Ratinaud → La possession</td>
+                <td>2.5%</td>
+                <td>Christophe BENOIT (3367)<br>
+                    (5.3/5.5 km/h)</td>
+                <td>Muriel RISER (3392)<br>
+                    (4.8/5.1 km/h)</td>
+                <td>8.5km<br>+840m</td>
+                <td>17</td>
+            </tr>
+            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <script>
+            function toggleSection(header) {
+    header.classList.toggle('active');
+    const content = header.nextElementSibling;
+    
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+    } else {
+        content.style.display = 'block';
+    }
+
+    // Sauvegarder l'état dans le localStorage
+    const sectionId = header.textContent.trim();
+    localStorage.setItem(sectionId, content.style.display === 'block');
+}
+
+// Au chargement de la page, restaurer l'état des sections
+document.addEventListener('DOMContentLoaded', function() {
+    const headers = document.querySelectorAll('.collapsible-header');
+    headers.forEach(header => {
+        const sectionId = header.textContent.trim();
+        const isOpen = localStorage.getItem(sectionId) === 'true';
+        if (isOpen) {
+            header.classList.add('active');
+            header.nextElementSibling.style.display = 'block';
+        }
+    });
+});
+            </script>
+        </body>
+        </html>
+        
