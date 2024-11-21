@@ -1,0 +1,2385 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Analyse des sections - Toutes les courses</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                .section-card {
+                    margin-bottom: 1rem;
+                    border: 1px solid #dee2e6;
+                    border-radius: 0.25rem;
+                }
+                .section-header {
+                    padding: 1rem;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .section-content {
+                    display: none;
+                    padding: 1rem;
+                }
+                .section-info {
+                    display: flex;
+                    gap: 2rem;
+                    color: #666;
+                    margin: 1rem 0;
+                }
+                .toggle-icon { 
+                    font-size: 1.2rem;
+                    transition: transform 0.3s;
+                }
+                .toggle-icon.active {
+                    transform: rotate(180deg);
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container py-4">
+                <div class="mb-4">
+                    <a href="index.html" class="btn btn-secondary">← Retour au menu</a>
+                </div>
+
+                <h1 class="mb-4">Analyse des sections - Toutes les courses</h1>
+
+                <!-- Sélecteur de course -->
+                <div class="mb-4">
+                    <label for="courseSelect" class="form-label">Sélectionner une course:</label>
+                    <select id="courseSelect" class="form-select" style="width: auto;">
+        <option value="Toutes les courses" selected>Toutes les courses</option><option value="Diagonale des Fous" >Diagonale des Fous</option>
+                    </select>
+                </div>
+        
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">St Pierre Ravine Blanche → Domaine Vidot</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 14.0 km</div>
+                            <div>D+: 646 m</div>
+                            <div>D-: 1 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-st-pierre-ravine-blanche-→-domaine-vidot" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:17:19</td><td>10.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:30:48</td><td>9.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:33:39</td><td>9.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:33:40</td><td>9.0 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-st-pierre-ravine-blanche-→-domaine-vidot')) {
+                        const table = $('#temps-st-pierre-ravine-blanche-→-domaine-vidot').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-st-pierre-ravine-blanche-→-domaine-vidot" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>0</td><td>0 → 46</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>0</td><td>0 → 264</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>0</td><td>0 → 365</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>0</td><td>0 → 367</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-st-pierre-ravine-blanche-→-domaine-vidot')) {
+                        const table = $('#progression-st-pierre-ravine-blanche-→-domaine-vidot').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Domaine Vidot → Notre Dame de la Paix</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 19.4 km</div>
+                            <div>D+: 1330 m</div>
+                            <div>D-: 297 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-domaine-vidot-→-notre-dame-de-la-paix" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>02:27:26</td><td>7.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>03:01:56</td><td>6.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>03:07:25</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>03:37:52</td><td>5.3 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-domaine-vidot-→-notre-dame-de-la-paix')) {
+                        const table = $('#temps-domaine-vidot-→-notre-dame-de-la-paix').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-domaine-vidot-→-notre-dame-de-la-paix" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+81</td><td>367 → 286</td></tr><tr><td class="progression-positive">+2</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+10</td><td>46 → 36</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-45</td><td>264 → 309</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-339</td><td>365 → 704</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-domaine-vidot-→-notre-dame-de-la-paix')) {
+                        const table = $('#progression-domaine-vidot-→-notre-dame-de-la-paix').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Notre Dame de la Paix → Parking Aire Nez de Boeuf</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 12.0 km</div>
+                            <div>D+: 597 m</div>
+                            <div>D-: 262 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-notre-dame-de-la-paix-→-parking-aire-nez-de-boeuf" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:30:59</td><td>7.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:53:51</td><td>6.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>02:01:34</td><td>5.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>02:06:18</td><td>5.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-notre-dame-de-la-paix-→-parking-aire-nez-de-boeuf')) {
+                        const table = $('#temps-notre-dame-de-la-paix-→-parking-aire-nez-de-boeuf').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-notre-dame-de-la-paix-→-parking-aire-nez-de-boeuf" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+49</td><td>704 → 655</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+6</td><td>286 → 280</td></tr><tr><td class="progression-positive">+3</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+4</td><td>36 → 32</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-50</td><td>309 → 359</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-notre-dame-de-la-paix-→-parking-aire-nez-de-boeuf')) {
+                        const table = $('#progression-notre-dame-de-la-paix-→-parking-aire-nez-de-boeuf').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Parking Aire Nez de Boeuf → Mare à Boue</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 10.3 km</div>
+                            <div>D+: 31 m</div>
+                            <div>D-: 448 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-parking-aire-nez-de-boeuf-→-mare-à-boue" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:08:16</td><td>9.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:27:53</td><td>7.0 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:36:08</td><td>6.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:40:19</td><td>6.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-parking-aire-nez-de-boeuf-→-mare-à-boue')) {
+                        const table = $('#temps-parking-aire-nez-de-boeuf-→-mare-à-boue').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-parking-aire-nez-de-boeuf-→-mare-à-boue" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+41</td><td>655 → 614</td></tr><tr><td class="progression-positive">+2</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+3</td><td>32 → 29</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-54</td><td>280 → 334</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-78</td><td>359 → 437</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-parking-aire-nez-de-boeuf-→-mare-à-boue')) {
+                        const table = $('#progression-parking-aire-nez-de-boeuf-→-mare-à-boue').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Mare à Boue → Coteaux Kerveguen</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 9.6 km</div>
+                            <div>D+: 685 m</div>
+                            <div>D-: 90 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-mare-à-boue-→-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:56:08</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:59:57</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>02:02:01</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>02:05:31</td><td>4.6 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-mare-à-boue-→-coteaux-kerveguen')) {
+                        const table = $('#temps-mare-à-boue-→-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-mare-à-boue-→-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+118</td><td>614 → 496</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+96</td><td>437 → 341</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+51</td><td>334 → 283</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-14</td><td>29 → 43</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-mare-à-boue-→-coteaux-kerveguen')) {
+                        const table = $('#progression-mare-à-boue-→-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Coteaux Kerveguen → Croisée coteaux Kerveguen</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.5 km</div>
+                            <div>D+: 283 m</div>
+                            <div>D-: 7 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>00:49:02</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>00:57:00</td><td>2.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>00:59:31</td><td>2.5 km/h</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>00:59:56</td><td>2.5 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen')) {
+                        const table = $('#temps-coteaux-kerveguen-→-croisée-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+29</td><td>496 → 467</td></tr><tr><td class="progression-positive">+2</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-1</td><td>43 → 44</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-1</td><td>283 → 284</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-4</td><td>341 → 345</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen')) {
+                        const table = $('#progression-coteaux-kerveguen-→-croisée-coteaux-kerveguen').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Croisée coteaux Kerveguen → Le Bloc</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 4.0 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 1097 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-croisée-coteaux-kerveguen-→-le-bloc" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>00:48:22</td><td>5.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>00:59:15</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:03:36</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:10:03</td><td>3.4 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-croisée-coteaux-kerveguen-→-le-bloc')) {
+                        const table = $('#temps-croisée-coteaux-kerveguen-→-le-bloc').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-croisée-coteaux-kerveguen-→-le-bloc" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+15</td><td>467 → 452</td></tr><tr><td class="progression-positive">+2</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-2</td><td>44 → 46</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-27</td><td>345 → 372</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-39</td><td>284 → 323</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-croisée-coteaux-kerveguen-→-le-bloc')) {
+                        const table = $('#progression-croisée-coteaux-kerveguen-→-le-bloc').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Bloc → Plateau des chênes</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.0 km</div>
+                            <div>D+: 135 m</div>
+                            <div>D-: 131 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-bloc-→-plateau-des-chênes" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>00:18:27</td><td>6.5 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>00:21:13</td><td>5.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>00:22:49</td><td>5.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>00:24:39</td><td>4.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-bloc-→-plateau-des-chênes')) {
+                        const table = $('#temps-le-bloc-→-plateau-des-chênes').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-bloc-→-plateau-des-chênes" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+32</td><td>452 → 420</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+9</td><td>323 → 314</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+7</td><td>372 → 365</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+2</td><td>46 → 44</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-bloc-→-plateau-des-chênes')) {
+                        const table = $('#progression-le-bloc-→-plateau-des-chênes').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Plateau des chênes → Cilaos (Stade)</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.4 km</div>
+                            <div>D+: 0 m</div>
+                            <div>D-: 186 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-plateau-des-chênes-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>00:28:13</td><td>5.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>00:38:35</td><td>3.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>00:47:48</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>00:54:19</td><td>2.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-plateau-des-chênes-→-cilaos-(stade)')) {
+                        const table = $('#temps-plateau-des-chênes-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-plateau-des-chênes-→-cilaos-(stade)" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-37</td><td>420 → 457</td></tr><tr><td class="progression-positive">+2</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-46</td><td>44 → 90</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-64</td><td>314 → 378</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-112</td><td>365 → 477</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-plateau-des-chênes-→-cilaos-(stade)')) {
+                        const table = $('#progression-plateau-des-chênes-→-cilaos-(stade)').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Cilaos (Stade) → Sentier Taïbit</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.6 km</div>
+                            <div>D+: 529 m</div>
+                            <div>D-: 474 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-cilaos-(stade)-→-sentier-taïbit" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:26:25</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+2</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:26:46</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:29:26</td><td>4.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:47:42</td><td>3.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-cilaos-(stade)-→-sentier-taïbit')) {
+                        const table = $('#temps-cilaos-(stade)-→-sentier-taïbit').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-cilaos-(stade)-→-sentier-taïbit" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+152</td><td>457 → 305</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+148</td><td>477 → 329</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+72</td><td>378 → 306</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+14</td><td>90 → 76</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-cilaos-(stade)-→-sentier-taïbit')) {
+                        const table = $('#progression-cilaos-(stade)-→-sentier-taïbit').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Sentier Taïbit → Marla</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.9 km</div>
+                            <div>D+: 858 m</div>
+                            <div>D-: 507 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-sentier-taïbit-→-marla" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:54:42</td><td>3.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:57:30</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:58:05</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>02:00:28</td><td>2.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-sentier-taïbit-→-marla')) {
+                        const table = $('#temps-sentier-taïbit-→-marla').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-sentier-taïbit-→-marla" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+23</td><td>329 → 306</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+4</td><td>306 → 302</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-2</td><td>305 → 307</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-22</td><td>76 → 98</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-sentier-taïbit-→-marla')) {
+                        const table = $('#progression-sentier-taïbit-→-marla').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Marla → Plaine des Merles</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.5 km</div>
+                            <div>D+: 470 m</div>
+                            <div>D-: 275 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-marla-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:38:27</td><td>4.0 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:43:26</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:43:27</td><td>3.8 km/h</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:44:05</td><td>3.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-marla-→-plaine-des-merles')) {
+                        const table = $('#temps-marla-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-marla-→-plaine-des-merles" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+14</td><td>306 → 292</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+14</td><td>307 → 293</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+8</td><td>302 → 294</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-12</td><td>98 → 110</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-marla-→-plaine-des-merles')) {
+                        const table = $('#progression-marla-→-plaine-des-merles').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Plaine des Merles → Sentier Scout</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 2.0 km</div>
+                            <div>D+: 23 m</div>
+                            <div>D-: 194 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>00:24:25</td><td>4.9 km/h</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>00:29:30</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>00:29:33</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>00:29:34</td><td>4.1 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#temps-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-plaine-des-merles-→-sentier-scout" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+8</td><td>292 → 284</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+8</td><td>293 → 285</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+8</td><td>294 → 286</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>0</td><td>110 → 110</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-plaine-des-merles-→-sentier-scout')) {
+                        const table = $('#progression-plaine-des-merles-→-sentier-scout').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Sentier Scout → Aurère</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.7 km</div>
+                            <div>D+: 383 m</div>
+                            <div>D-: 1107 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:24:47</td><td>6.2 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>02:02:57</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>02:03:01</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>02:03:05</td><td>4.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-sentier-scout-→-aurère')) {
+                        const table = $('#temps-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-sentier-scout-→-aurère" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+13</td><td>110 → 97</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-29</td><td>286 → 315</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-30</td><td>284 → 314</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-31</td><td>285 → 316</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-sentier-scout-→-aurère')) {
+                        const table = $('#progression-sentier-scout-→-aurère').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Aurère → Passerelle d'Oussy</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 3.9 km</div>
+                            <div>D+: 48 m</div>
+                            <div>D-: 591 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-aurère-→-passerelle-d'oussy" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>00:51:44</td><td>4.5 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:21:13</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:21:49</td><td>2.9 km/h</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:21:49</td><td>2.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-aurère-→-passerelle-d'oussy')) {
+                        const table = $('#temps-aurère-→-passerelle-d'oussy').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-aurère-→-passerelle-d'oussy" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+1</td><td>97 → 96</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-10</td><td>316 → 326</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-15</td><td>314 → 329</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-15</td><td>315 → 330</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-aurère-→-passerelle-d'oussy')) {
+                        const table = $('#progression-aurère-→-passerelle-d'oussy').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Passerelle d'Oussy → Ilet des orangers</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 5.7 km</div>
+                            <div>D+: 909 m</div>
+                            <div>D-: 299 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-passerelle-d'oussy-→-ilet-des-orangers" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:38:27</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>02:07:41</td><td>2.7 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>02:07:41</td><td>2.7 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>02:08:20</td><td>2.7 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-passerelle-d'oussy-→-ilet-des-orangers')) {
+                        const table = $('#temps-passerelle-d'oussy-→-ilet-des-orangers').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-passerelle-d'oussy-→-ilet-des-orangers" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+2</td><td>329 → 327</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+2</td><td>330 → 328</td></tr><tr><td class="progression-positive">+3</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+1</td><td>96 → 95</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-3</td><td>326 → 329</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-passerelle-d'oussy-→-ilet-des-orangers')) {
+                        const table = $('#progression-passerelle-d'oussy-→-ilet-des-orangers').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Ilet des orangers → Piton des orangers</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 7.8 km</div>
+                            <div>D+: 1210 m</div>
+                            <div>D-: 241 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-ilet-des-orangers-→-piton-des-orangers" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>02:23:37</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>03:20:22</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>03:21:11</td><td>2.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>03:30:31</td><td>2.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-ilet-des-orangers-→-piton-des-orangers')) {
+                        const table = $('#temps-ilet-des-orangers-→-piton-des-orangers').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-ilet-des-orangers-→-piton-des-orangers" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+28</td><td>327 → 299</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+27</td><td>328 → 301</td></tr><tr><td class="progression-positive">+3</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+20</td><td>95 → 75</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+12</td><td>329 → 317</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-ilet-des-orangers-→-piton-des-orangers')) {
+                        const table = $('#progression-ilet-des-orangers-→-piton-des-orangers').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Piton des orangers → Ilet Savannah</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 17.2 km</div>
+                            <div>D+: 72 m</div>
+                            <div>D-: 1895 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-piton-des-orangers-→-ilet-savannah" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>03:40:46</td><td>4.7 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>03:42:58</td><td>4.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>04:04:18</td><td>4.2 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>04:06:43</td><td>4.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-piton-des-orangers-→-ilet-savannah')) {
+                        const table = $('#temps-piton-des-orangers-→-ilet-savannah').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-piton-des-orangers-→-ilet-savannah" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+17</td><td>317 → 300</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-14</td><td>301 → 315</td></tr><tr><td class="progression-positive">+3</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-16</td><td>75 → 91</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-23</td><td>299 → 322</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-piton-des-orangers-→-ilet-savannah')) {
+                        const table = $('#progression-piton-des-orangers-→-ilet-savannah').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Ilet Savannah → Chemin Ratinaud</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 6.8 km</div>
+                            <div>D+: 604 m</div>
+                            <div>D-: 265 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-ilet-savannah-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>02:02:18</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>02:03:49</td><td>3.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>02:15:40</td><td>3.0 km/h</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>02:27:08</td><td>2.8 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-ilet-savannah-→-chemin-ratinaud')) {
+                        const table = $('#temps-ilet-savannah-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-ilet-savannah-→-chemin-ratinaud" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+38</td><td>322 → 284</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+30</td><td>315 → 285</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+17</td><td>300 → 283</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-4</td><td>91 → 95</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-ilet-savannah-→-chemin-ratinaud')) {
+                        const table = $('#progression-ilet-savannah-→-chemin-ratinaud').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Chemin Ratinaud → La possession</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.3 km</div>
+                            <div>D+: 188 m</div>
+                            <div>D-: 649 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>02:18:05</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+2</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>02:18:05</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>02:18:13</td><td>3.6 km/h</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>02:51:16</td><td>2.9 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#temps-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-chemin-ratinaud-→-la-possession" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-20</td><td>95 → 115</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-24</td><td>284 → 308</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-24</td><td>285 → 309</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-27</td><td>283 → 310</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-chemin-ratinaud-→-la-possession')) {
+                        const table = $('#progression-chemin-ratinaud-→-la-possession').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">La possession → Grande Chaloupe</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 7.3 km</div>
+                            <div>D+: 325 m</div>
+                            <div>D-: 319 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:31:51</td><td>4.8 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:42:47</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+3</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:42:48</td><td>4.3 km/h</td></tr><tr><td class="progression-positive">+4</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:43:47</td><td>4.2 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-la-possession-→-grande-chaloupe')) {
+                        const table = $('#temps-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-la-possession-→-grande-chaloupe" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-positive">+12</td><td>310 → 298</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-positive">+11</td><td>308 → 297</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-positive">+9</td><td>309 → 300</td></tr><tr><td class="progression-positive">+4</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-positive">+4</td><td>115 → 111</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-la-possession-→-grande-chaloupe')) {
+                        const table = $('#progression-la-possession-→-grande-chaloupe').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Grande Chaloupe → Le Colorado</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 8.5 km</div>
+                            <div>D+: 821 m</div>
+                            <div>D-: 149 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>02:05:23</td><td>4.1 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>02:28:33</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>02:28:33</td><td>3.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>02:29:33</td><td>3.4 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#temps-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-grande-chaloupe-→-le-colorado" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>0</td><td>111 → 111</td></tr><tr><td class="progression-positive">+2</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-8</td><td>298 → 306</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-10</td><td>300 → 310</td></tr><tr><td class="progression-positive">+4</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-12</td><td>297 → 309</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-grande-chaloupe-→-le-colorado')) {
+                        const table = $('#progression-grande-chaloupe-→-le-colorado').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="section-card">
+                    <div class="section-header" onclick="toggleSection(this)">
+                        <h3 class="mb-0">Le Colorado → St Denis La Redoute</h3>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-info">
+                            <div>Distance: 3.9 km</div>
+                            <div>D+: 16 m</div>
+                            <div>D-: 649 m</div>
+                        </div>
+
+                        <!-- TOP Temps -->
+                        <div class="performance-section">
+                            <h4>Top temps</h4>
+                            
+            <div class="table-responsive">
+                <table id="temps-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Temps</th><th>Vitesse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td>01:07:38</td><td>3.5 km/h</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td>01:38:13</td><td>2.4 km/h</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td>01:38:14</td><td>2.4 km/h</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td>01:39:10</td><td>2.4 km/h</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#temps-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#temps-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+
+                        <!-- TOP Progression -->
+                        <div class="performance-section">
+                            <h4>Top progressions</h4>
+                            
+            <div class="table-responsive">
+                <table id="progression-le-colorado-→-st-denis-la-redoute" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Position</th><th>Dossard</th><th>Nom</th><th>Course</th><th>Progression</th><th>Évolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="progression-positive">+1</td><td>1480</td><td>Frederic GAY</td><td>Diagonale des Fous</td><td class="progression-negative">-2</td><td>111 → 113</td></tr><tr><td class="progression-positive">+2</td><td>2494</td><td>Cedric BOUESSAY</td><td>Diagonale des Fous</td><td class="progression-negative">-20</td><td>309 → 329</td></tr><tr><td class="progression-positive">+3</td><td>858</td><td>Sophie GERBELOT LEGRIS</td><td>Diagonale des Fous</td><td class="progression-negative">-21</td><td>310 → 331</td></tr><tr><td class="progression-positive">+4</td><td>2188</td><td>Sébastien LESAGE</td><td>Diagonale des Fous</td><td class="progression-negative">-24</td><td>306 → 330</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <script>
+                (function() {
+                    if (!$.fn.DataTable.isDataTable('#progression-le-colorado-→-st-denis-la-redoute')) {
+                        const table = $('#progression-le-colorado-→-st-denis-la-redoute').DataTable({
+                            "pageLength": 20,
+                            "lengthMenu": [20],
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/French.json"
+                            },
+                            "order": [],
+                            "dom": 'frt<"bottom"ip>',
+                            "searching": true,
+                            "info": true,
+                            "paginate": true
+                        });
+
+                        $('#courseSelect').change(function() {
+                            const selectedCourse = $(this).val();
+                            table.column(3).search(selectedCourse === 'all' ? '' : selectedCourse, true, false).draw();
+                        });
+                    }
+                })();
+            </script>
+        
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <script>
+                function toggleSection(header) {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.toggle-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.textContent = '▼';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.textContent = '▲';
+                        icon.classList.add('active');
+                    }
+                }
+
+                document.getElementById('courseSelect').addEventListener('change', function() {
+                    const course = this.value;
+                    const suffix = course === 'Toutes les courses' ? '' 
+                                 : '_' + course.toLowerCase().replace(/ /g, '_');
+                    window.location.href = `sections_analysis${suffix}.html`;
+                });
+            </script>
+        </body>
+        </html>
+        
